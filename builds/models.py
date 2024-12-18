@@ -1,23 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
+#from cloudinary.models import CloudinaryField
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
 
 class BuildPost(models.Model):
     """
-    Modeel to store a single build post entry related to :model:`auth.User`.
+    Model to store a single build post entry related to :model:`auth.User`.
     """
     build_title = models.CharField(max_length=150, unique=True)
     build_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="build_posts"
     )
-    image_of_build = CloudinaryField('build image', default='placeholder')
-    image_alt = models.CharField(
-       max_length=100, default="",
-       null=False, blank=False
-    )
+    #image_of_build = CloudinaryField('build image', default='placeholder')
+    #image_alt = models.CharField(
+    #   max_length=100, default="",
+    #   null=False, blank=False
+    #)
     build_description = models.TextField()
     money_spent = models.DecimalField(max_digits=8, decimal_places=2)
     year_build = models.DateField()
