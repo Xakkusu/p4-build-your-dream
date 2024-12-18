@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
@@ -12,11 +13,11 @@ class BuildPost(models.Model):
     build_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="build_posts"
     )
-    #image = CloudinaryField('image', default='placeholder')
-    #image_alt = models.CharField(
-    #   max_length=100, default="",
-    #   null=False, blank=False
-    #)
+    image_of_build = CloudinaryField('build image', default='placeholder')
+    image_alt = models.CharField(
+       max_length=100, default="",
+       null=False, blank=False
+    )
     build_description = models.TextField()
     money_spent = models.DecimalField(max_digits=8, decimal_places=2)
     year_build = models.DateField()
