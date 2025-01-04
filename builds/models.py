@@ -24,7 +24,7 @@ class BuildPost(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status_build_post = models.IntegerField(choices=STATUS, default=0)
     #should be automated from the description field
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(max_length=180, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
