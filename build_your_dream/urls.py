@@ -18,8 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("", include("builds.urls"), name="builds.urls"),
+    path("", include("builds.urls"), name="builds-urls"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     #path('show-my-build/', include("builds.urls"), name="builds.urls"),
 ]

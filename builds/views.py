@@ -9,7 +9,8 @@ class BuildPostList(generic.ListView):
     per page paginated based on the date of creation.
     """
     #model = BuildPost
-    queryset = BuildPost.objects.all()
+    queryset = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
     #queryset = BuildPost.objects.filter(status=1).order_by("created_on")
     template_name = "index.html"
     #paginate_by = 8
+    
