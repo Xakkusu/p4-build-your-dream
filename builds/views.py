@@ -11,6 +11,6 @@ class BuildPostList(generic.ListView):
     #model = BuildPost
     queryset = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
     #queryset = BuildPost.objects.filter(status=1).order_by("created_on")
-    template_name = "index.html"
-    #paginate_by = 8
+    template_name = "builds/index.html"
+    paginate_by = 8
     
