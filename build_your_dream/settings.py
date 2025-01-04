@@ -70,11 +70,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'build_your_dream.urls'
 
+TEMPLATES_DIR = [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'builds', 'templates', 'builds'),]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'builds', 'templates', 'builds'),],
+        'DIRS': TEMPLATES_DIR,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
