@@ -13,15 +13,15 @@ class BuildPostList(generic.ListView):
     template_name = "builds/index.html"
     paginate_by = 8
 
-#def show_build_post(request, build_title):
-#    """
-#    Displays/Shows singular build post with all it's content
-#    """
-#    queryset = BuildPost.objects.filter(status_build_post=2)
-#    build_post = get_object_or_404(queryset, build_title=build_title)
-#
-#   return render(
-#        request,
-#        "builds/show_build_post.html",
-#        {"build_post": build_post},
-#    )
+def show_build_post(request, slug):
+    """
+    Displays/Shows singular build post with all it's content
+    """
+    queryset = BuildPost.objects.filter(status_build_post=2)
+    build_post = get_object_or_404(queryset, slug=slug)
+
+    return render(
+        request,
+        "builds/show_build_post.html",
+        {"build_post": build_post},
+    )

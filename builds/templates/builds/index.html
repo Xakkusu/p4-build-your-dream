@@ -6,8 +6,10 @@
 <h1>Builds list</h1>
 {% for build in object_list %}
 <div>
-    <h2>{{build.build_title}}</h2>
-    <p>Author: {{build.build_author}}</p>
+    <a href="{% url 'show_build_post' build.slug %}" class="post-link">
+        <h2>{{build.build_title}}</h2>
+        <p>Author: {{build.build_author}}</p>
+    </a>
 </div>
 {% endfor %}
 <div>
