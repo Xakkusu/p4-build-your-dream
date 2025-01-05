@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 	'allauth.socialaccount',
     'builds',
     'django_summernote',
+    'future_content',
 ]
 
 SITE_ID = 1
