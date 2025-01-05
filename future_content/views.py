@@ -11,7 +11,7 @@ class FutureRequestList(generic.ListView):
     per page paginated based on the date of creation.
     """
     #model = BuildPost
-    queryset = FutureContentRequest.objects.filter(status_of_request=3).order_by("created_on")
+    queryset = FutureContentRequest.objects.filter(status_of_request=2).order_by("created_on")
     template_name = "future_content/future_content.html"
     paginate_by = 4
 
