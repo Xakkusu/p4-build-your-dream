@@ -72,7 +72,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'build_your_dream.urls'
 
 TEMPLATES_DIR = [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'builds', 'templates', 'builds'),]
+                 os.path.join(BASE_DIR, 'builds', 'templates', 'builds'),
+                 os.path.join(BASE_DIR, 'future_content', 'templates', 'future_content'),]
 
 TEMPLATES = [
     {
