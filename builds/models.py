@@ -10,6 +10,7 @@ class BuildPost(models.Model):
     Model to store a single build post entry related to :model:`auth.User`.
     """
     build_title = models.CharField(max_length=150, unique=True)
+    slug = models.SlugField(max_length=150, default="", null=False)
     build_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="build_posts"
     )
