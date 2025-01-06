@@ -25,3 +25,12 @@ def show_build_post(request, slug):
         "builds/show_build_post.html",
         {"build": build},
     )
+
+class AddBuildPost(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
+    """
+    A logged in user can add a build post to the database through this class
+    1. create form in forms.py
+    2. add success message & link url
+    3. validate build post method
+    4. show success message method
+    """
