@@ -14,7 +14,7 @@ class BuildPost(models.Model):
     build_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="build_posts"
     )
-    image_of_build = CloudinaryField('build image', default='placeholder')
+    image_of_build = CloudinaryField('image', default='placeholder')
     image_alt = models.CharField(
        max_length=100, default="",
        null=False, blank=False
