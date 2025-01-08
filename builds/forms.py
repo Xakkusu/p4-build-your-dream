@@ -12,5 +12,5 @@ class CreateBuildsPost(forms.ModelForm):
         in the form
         """
         model = BuildPost
-        fields =["build_title ", "image_of_build", "image_alt", 
+        fields =["build_title", "image_of_build", "image_alt", 
                 "build_description", "money_spent", "year_build"]
