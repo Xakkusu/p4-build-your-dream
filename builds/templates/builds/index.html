@@ -5,6 +5,9 @@
 
 <!-- index.html content starts here -->
 <h1>Builds list</h1>
+<a href="{% url 'create_build_post' %}" class="post-link">
+    <p>Create build post</p>
+</a>
 {% for build in object_list %}
 <div>
     <a href="{% url 'show_build_post' build.slug %}" class="post-link">

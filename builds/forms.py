@@ -1,7 +1,7 @@
 from django import forms
 from .models import BuildPost
 
-class CreateBuildsPost(forms.ModelForm):
+class CreateBuildsPostForm(forms.ModelForm):
     """
     Class to create the form fields needed to create
     a build post by the user from the views
