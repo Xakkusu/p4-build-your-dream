@@ -1,5 +1,5 @@
 from django import forms
-from .models import BuildPost
+from .models import BuildPost, Comment
 
 class CreateBuildsPostForm(forms.ModelForm):
     """
@@ -14,3 +14,16 @@ class CreateBuildsPostForm(forms.ModelForm):
         model = BuildPost
         fields =["build_title", "image_of_build", "image_alt", 
                 "build_description", "money_spent", "year_build"]
+
+class CreateCommentForm(forms.ModelForm):
+    """
+    Class to create the form fields needed to create
+    a comment by the user from the views
+    """
+    class Meta:
+        """
+        Specify the model used and which fields will be
+        in the form
+        """
+        model = Comment
+        fields =["comment_title", "comment_body"]
