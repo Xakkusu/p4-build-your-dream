@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import BuildPost, Comment
-from .forms import CreateBuildsPostForm
+from .forms import CreateBuildsPostForm, CreateCommentForm
 
 # Create your views here.
 class BuildPostList(generic.ListView):
@@ -24,7 +24,7 @@ def show_build_post(request, slug):
     build = get_object_or_404(queryset, slug=slug)
     comments = build.comments.all().order_by("-created_on")
     comment_count = build.comments.filter(comment_status = 2).count()
-
+    create_comment_form = CreateCommentForm()
 
     return render(
         request,
@@ -33,6 +33,7 @@ def show_build_post(request, slug):
             "build": build,
             "comments": comments,
             "comment_count": comment_count,
+            "create_comment_form": create_comment_form
         },
     )
 

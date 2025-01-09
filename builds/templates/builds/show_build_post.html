@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="masthead">
@@ -94,6 +95,22 @@
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
+            </div>
+        </div>
+        <!--Create Comment Form-->
+        <div class="container">
+            <h1>Add your comment to this build post</h1>
+            <br>
+            <div class="row justify-content-center ">
+                {% if user.is_authenticated %}
+                <div class="col-11 col-md-8 col-lg-6 mt-3">
+                    <form method="post" enctype="multipart/form-data">
+                        {{ create_comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-dark">Create your comment</button>
+                    </form>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
