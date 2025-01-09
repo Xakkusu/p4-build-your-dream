@@ -22,11 +22,18 @@ def show_build_post(request, slug):
     """
     queryset = BuildPost.objects.filter(status_build_post=2)
     build = get_object_or_404(queryset, slug=slug)
+    comments = build.comments.all().order_by("-created_on")
+    comment_count = build.comments.filter(comment_status = 2).count()
+
 
     return render(
         request,
         "builds/show_build_post.html",
-        {"build": build},
+        {
+            "build": build,
+            "comments": comments,
+            "comment_count": comment_count,
+        },
     )
 
 
