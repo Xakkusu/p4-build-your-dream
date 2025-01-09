@@ -24,6 +24,14 @@ def show_build_post(request, slug):
     build = get_object_or_404(queryset, slug=slug)
     comments = build.comments.all().order_by("-created_on")
     comment_count = build.comments.filter(comment_status = 2).count()
+    
+    if request.method == "POST":
+        create_comment_form = CreateCommentForm(data=request.POST)
+        if create_comment_form.is_valid():
+            comment = create_comment_form.save(commit=False)
+            comment.comment_author = request.user
+            comment.build_post = build
+            comment.save()
     create_comment_form = CreateCommentForm()
 
     return render(

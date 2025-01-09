@@ -40,7 +40,7 @@ class Comment(models.Model):
     Model to store a single comment entry related to :model:`auth.User`
     and :model:`build_dream.BuildPost`. Needs to be approved
     """
-    build_id = models.ForeignKey(BuildPost, on_delete=models.CASCADE,
+    build_post = models.ForeignKey(BuildPost, on_delete=models.CASCADE,
                              related_name="comments")
     comment_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
