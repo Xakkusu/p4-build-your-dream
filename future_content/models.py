@@ -11,7 +11,7 @@ class FutureContentRequest(models.Model):
     """
     future_content_title = models.CharField(max_length=150, unique=True)
     future_content_author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="future_content_request"
+        User, on_delete=models.CASCADE, related_name="future_content_request_user"
     )
     email_for_contact = models.EmailField(max_length=300)
     future_content_description = models.TextField()
