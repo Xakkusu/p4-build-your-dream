@@ -30,7 +30,7 @@ class CreateFutureContentRequest(generic.CreateView):
     future content that could be added
     Help from: https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10
     """
-    template_name = "future_content/create_future_content_request.html"
+    template_name = "future_content/future_content.html"
     model = FutureContentRequest
     form_class = FutureContentRequestForm
     success_url = "/"
