@@ -10,6 +10,13 @@
 <div class="container">
     <h1>What possible content would you like to see from us?</h1>
     <br>
+    <div class="user-status">
+        {% if user.is_authenticated %}
+        {% else %}
+        <p class="text-end m-3">You need be be logged in to create a request, don't have an account yet? Get <a class="{% if request.path == signup_url %}active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">signed up</a>!</p>
+        {% endif %}
+    </div>
+    <br>
     <div class="row justify-content-center ">
         {% if user.is_authenticated %}
         <div class="col-11 col-md-8 col-lg-6 mt-3">
@@ -24,7 +31,18 @@
 </div>
 
 <h1>Requests that will be implemented</h1>
-{% for implementedRequest in object_list %}
+<!-- Displaying count of requests -->
+<div class="row">
+    <div class="col-12">
+        <strong class="text-secondary">
+            <i class="far fa-comments"></i> {{ future_content_request_count }}
+        </strong>
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+</div>
+{% for implementedRequest in future_content_request %}
 <div>
     <h2>{{implementedRequest.future_content_title}}</h2>
     <p class="post-subtitle">Request by: {{implementedRequest.future_content_author}} | Made on: {{implementedRequest.created_on}}</p>

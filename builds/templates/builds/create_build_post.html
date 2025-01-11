@@ -7,6 +7,13 @@
 <div class="container">
     <h1>Create your very own build Post</h1>
     <br>
+    <div class="user-status">
+        {% if user.is_authenticated %}
+        {% else %}
+        <p class="text-end m-3">You need be be logged in to create a post, don't have an account yet? Get <a class="{% if request.path == signup_url %}active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">signed up</a>!</p>
+        {% endif %}
+    </div>
+    <br>
     <div class="row justify-content-center ">
         {% if user.is_authenticated %}
         <div class="col-11 col-md-8 col-lg-6 mt-3">

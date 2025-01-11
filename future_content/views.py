@@ -24,12 +24,14 @@ def create_future_content_request(request):
             )
     future_content_request = FutureContentRequest.objects.filter(status_of_request=2).order_by("created_on")
     future_content_request_form = FutureContentRequestForm()
+    future_content_request_count = future_content_request.filter(status_of_request = 2).count()
 
     return render(
         request,
         "future_content/future_content.html",
         {"future_content_request": future_content_request,
          "paginate_by": paginate_by,
+         "future_content_request_count":future_content_request_count,
          "future_content_request_form": future_content_request_form},
     )
 
