@@ -5,6 +5,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .models import BuildPost, Comment
 from .forms import CreateBuildsPostForm, CreateCommentForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 class BuildPostList(generic.ListView):
@@ -87,6 +89,27 @@ def show_build_post(request, slug):
 #            title=self.object.title,
 #        )
 
+def edit_comment(request, slug, comment_id):
+    """
+    user can edit comment
+    """
+    if request.method == "POST":
+        builds = BuildPost.objects.all()
+        build = get_object_or_404(builds, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        create_comment_form = CreateCommentForm(data=request.POST, instance=comment)
+        # form validation and "user = commenter" check 
+        if create_comment_form.is_valid() and comment.comment_author == request.user:
+            comment = create_comment_form.save(commit=False)
+            comment.build_post = build
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(
+                request, messages.ERROR, 'Error updating comment!')
+    return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
+
+
 class CreateBuildPost(generic.CreateView):
     """"
     A logged in user can add a build post to the database through this class
@@ -130,5 +153,5 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         Used to show success message: https://stackoverflow.com/questions/24822509/
         success-message-in-deleteview-not-shown
         """
-        messages.success(self.request, self.success_message)
+        messages.SUCCESS(self.request, self.success_message)
         return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
