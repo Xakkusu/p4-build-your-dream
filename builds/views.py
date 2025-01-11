@@ -114,7 +114,7 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
     """
     model = BuildPost
     template_name = "builds/delete_build_post.html"
-
+    success_message = "Your build post has been successfully deleted"
     success_url = "/"
 
     def test_func(self):
@@ -124,4 +124,11 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         True will delete
         """
         return self.request.user == self.get_object().build_author
-
+    def delete(self, request, *args, **kwargs):
+        """
+        after succesfull deletion a sucess message i displayed
+        Used to show success message: https://stackoverflow.com/questions/24822509/
+        success-message-in-deleteview-not-shown
+        """
+        messages.success(self.request, self.success_message)
+        return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
