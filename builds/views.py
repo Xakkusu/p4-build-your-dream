@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import BuildPost, Comment
 from .forms import CreateBuildsPostForm, CreateCommentForm
 
@@ -104,3 +104,21 @@ class CreateBuildPost(generic.CreateView):
         """
         form.instance.build_author = self.request.user
         return super(CreateBuildPost, self).form_valid(form)
+
+class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    """
+    used tutorial from: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13
+    to delete a Post and redirect the user to a seperate html
+    to confirm the deletion
+    Only the user that wrote the post can delete it
+    """
+    model = BuildPost
+    success_url = "/"
+
+    def test_func(self):
+        """
+        is needed for the UserPassesTestMixin to work
+        returns True or False
+        True will delete
+        """
+        return self.request.user == self.get_object().user
