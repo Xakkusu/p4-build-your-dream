@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import BuildPost, Comment
@@ -32,6 +33,10 @@ def show_build_post(request, slug):
             comment.comment_author = request.user
             comment.build_post = build
             comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "We recceived your comment, after it is approved it will be added to the post!"
+            )
     create_comment_form = CreateCommentForm()
 
     return render(
