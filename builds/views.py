@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .models import BuildPost, Comment
 from .forms import CreateBuildsPostForm, CreateCommentForm
 
@@ -113,6 +113,8 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
     Only the user that wrote the post can delete it
     """
     model = BuildPost
+    template_name = "builds/delete_build_post.html"
+
     success_url = "/"
 
     def test_func(self):
@@ -121,4 +123,5 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         returns True or False
         True will delete
         """
-        return self.request.user == self.get_object().user
+        return self.request.user == self.get_object().build_author
+
