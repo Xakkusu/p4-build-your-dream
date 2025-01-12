@@ -17,7 +17,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
             {% for tag in tags %}
                 <button type="button" 
-                        class="rounded-l inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out mr-1">{{ tag.name }}</button>
+                        class="btn btn-outline-primary inline-block">{{ tag.name }}</button>
 
             {% endfor %}
         </div>

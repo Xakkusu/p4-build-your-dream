@@ -10,15 +10,19 @@ from django.urls import reverse
 from taggit.models import Tag
 
 # Create your views here.
-class BuildPostList(generic.ListView):
+def build_post_list(request):
     """
     Returns all published  build-posts and displays 8 posts 
     per page paginated based on the date of creation.
+    Also shows tags, for tags/taggit I used this Tutorial:
+    https://www.youtube.com/watch?v=213swbH8j_o
     """
-    #model = BuildPost
-    queryset = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
-    template_name = "builds/index.html"
+    builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
+    tags = Tag.objects.all()
     paginate_by = 8
+    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
+    return render(request, 'builds/index.html', context)
+
 
 def show_build_post(request, slug):
     """
