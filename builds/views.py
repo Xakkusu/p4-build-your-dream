@@ -148,13 +148,27 @@ class CreateBuildPost(generic.CreateView):
         return super(CreateBuildPost, self).form_valid(form)
 
 
-class EditBuildPost():
+class EditBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     """
     used tutorial from: https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14
     to edit a Post and redirect the user to a seperate html
     to make the edit
     Only the user that wrote the post can edit it.
     """
+    model = BuildPost
+    template_name = "builds/edit_build_post.html"
+    form_class = CreateBuildsPostForm
+    success_message = "Your build post has been successfully edited"
+    success_url = "/"
+
+    def test_func(self):
+        """
+        is needed for the UserPassesTestMixin to work
+        returns True or False
+        True will let user edit build post
+        """
+        return self.request.user == self.get_object().build_author
+    
 
 
 class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
