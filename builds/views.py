@@ -109,7 +109,7 @@ def edit_comment(request, slug, comment_id):
     return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
 
 
-def comment_delete(request, slug, comment_id):
+def delete_comment(request, slug, comment_id):
     """
     user can delete their own comment
     """
