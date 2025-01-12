@@ -147,6 +147,16 @@ class CreateBuildPost(generic.CreateView):
         form.instance.build_author = self.request.user
         return super(CreateBuildPost, self).form_valid(form)
 
+
+class EditBuildPost():
+    """
+    used tutorial from: https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14
+    to edit a Post and redirect the user to a seperate html
+    to make the edit
+    Only the user that wrote the post can edit it.
+    """
+
+
 class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     """
     used tutorial from: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13
