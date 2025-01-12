@@ -16,8 +16,6 @@ def build_post_list(request):
     """
     Returns all published  build-posts and displays 8 posts 
     per page paginated based on the date of creation.
-    Also shows tags, for tags/taggit I used this Tutorial:
-    https://www.youtube.com/watch?v=213swbH8j_o
     """
     builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
     tags = Tag.objects.all()
@@ -25,6 +23,18 @@ def build_post_list(request):
     context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
     return render(request, 'builds/index.html', context)
 
+def search_build_tags_list(request):
+    """
+    Returns all published  build-posts and displays 8 posts 
+    per page paginated based on the date of creation.
+    Also shows tags, for tags/taggit I used this Tutorial:
+    https://www.youtube.com/watch?v=213swbH8j_o
+    """
+    builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
+    tags = Tag.objects.all()
+    paginate_by = 8
+    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
+    return render(request, 'builds/search_build_tags.html', context)
 
 class BuildListAPIView (ListAPIView):
     """

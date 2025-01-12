@@ -13,20 +13,14 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
 -->
 <div class="m-5">
     <h1>Builds list</h1>
-    <div class="flex items-center">
-        <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-            {% for tag in tags %}
-                <button type="button" 
-                        class="btn btn-outline-primary inline-block">{{ tag.name }}</button>
-
-            {% endfor %}
-        </div>
-    </div>
+    <span><a href="{% url 'search_build_tags' %}" class="post-link">
+        <p>Search builds via tags</p>
+    </a></span>
     <br/>
 
-    <a href="{% url 'create_build_post' %}" class="post-link">
+    <span><a href="{% url 'create_build_post' %}" class="post-link">
         <p>Create build post</p>
-    </a>
+    </a></span>
     {% for build in builds %}
     <div>
         <a href="{% url 'show_build_post' build.slug %}" class="post-link">
