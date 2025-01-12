@@ -55,10 +55,15 @@
             </div>
         </div>
     </div>
-    <!-- Delete Button -->
-    <div>
+    <!-- Delete & Edit Buttons -->
+    {% if user.is_authenticated and build.build_author == user %}
+    <span>
+        <a href="{% url 'edit_build_post' build.id %}" class="btn btn-primary w-25">Edit this post</a>
+    </span>
+    <span>
         <a href="{% url 'delete_build_post' build.id %}" class="btn btn-primary w-25">Delete this post</a>
-    </div>
+    </span>
+    {% endif %}
     <!-- Displaying count of comments -->
     <div class="row">
         <div class="col-12">
@@ -115,7 +120,8 @@
                     <form id="commentForm" method="post" enctype="multipart/form-data">
                         {{ create_comment_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" id="submitButton" class="btn btn-outline-dark">Create your comment</button>
+                        <button type="submit" id="submitButton" class="btn btn-outline-dark">Create your
+                            comment</button>
                     </form>
                 </div>
                 {% endif %}
