@@ -8,6 +8,8 @@ from .forms import CreateBuildsPostForm, CreateCommentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from taggit.models import Tag
+from .serializers import BuildPostSerializer
+from rest_framework.generics import ListAPIView
 
 # Create your views here.
 def build_post_list(request):
@@ -22,6 +24,14 @@ def build_post_list(request):
     paginate_by = 8
     context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
     return render(request, 'builds/index.html', context)
+
+
+class BuildListAPIView (ListAPIView):
+    """
+    Returns a serlialized list used for the tags later on
+    """
+    queryset = BuildPost.objects.filter(status_build_post=2)
+    serializer_class = BuildPostSerializer
 
 
 def show_build_post(request, slug):

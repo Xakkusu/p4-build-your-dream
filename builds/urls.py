@@ -3,6 +3,7 @@ from django.urls import path
 
 urlpatterns = [
     path("", views.build_post_list, name='home'),
+    path('build-list/', views.BuildListAPIView.as_view(), name='build-list'),
     path('createbuildpost/', views.CreateBuildPost.as_view(), name='create_build_post'),
     path('<slug:slug>/', views.show_build_post, name='show_build_post'),
     path('delete/<slug:pk>/', views.DeleteBuildPost.as_view(), name='delete_build_post'),

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'future_content',
     'taggit',
+    'rest_framework',
 ]
 
 SITE_ID = 1
