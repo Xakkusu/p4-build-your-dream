@@ -7,6 +7,7 @@ from .models import BuildPost, Comment
 from .forms import CreateBuildsPostForm, CreateCommentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from taggit.models import Tag
 
 # Create your views here.
 class BuildPostList(generic.ListView):

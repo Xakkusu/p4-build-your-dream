@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from taggit.managers import TaggableManager
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
@@ -27,6 +28,7 @@ class BuildPost(models.Model):
     #should be automated from the description field
     excerpt = models.TextField(max_length=180, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    tags = TaggableManager()
 
     class Meta:
         ordering = ["-created_on"]
