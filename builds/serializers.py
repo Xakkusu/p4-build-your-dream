@@ -13,5 +13,5 @@ class BuildPostSerializer(TaggitSerializer, serializers.ModelSerializer):
 
     class Meta:
         model = BuildPost
-        fields = ("id", "build_title", "build_author", "tags")
+        fields = ("id", "build_title", "build_author", "tags", "slug")
 

@@ -17,6 +17,9 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
 -->
 <div class="m-5" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
     <h1>Builds list</h1>
+    <a href="{% url 'create_build_post' %}" class="post-link">
+        <p>Create build post</p>
+    </a>
     <div class="flex items-center">
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
             <button type="button" class="btn btn-outline-primary inline-block"
@@ -29,12 +32,9 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
         </div>
     </div>
     <br />
-    <a href="{% url 'create_build_post' %}" class="post-link">
-        <p>Create build post</p>
-    </a>
     <template x-for="build in builds.filter(f => tag === 'ALL' || f.tags.includes(tag))">
         <div>
-            <a href="#" class="post-link">
+            <a href="" class="post-link">
                 <h2 x-text="build.build_title"></h2>
                 <p>Author: <span x-text="build.build_author"></span></p>
                 <small x-text="build.tags.join(', ')"></small>
