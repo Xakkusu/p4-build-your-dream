@@ -98,7 +98,6 @@ def edit_comment(request, slug, comment_id):
         build = get_object_or_404(builds, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         create_comment_form = CreateCommentForm(data=request.POST, instance=comment)
-        # form validation and "user = commenter" check 
         if create_comment_form.is_valid() and comment.comment_author == request.user:
             comment = create_comment_form.save(commit=False)
             comment.build_post = build
@@ -107,6 +106,26 @@ def edit_comment(request, slug, comment_id):
         else:
             messages.add_message(
                 request, messages.ERROR, 'Error updating comment!')
+    return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
+
+
+def comment_delete(request, slug, comment_id):
+    """
+    user can delete their own comment
+    """
+    builds = BuildPost.objects.all()
+    build = get_object_or_404(builds, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    #  "user = commenter" check
+    if comment.comment_author == request.user:
+        comment.delete()
+        messages.add_message(
+            request, messages.SUCCESS, 'Your comment has been deleted!'
+        )
+    else:
+        messages.add_message(
+            request, messages.ERROR, 'You can only delete your own comments!')
     return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
 
 
