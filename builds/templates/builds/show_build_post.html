@@ -55,6 +55,20 @@
             </div>
         </div>
     </div>
+    <!-- Like Button -->
+    <div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'like_build_post' build.slug %}" method="POST">
+            {% csrf_token %}
+            {% if liked %}
+            <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn">Unlike</button>
+            {% else %}
+            <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn" type="submit">Like</button>
+            {% endif %}
+        </form>
+        <strong>{{build.liked.all.count}} likes</strong>
+        {% endif %}
+    </div>
    <!-- Delete & Edit Buttons -->
     {% if user.is_authenticated and build.build_author == user %}
     <div><span>

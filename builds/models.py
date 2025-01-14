@@ -48,7 +48,7 @@ LIKE_CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
 
 class Like(models.Model):
     """
-    likes model to like posts
+    likes model to like posts ---> don't think i need the model for this anymore - might use for sth else?
     Used this tutorial: https://www.youtube.com/watch?app=desktop&v=xqFM6ykQEwo&t=69s
     """
     user = models.ForeignKey(
