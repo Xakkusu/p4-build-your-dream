@@ -226,6 +226,10 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
 
 def like_buildpost(request, slug, *args, **kwargs):
+    """
+    Select and unselect the like-button
+    got a tutorial and how to write the code instruction from: https://github.com/FlorianS4/project_4_django
+    """
     if request.method == "POST":
         buildpost = get_object_or_404(BuildPost, slug=slug)
         if buildpost.liked.filter(id=request.user.id).exists():
