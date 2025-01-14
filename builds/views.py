@@ -225,3 +225,11 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         messages.SUCCESS(self.request, self.success_message)
         return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
 
+def like_buildpost(request, slug, *args, **kwargs):
+    if request.method == "POST":
+        buildpost = get_object_or_404(BuildPost, slug=slug)
+        if buildpost.liked.filter(id=request.user.id).exists():
+            buildpost.liked.remove(request.user)
+        else:
+            buildpost.liked.add(request.user)
+    return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
