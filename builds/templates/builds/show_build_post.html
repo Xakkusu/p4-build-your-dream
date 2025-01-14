@@ -55,14 +55,14 @@
             </div>
         </div>
     </div>
-    <!-- Delete & Edit Buttons -->
+   <!-- Delete & Edit Buttons -->
     {% if user.is_authenticated and build.build_author == user %}
-    <span>
-        <a href="{% url 'edit_build_post' build.id %}" class="btn btn-primary w-25">Edit this post</a>
-    </span>
-    <span>
-        <a href="{% url 'delete_build_post' build.id %}" class="btn btn-primary w-25">Delete this post</a>
-    </span>
+    <div><span>
+            <a href="{% url 'edit_build_post' build.id %}" class="btn btn-primary w-25">Edit this post</a>
+        </span>
+        <span>
+            <a href="{% url 'delete_build_post' build.id %}" class="btn btn-primary w-25">Delete this post</a>
+        </span></div>
     {% endif %}
     <!-- Displaying count of comments -->
     <div class="row">

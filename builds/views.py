@@ -20,7 +20,8 @@ def build_post_list(request):
     builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
     tags = Tag.objects.all()
     paginate_by = 8
-    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
+    user = request.user
+    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by, 'user': user}
     return render(request, 'builds/index.html', context)
 
 def search_build_tags_list(request):
@@ -223,3 +224,4 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         """
         messages.SUCCESS(self.request, self.success_message)
         return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
+

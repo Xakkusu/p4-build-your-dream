@@ -29,6 +29,7 @@ class BuildPost(models.Model):
     excerpt = models.TextField(max_length=180, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
+    liked = models.ManyToManyField(User, default=None, blank=True, related_name="liked")
 
     class Meta:
         ordering = ["-created_on"]
@@ -36,6 +37,29 @@ class BuildPost(models.Model):
     def __str__(self):
         return f"{self.build_title} | written by {self.build_author}"
 
+    @property
+    def num_likes(self):
+        """
+        getting the number of likes
+        """
+        return self.liked.all().count()
+
+LIKE_CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
+
+class Like(models.Model):
+    """
+    likes model to like posts
+    Used this tutorial: https://www.youtube.com/watch?app=desktop&v=xqFM6ykQEwo&t=69s
+    """
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="build_likes")
+    buildpost = models.ForeignKey(
+        BuildPost, on_delete=models.CASCADE, related_name="build_post")
+    value = models.CharField(choices=LIKE_CHOICES, default="Like", max_length=10)
+
+    def __str__(self):
+        return str(self.buildpost)
+        
 
 class Comment(models.Model):
     """
