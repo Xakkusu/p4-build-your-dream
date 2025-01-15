@@ -30,7 +30,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 
     <!-- Use jquery -->
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
 
@@ -71,6 +71,12 @@
                     </li>
                     {% endif %}
                 </ul>
+                <!-- Form for search bar
+                Used the following tutorial:  https://www.youtube.com/watch?v=LsU79aY79UA&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=15
+                -->
+                <span><a href="{% url 'search_build_tags' %}" class="post-link">
+                    <p>Search builds via tags</p>
+                </a></span>
                 <span class="navbar-text text-muted">
                     Find or add your dream PC-build
                 </span>
@@ -123,7 +129,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
-        {% block extras %}
+    {% block extras %}
     {% endblock %}
 </body>
 
