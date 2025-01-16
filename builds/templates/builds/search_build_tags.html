@@ -23,7 +23,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
     <div class="flex items-center">
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
             <button type="button" class="btn btn-outline-primary inline-block"
-            @click="tag = $el.textContent">ALL</button>
+                @click="tag = $el.textContent">ALL</button>
             {% for tag in tags %}
             <button type="button" class="btn btn-outline-primary inline-block"
                 @click="tag = $el.textContent">{{ tag.name }}</button>
@@ -41,20 +41,6 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
             </a>
         </div>
     </template>
-    <div>
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
-    </div>
 </div>
 <!-- index.html content ends here -->
 {% endblock %}
