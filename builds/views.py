@@ -10,6 +10,7 @@ from django.urls import reverse
 from taggit.models import Tag
 from .serializers import BuildPostSerializer
 from rest_framework.generics import ListAPIView
+from django.core.paginator import Paginator
 
 # Create your views here.
 def build_post_list(request):
@@ -19,9 +20,15 @@ def build_post_list(request):
     """
     builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
     tags = Tag.objects.all()
+
+    paginator = Paginator(builds, 8)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     paginate_by = 8
     user = request.user
-    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by, 'user': user}
+    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by, 'user': user, "page_obj" : page_obj}
     return render(request, 'builds/index.html', context)
 
 def search_build_tags_list(request):
