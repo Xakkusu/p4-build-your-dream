@@ -46,20 +46,6 @@ class BuildPost(models.Model):
 
 LIKE_CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
 
-class Like(models.Model):
-    """
-    likes model to like posts ---> don't think i need the model for this anymore - might use for sth else?
-    Used this tutorial: https://www.youtube.com/watch?app=desktop&v=xqFM6ykQEwo&t=69s
-    """
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="build_likes")
-    buildpost = models.ForeignKey(
-        BuildPost, on_delete=models.CASCADE, related_name="build_post")
-    value = models.CharField(choices=LIKE_CHOICES, default="Like", max_length=10)
-
-    def __str__(self):
-        return str(self.buildpost)
-        
 
 class Comment(models.Model):
     """

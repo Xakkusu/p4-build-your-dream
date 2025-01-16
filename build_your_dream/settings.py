@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["8000-xakkusu-p4buildyourdrea-zbw6jk1ztx3.ws.codeinstitute-ide.net",".herokuapp.com"]
 
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary_storage',
-    'cloudinary',
     'django.contrib.sites',
 	'allauth',
 	'allauth.account',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'builds',
+    'cloudinary',
     'django_summernote',
     'future_content',
     'taggit',
@@ -173,7 +173,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Cloudinary 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+CLOUIDNARY_URL = os.environ.get('CLOUDINARY_URL')
 
 
 # Default primary key field type
