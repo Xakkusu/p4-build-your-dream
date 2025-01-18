@@ -163,7 +163,7 @@ def delete_comment(request, slug, comment_id):
     return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
 
 
-class CreateBuildPost(generic.CreateView):
+class CreateBuildPost(SuccessMessageMixin, generic.CreateView):
     """"
     A logged in user can add a build post to the database through this class
     Help from: https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10
@@ -172,6 +172,7 @@ class CreateBuildPost(generic.CreateView):
     model = BuildPost
     form_class = CreateBuildsPostForm
     success_url = "/"
+    success_message = "Your build was uploaded successfully and is waiting for approval."
 
     def form_valid(self, form):
         """
@@ -181,8 +182,20 @@ class CreateBuildPost(generic.CreateView):
         form.instance.build_author = self.request.user
         return super(CreateBuildPost, self).form_valid(form)
 
+    def get_success_message(self, cleaned_data):
+        """
+        display success message
+        Source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
+        here other source: https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views 
+        """ 
+        return self.success_message % dict(
+            cleaned_data,
+            build_title=self.object.build_title,
+        )
+        
 
-class EditBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+
+class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin, SuccessMessageMixin, generic.UpdateView):
     """
     used tutorial from: https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14
     to edit a Post and redirect the user to a seperate html
@@ -193,8 +206,7 @@ class EditBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView)
     template_name = "builds/edit_build_post.html"
     form_class = CreateBuildsPostForm
     success_message = "Your build post has been successfully edited"
-    success_url = "/"
-
+    
     def test_func(self):
         """
         is needed for the UserPassesTestMixin to work
@@ -202,6 +214,17 @@ class EditBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView)
         True will let user edit build post
         """
         return self.request.user == self.get_object().build_author
+
+    def get_success_url(self, **kwargs):
+        """
+        display success message when editing a post
+        used: https://stackoverflow.com/questions/26897050/django-success-url-using-kwargs
+        since the one for create builddpost did not work
+        """
+        if self.object.id is not None:
+            return reverse('show_build_post', args=[self.object.slug])
+        else:
+            return reverse('home')
     
 
 
