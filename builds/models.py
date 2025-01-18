@@ -56,7 +56,6 @@ class Comment(models.Model):
                              related_name="comments")
     comment_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
-    comment_title = models.CharField(max_length=100, unique=True)
     comment_body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     comment_status = models.IntegerField(choices=STATUS, default=0)

@@ -26,4 +26,4 @@ class CreateCommentForm(forms.ModelForm):
         in the form
         """
         model = Comment
-        fields =["comment_title", "comment_body"]
+        fields =["comment_body"]
