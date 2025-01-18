@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <h1>404 Error - Something went wrong</h1>
+    <br>
+    <div>
+        <p>Well you went somewhere you shouldn't have...</p>
+        <a href="{% url 'home' %}" class="btn btn-primary w-25">Return home</a>
+    </div>
+    <br>
+</div>
+
+{%endblock%}

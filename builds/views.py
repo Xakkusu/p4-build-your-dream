@@ -244,3 +244,5 @@ def like_buildpost(request, slug, *args, **kwargs):
         else:
             buildpost.liked.add(request.user)
     return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
+
+
