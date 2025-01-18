@@ -228,7 +228,7 @@ class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin, SuccessMessageMixi
     
 
 
-class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+class DeleteBuildPost(SuccessMessageMixin, LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     """
     used tutorial from: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13
     to delete a Post and redirect the user to a seperate html
@@ -247,6 +247,7 @@ class DeleteBuildPost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteVie
         True will delete
         """
         return self.request.user == self.get_object().build_author
+    # do I need a success message for deletion? nooo don't think sooooo
     def delete(self, request, *args, **kwargs):
         """
         after succesfull deletion a sucess message i displayed
