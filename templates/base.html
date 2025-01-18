@@ -52,6 +52,10 @@
                             href="/">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
+                            aria-current="page" href="/createbuildpost/">Upload your build!</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if request.path == future_content_url %}active{% endif %}"
                             aria-current="page" href="/future-content/">Future Content</a>
                     </li>
