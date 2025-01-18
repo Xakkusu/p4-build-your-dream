@@ -59,7 +59,7 @@ def show_build_post(request, slug):
     queryset = BuildPost.objects.filter(status_build_post=2)
     build = get_object_or_404(queryset, slug=slug)
     comments = build.comments.all().order_by("-created_on")
-    comment_count = build.comments.filter(comment_status = 2).count()
+    comment_count = build.comments.filter(approved=True).count()
     
     if request.method == "POST":
         create_comment_form = CreateCommentForm(data=request.POST)
@@ -134,6 +134,7 @@ def edit_comment(request, slug, comment_id):
         if create_comment_form.is_valid() and comment.comment_author == request.user:
             comment = create_comment_form.save(commit=False)
             comment.build_post = build
+            comment.approved = False
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:

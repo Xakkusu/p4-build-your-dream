@@ -58,7 +58,7 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     comment_body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    comment_status = models.IntegerField(choices=STATUS, default=0)
+    approved = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
