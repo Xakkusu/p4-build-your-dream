@@ -1,6 +1,8 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'search_build_tags' as search_build_tags_url %}
+{% url 'create_build_post' as create_build_post_url %}
 {% url 'future_content' as future_content_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -20,15 +22,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
 
 
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- Use alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -37,93 +39,97 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
+
 </head>
 
 <body class="d-flex flex-column h-100 main-bg text-white bg-dark">
 
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary text-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span id="label-fw">build your dream</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-fw">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="/">Home</a>
-                    </li>
-                    <!-- Form for search bar
+    <main>
+        <!-- Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary text-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}"><span id="label-fw">build your dream</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2" id="navbar-fw">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                                href="/">Home</a>
+                        </li>
+                        <!-- Form for search bar
                 Used the following tutorial:  https://www.youtube.com/watch?v=LsU79aY79UA&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=15
                 -->
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == search_build_tags_url %}active{% endif %}"
-                            aria-current="page" href="/search/">Search builds via tags</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
-                            aria-current="page" href="/createbuildpost/">Upload your build!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == future_content_url %}active{% endif %}"
-                            aria-current="page" href="/future-content/">Future Content</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_logout' %}"><span class="font-weight-bolder" id="li-paddding-r">|</span> Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_signup' %}"><span class="font-weight-bolder" id="li-paddding-r">|</span> Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- displaying Django messages -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == search_build_tags_url %}active{% endif %}"
+                                aria-current="page" href="/search/">Search via tags</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
+                                aria-current="page" href="/createbuildpost/">Upload your build!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == future_content_url %}active{% endif %}"
+                                aria-current="page" href="/future-content/">Future Content</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_logout' %}"><span
+                                    class="font-weight-bolder li-paddding-r">|</span> Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_signup' %}"><span
+                                    class="font-weight-bolder li-paddding-r">|</span> Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-                {% endfor %}
+            </div>
+        </nav>
+
+        <!-- displaying Django messages -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
 
-    <main class="flex-shrink-0 main-bg">
+        <div class="flex-shrink-0 main-bg">
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+            {% block content %}
+            <!-- Content Goes here -->
+            {% endblock content %}
 
-        <div class="user-status">
-            {% if user.is_authenticated %}
-            <p class="text-end m-3">{{ user }}, you are now logged in, share some builds! </p>
-            {% else %}
-            <p class="text-end m-3">You are not logged in, don't have an account yet? Get <a
-                    class="{% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                    href="{% url 'account_signup' %}">signed up</a>!</p>
-            {% endif %}
+            <div class="user-status">
+                {% if user.is_authenticated %}
+                <p class="text-end m-3">{{ user }}, you are now logged in, share some builds! </p>
+                {% else %}
+                <p class="text-end m-3">You are not logged in, don't have an account yet? Get <a
+                        class="{% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                        href="{% url 'account_signup' %}">signed up</a>!</p>
+                {% endif %}
+            </div>
+
         </div>
-
     </main>
-
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 light-bg fixed-bottom">
+    <footer class="footer mt-auto py-3 fixed-bottom navbar-dark bg-secondary text-white">
         <p class="m-0 text-center ">By Xakkusu</p>
         <!--<p class="m-0 text-center text-white">Will be updated shortly <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
