@@ -1,0 +1,42 @@
+main{
+    /* Push footer down */
+    margin-top: 62px;
+}
+
+#li-paddding-r {
+    display:none;
+}
+
+#navbar-fw {
+    text-align: right;
+}
+
+
+@media (min-width: 992px) {
+    #li-paddding-r {
+        padding-right: 10px;
+    }
+    
+    #label-fw {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    #navbar-fw {
+        font-family: Lato, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+    
+    #navbarText {
+        display: flex;
+        justify-content: flex-end;
+    }
+  }
+
+
+  @media (min-width: 1020px) {
+    #li-paddding-r {
+        display:unset;
+    }
+  }

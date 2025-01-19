@@ -19,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
 
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -32,6 +36,7 @@
     <!-- Use jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+
 </head>
 
 <body class="d-flex flex-column h-100 main-bg text-white bg-dark">
@@ -39,17 +44,23 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary text-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">b<span class="red-o">ui</span>ld<span
-                        class="thin"> your dream</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span id="label-fw">build your dream</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-fw">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="/">Home</a>
+                    </li>
+                    <!-- Form for search bar
+                Used the following tutorial:  https://www.youtube.com/watch?v=LsU79aY79UA&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=15
+                -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == search_build_tags_url %}active{% endif %}"
+                            aria-current="page" href="/search/">Search builds via tags</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
@@ -62,12 +73,12 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_logout' %}">Logout</a>
+                            href="{% url 'account_logout' %}"><span class="font-weight-bolder" id="li-paddding-r">|</span> Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_signup' %}">Register</a>
+                            href="{% url 'account_signup' %}"><span class="font-weight-bolder" id="li-paddding-r">|</span> Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
@@ -75,15 +86,6 @@
                     </li>
                     {% endif %}
                 </ul>
-                <!-- Form for search bar
-                Used the following tutorial:  https://www.youtube.com/watch?v=LsU79aY79UA&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=15
-                -->
-                <span><a href="{% url 'search_build_tags' %}" class="post-link">
-                    <p>Search builds via tags</p>
-                </a></span>
-                <span class="navbar-text text-muted">
-                    Find or add your dream PC-build
-                </span>
             </div>
         </div>
     </nav>
