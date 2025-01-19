@@ -3,8 +3,21 @@ main{
     padding-bottom: 56px;
 }
 
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .li-paddding-r {
     display:none;
+}
+
+.footer-bg{
+    background-color: #6c757d;
+    color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
 }
 
 #navbar-fw {
@@ -28,7 +41,10 @@ main{
         font-weight: 500;
 
     }
-
+    .footer-bg{
+        padding: 0px 50px;
+        font-size: 1.1rem;
+    }
   }
 
 
