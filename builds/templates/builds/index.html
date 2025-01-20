@@ -23,12 +23,10 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
         </a></span>
 
 
-    <!--use this design: https://codepen.io/creativemanner/pen/NWrNWrd-->
-    <section class="wrapper">
-        <div class="container">
-            <div class="row">
+    <!--used this design: https://codepen.io/creativemanner/pen/NWrNWrd-->
+    <section class="cards-section">
                 {% for build in builds %}
-                <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+                <div class="card-container">
 
                     <div class="card text-dark card-has-bg click-col">
                         <a href="{% url 'show_build_post' build.slug %}" class="post-link">
@@ -46,14 +44,14 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                                     <img class="card-img-top" src=" {{ build.image_of_build.url }}"
                                         alt="{{ build.image_alt }}">
                                     {% endif %}
-                                    <h4 class="card-title mt-0 "><a class="text-dark" href="{% url 'show_build_post' build.slug %}">{{build.build_title}}</a></h4>
+                                    <h4 class="card-title mt-0 "><a class="text-dark smaller-heading" href="{% url 'show_build_post' build.slug %}">{{build.build_title}}</a></h4>
                                     <small><i class="far fa-clock"></i>{{build.created_on}}</small>
                                 </div>
                                 <div class="card-footer">
                                     <div class="media">
                                         <div class="media-body">
                                             <h6 class="my-0 text-dark d-block">
-                                                <strong>{{build.liked.all.count}}</strong> likes</p>
+                                                <p><strong>{{build.liked.all.count}} </strong><i class="far fa-heart"></i></p>
                                             </h6>
                                         </div>
                                     </div>
@@ -65,7 +63,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                 </div>
 
                 {% endfor %}
-            </div>
+            
 
         </div>
 </div>

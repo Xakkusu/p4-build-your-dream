@@ -1,3 +1,7 @@
+*, ::after, ::before {
+  box-sizing: content-box;
+}
+
 main{
     padding-top: 70px;
     padding-bottom: 56px;
@@ -24,14 +28,37 @@ footer a {
     text-align: right;
 }
 
+.post-link, .text-dark {
+  text-decoration: none;
+}
+
+.smaller-heading {
+  font-size: 1.4rem;
+}
+
+
+.cards-section {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-count: auto;
+  column-gap: 2px;
+}
+
+.card-container {
+  width: 320px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
 /** Card styles 
 used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 **/
 
-.wrapper{margin:3vh}
-
 .card-img-top{
-    width: 225px;
+    width: 250px;
     max-height: 175px;
 }
 
@@ -41,7 +68,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     overflow:hidden;
     border-radius:20px;
     min-height:400px;
-    min-width:300px;
+    width: 300px;
     box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
 
   
@@ -82,13 +109,14 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
      border-top: none;
    }
     .card-title{font-weight:800}
-   .card-meta{color:rgba(0,0,0,0.3);
+   .card-meta{color:rgba(0,0,0,0.5);
     text-transform:uppercase;
-     font-weight:500;
-     letter-spacing:2px;}
+    font-weight:500;
+    letter-spacing:2px;
+    }
    .card-body{ 
      transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-   
+      size: 90%;
   
     }
    &:hover {
@@ -105,6 +133,19 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
   }
   
+  @media (min-width: 430px) {
+
+  }
+
+
+  @media (min-width: 750px) {
+
+  }
+
+@media (min-width: 992px) {
+
+  }
+
 
 
 @media (min-width: 992px) {
@@ -130,10 +171,10 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
 
 
-  @media (min-width: 1020px) {
-    .li-paddding-r {
-        display:unset;
-        font-weight: 800;
-        padding-right: 10px;
-    }
+@media (min-width: 1020px) {
+  .li-paddding-r {
+      display:unset;
+      font-weight: 800;
+      padding-right: 10px;
   }
+}
