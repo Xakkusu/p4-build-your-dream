@@ -24,6 +24,57 @@ footer a {
     padding: 0px 10px;
 }
 
+.banner {
+  font-family: Lato, sans-serif;
+}
+
+.hero-img {
+  background: url(../images/banner_build2.webp) no-repeat center center / cover;
+  height: 220px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro-text, .community {
+  font-weight: 800;
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-shadow: #fafafa 1px 0 10px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.intro-text h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #491e23;
+  letter-spacing: 2px;
+  font-size: 110%;
+  padding-top: 3px;
+}
+
+.intro-text p, .community p {
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.community-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0  5px;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.community-buttons .btn {
+  font-weight: 600;
+}
+
 #navbar-fw {
     text-align: right;
 }
@@ -36,6 +87,22 @@ footer a {
   font-size: 1.4rem;
 }
 
+.manage-div {
+  width: 90%;
+  min-width: 250px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  text-transform: lowercase;
+  font-family: Roboto, sans-serif;
+}
+
+.manage-div .btn {
+  font-weight: 600;
+}
 
 .cards-section {
   width:100%;
@@ -133,22 +200,47 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
   }
   
-  @media (min-width: 430px) {
-
+  @media (min-width: 470px) {
+    .hero-img {
+      height: 270px;
+    }
+    .intro-text h1 {
+      font-size: 150%;
+    }
+    .intro-text, .community {
+      font-weight: 800;
+      color: #000;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
   }
 
 
   @media (min-width: 750px) {
+    .hero-img {
+      height: 300px;
+    }
+    
+    .intro-text, .community {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .intro-text h1 {
+      font-weight: 900;
+      color: #491e23;
+      letter-spacing: 2px;
+      font-size: 45px;
+    }
 
+    .manage-div {
+      min-width: 380px;
+      max-width: 645px;
+    }
+    
   }
 
-@media (min-width: 992px) {
-
-  }
-
-
-
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
     #li-paddding-r {
         padding-right: 10px;
     }
@@ -170,11 +262,27 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     }
   }
 
-
 @media (min-width: 1020px) {
   .li-paddding-r {
       display:unset;
       font-weight: 800;
       padding-right: 10px;
+  }
+  .cards-section {
+    max-width: 1390px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .manage-div {
+    width: 100%;
+    min-width: 645x;
+    max-width: 980px;
+  }
+}
+
+@media (min-width: 1365px) {
+  .manage-div {
+    min-width: 980x;
+    max-width: 1325px;
   }
 }
