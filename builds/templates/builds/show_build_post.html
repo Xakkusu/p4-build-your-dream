@@ -3,101 +3,84 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
+<section class="show-build">
+    <div class="build-container">
+        <div class="build-post-container">
             <div class="col-md-8 masthead-text">
-                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ build.build_title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">From: {{ build.build_author }} | created: {{ build.created_on }} | last
                     updated: {{ build.updated_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <div class="image-container">
-                    {% if "placeholder" in build.image_of_build.url %}
-                    <img class="card-img-top" src="{% static 'images/default-pc-build.webp' %}" alt="placeholder image">
-                    {% else %}
-                    <img class="card-img-top" src=" {{ build.image_of_build.url }}" alt="{{ build.image_alt }}">
-                    {% endif %}
+            <div class="build-image-container">
+                {% if "placeholder" in build.image_of_build.url %}
+                <img class="build-image" src="{% static 'images/default-pc-build.webp' %}" alt="placeholder image">
+                {% else %}
+                <img class="build-image" src=" {{ build.image_of_build.url }}" alt="{{ build.image_alt }}">
+                {% endif %}
+            </div>
+            <div class="build-description-container">
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ build.build_description | safe}}
+                    </p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="info-build-container">
+                <div class="money-spent">
+                    <p class="card-text">
+                        Total amount spent on build: €{{ build.money_spent}}
+                    </p>
+                </div>
+                <div class="when-build">
+                    <p class="card-text">
+                        Finished on: {{ build.year_build }}
+                    </p>
+                </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ build.build_description | safe}}
-                </p>
+                <!-- Like Button -->
+                <div>
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'like_build_post' build.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn">Unlike</button>
+                        {% else %}
+                        <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn"
+                            type="submit">Like</button>
+                        {% endif %}
+                    </form>
+                    {% endif %}
+                    <strong>{{build.liked.all.count}} <i class="far fa-heart"></i></strong>
+                </div>
+                <!-- Delete & Edit Buttons -->
+                {% if user.is_authenticated and build.build_author == user %}
+                <div><span>
+                        <a href="{% url 'edit_build_post' build.id %}" class="btn btn-primary w-25">Edit this post</a>
+                    </span>
+                    <span>
+                        <a href="{% url 'delete_build_post' build.id %}" class="btn btn-primary w-25">Delete this
+                            post</a>
+                    </span></div>
+                {% endif %}
+            </div>
+            <!-- Displaying count of comments -->
+            <div class="col-12">
+                <strong class="text-secondary">
+                    <i class="far fa-comments"></i> {{ comment_count }}
+                </strong>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <p class="card-text">
-                    Total amount spent on build: €{{ build.money_spent}}
-                </p>
+        <hr>
+        <div class="comment-container">
+            <!-- Displaying Comments -->
+            <div class="comment-info">
+                <h3>Comments</h3>
+                <p>Some thoughts about this build:</p>
             </div>
-            <div class="card-body">
-                <p class="card-text">
-                    Finished on: {{ build.year_build }}
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- Like Button -->
-    <div>
-        {% if user.is_authenticated %}
-        <form action="{% url 'like_build_post' build.slug %}" method="POST">
-            {% csrf_token %}
-            {% if liked %}
-            <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn">Unlike</button>
-            {% else %}
-            <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn" type="submit">Like</button>
-            {% endif %}
-        </form>
-        <strong>{{build.liked.all.count}} likes</strong>
-        {% endif %}
-    </div>
-   <!-- Delete & Edit Buttons -->
-    {% if user.is_authenticated and build.build_author == user %}
-    <div><span>
-            <a href="{% url 'edit_build_post' build.id %}" class="btn btn-primary w-25">Edit this post</a>
-        </span>
-        <span>
-            <a href="{% url 'delete_build_post' build.id %}" class="btn btn-primary w-25">Delete this post</a>
-        </span></div>
-    {% endif %}
-    <!-- Displaying count of comments -->
-    <div class="row">
-        <div class="col-12">
-            <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
-            </strong>
-        </div>
-        <div class="col-12">
-            <hr>
-        </div>
-    </div>
-    <!-- Displaying Comments -->
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
+            <div class="comments">
                 {% for comment in comments %}
-                <div class="p-2 comments
+                <div
+                    class="p-2 comments
                 {% if not comment.approved and comment.comment_author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.comment_author }}
@@ -114,8 +97,8 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and request.user == comment.comment_author %}
-                    <button class="btn btn-edit btn-outline-dark" data-comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-delete btn-outline-dark" data-comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit btn-outline-light" data-comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-delete btn-outline-light" data-comment_id="{{ comment.id }}">Delete</button>
                     {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
@@ -124,7 +107,14 @@
         </div>
         <!--Create Comment Form-->
         <div class="container">
-            <h1>Add your comment to this build post</h1>
+            <h3>Add your comment to this build post</h3>
+            {% if user.is_authenticated %}
+            <p>Give your opinion on this build:</p>
+            {% else %}
+            <p class="text-end m-3">You need be be logged in to create a comment, don't have an account yet? Get <a
+                    class="{% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                    href="{% url 'account_signup' %}">signed up</a>!</p>
+            {% endif %}
             <br>
             <div class="row justify-content-center ">
                 {% if user.is_authenticated %}
@@ -140,28 +130,30 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
-<!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete your comment?
-                This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn
+    <!-- Delete confirmation modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your comment?
+                    This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
+</section>
 
 <!-- index.html content ends here -->
 {% endblock %}

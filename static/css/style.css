@@ -213,6 +213,44 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
   }
   }
+
+  /* Show build post styling */
+  /* Build post container */
+  .show-build {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+  }
+
+  .build-container {
+    width: 85%;
+    max-width: 1000px;
+    border:solid 2px rgba(51, 48, 48, 0.727);
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    background: #6c757d;
+    background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
+  }
+
+  .build-post-container {
+    font-family: Lato, sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .build-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .build-image{
+    width: 90%;
+    max-height: 800px;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  }
   
   @media (min-width: 470px) {
     .hero-img {
