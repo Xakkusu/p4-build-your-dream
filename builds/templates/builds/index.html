@@ -89,12 +89,12 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
 
 
 
-<div>
+<section class="pagination-section">
     <!-- Pagination 
         used this for help with the code:  https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django
         -->
 
-    <div class="pagination m-5">
+    <div class="pagination">
         <span class="step-links">
             {% if builds.has_previous %}
             <a href="?page=1">&laquo; first</a>
@@ -111,7 +111,6 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
             {% endif %}
         </span>
     </div>
-</div>
-</div>
+</section>
 <!-- index.html content ends here -->
 {% endblock %}
