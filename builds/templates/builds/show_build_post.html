@@ -6,7 +6,7 @@
 <section class="show-build">
     <div class="build-container">
         <div class="build-post-container">
-            <div class="col-md-8 masthead-text">
+            <div class="masthead-text">
                 <h1 class="post-title">{{ build.build_title }}</h1>
                 <p class="post-subtitle">From: {{ build.build_author }} | created: {{ build.created_on }} | last
                     updated: {{ build.updated_on }}</p>
@@ -19,38 +19,44 @@
                 {% endif %}
             </div>
             <div class="build-description-container">
-                <div class="card-body">
-                    <p class="card-text">
+                <div class="description">
+                    <p class="">
                         {{ build.build_description | safe}}
                     </p>
                 </div>
             </div>
             <div class="info-build-container">
                 <div class="money-spent">
-                    <p class="card-text">
-                        Total amount spent on build: €{{ build.money_spent}}
+                    <p class="spread-content">
+                        Total amount spent: <span class="info-content">€{{ build.money_spent}}</span>
                     </p>
                 </div>
                 <div class="when-build">
-                    <p class="card-text">
-                        Finished on: {{ build.year_build }}
+                    <p class="spread-content">
+                        Finished on: <span class="info-content">{{ build.year_build }}</span>
                     </p>
                 </div>
 
                 <!-- Like Button -->
-                <div>
+                <div class="like-container">
                     {% if user.is_authenticated %}
                     <form action="{% url 'like_build_post' build.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn">Unlike</button>
+                        <button type="submit" name="buildpost_id" value="{{build.slug}}"
+                            class="btn btn-like text-white"><i class="fas fa-heart heart-like"></i></button>
+                            <span><strong class="like-counter-btn">{{build.liked.all.count}}</strong></span>
                         {% else %}
-                        <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn"
-                            type="submit">Like</button>
+                        <button type="submit" name="buildpost_id" value="{{build.slug}}" class="btn btn-like text-white">
+                            <i class="far fa-heart heart-like"></i></button>
+                            <span><strong class="like-counter-btn">{{build.liked.all.count}}</strong></span>
                         {% endif %}
                     </form>
+                    {% else %}
+                    <i class="far fa-heart heart-like"></i><strong class="like-counter">{{build.liked.all.count}}</strong>
+                    <span id="user-hint"><a href="{% url 'account_login' %}">Login</a> or <a
+                        href="{% url 'account_signup' %}">sign up</a> to like this post</span>
                     {% endif %}
-                    <strong>{{build.liked.all.count}} <i class="far fa-heart"></i></strong>
                 </div>
                 <!-- Delete & Edit Buttons -->
                 {% if user.is_authenticated and build.build_author == user %}
@@ -63,18 +69,20 @@
                     </span></div>
                 {% endif %}
             </div>
-            <!-- Displaying count of comments -->
-            <div class="col-12">
-                <strong class="text-secondary">
-                    <i class="far fa-comments"></i> {{ comment_count }}
-                </strong>
-            </div>
         </div>
         <hr>
         <div class="comment-container">
             <!-- Displaying Comments -->
             <div class="comment-info">
-                <h3>Comments</h3>
+                <div class="comment-heading">
+                    <h3>Comments</h3>
+                    <!-- Displaying count of comments -->
+                    <div class="">
+                        <strong class="text-secondary">
+                            <i class="far fa-comments"></i> {{ comment_count }}
+                        </strong>
+                    </div>
+                </div>
                 <p>Some thoughts about this build:</p>
             </div>
             <div class="comments">
@@ -112,8 +120,7 @@
             <p>Give your opinion on this build:</p>
             {% else %}
             <p class="text-end m-3">You need be be logged in to create a comment, don't have an account yet? Get <a
-                    class="{% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                    href="{% url 'account_signup' %}">signed up</a>!</p>
+                    class="" aria-current="" href="{% url 'account_signup' %}">signed up</a>!</p>
             {% endif %}
             <br>
             <div class="row justify-content-center ">
