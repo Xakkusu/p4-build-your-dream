@@ -20,11 +20,14 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                     Be mindful, be willing to learn and most of all enjoy the builds!</p>
             </div>
             <div class="community">
+                {% if user.is_authenticated %}
+                {% else %}
                 <p>Want to become part of our community?</p>
                 <div class="community-buttons">
-                <a class="btn btn-secondary" aria-current="" href="{% url 'account_signup' %}">Sign Up</a>
-                <a class="btn btn-secondary" aria-current="" href="{% url 'account_login' %}">Login</a>
-            </div>
+                    <a class="btn btn-secondary" aria-current="" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="btn btn-secondary" aria-current="" href="{% url 'account_login' %}">Login</a>
+                </div>
+                {% endif %}
             </div>
         </div>
         <div class="manage-div">
@@ -49,7 +52,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                         <div class="card-body">
                             <small class="card-meta mb-2">
                                 {% for tag in build.tags.all %}
-                                {{ tag }},
+                                {{ tag }}
                                 {% endfor %}
                             </small>
                             {% if "placeholder" in build.image_of_build.url %}

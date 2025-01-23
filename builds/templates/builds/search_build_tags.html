@@ -5,21 +5,13 @@
 
 <!-- index.html content starts here -->
 
-<!-- Tags for being able to search through the tags & filter stuff
-used Tutorial & code from this Video: https://www.youtube.com/watch?v=213swbH8j_o 
-
-used Tutorial & code from the same developer through this video:
-https://www.youtube.com/watch?v=Wy3yrZ-bbvE
--- As they are building on each other I will not seperate whichc line of code is from which video since the second one changes the code from the first one --
-
-Tailwind also has styling for cards, if I don't find anything appealing wwith bootstraps etc for eg the cards later on I will use Tailwwind
-
--->
 <div class="m-5" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
-    <h1>Builds list</h1>
-    <a href="{% url 'create_build_post' %}" class="post-link">
-        <p>Create build post</p>
-    </a>
+    <div class="search-heading">
+        <h1>Builds list</h1>
+        <a href="{% url 'create_build_post' %}" class="post-link btn btn-outline-light">
+            Create build post
+        </a>
+    </div>
     <div class="flex items-center">
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
             <button type="button" class="btn btn-outline-primary inline-block"
@@ -37,7 +29,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
             <a x-bind:href="build.slug" class="post-link">
                 <h2 x-text="build.build_title"></h2>
                 <p>Author: <span x-text="build.build_author"></span></p>
-                <small x-text="build.tags.join(', ')"></small>
+                <small x-text="build.tags.join(' ')"></small>
             </a>
         </div>
     </template>

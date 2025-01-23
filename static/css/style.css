@@ -319,7 +319,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   text-decoration: none;
 }
 
-/* Comment styling */
+/* Comment container styling */
 
 .comment-heading {
   display: flex;
@@ -354,8 +354,6 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   margin-right: auto;
   border-radius: 20px;
 }
-
-
 
 .comments-div {
   padding-top: 5px;
@@ -395,6 +393,29 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   margin-bottom: 2px;
 }
   
+/* Search via tags page */
+
+.search-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.search-heading a { 
+  padding-top: 10px;
+  text-transform: lowercase;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+}
+
+.search-heading h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+
+
   @media (min-width: 470px) {
     .hero-img {
       height: 270px;
