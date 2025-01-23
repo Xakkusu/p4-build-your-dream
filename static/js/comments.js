@@ -1,7 +1,6 @@
 // Edit constants
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_comment_body");
-const commentTitle = document.getElementById("id_comment_title");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 // Delete constants
@@ -24,9 +23,6 @@ for (let button of editButtons) {
         let commentContent = document.getElementById(
           `comment${commentId}`).innerText;
         commentText.value = commentContent;
-        let commentTitleContent = document.getElementById(
-            `comment${commentId}`).innerText;
-        commentTitle.value = commentTitleContent;
         submitButton.innerText = "Update";
         commentForm.setAttribute("action", `edit_comment/${commentId}/`);
     });
@@ -49,4 +45,3 @@ for (let button of deleteButtons) {
       deleteModal.show();
     });
   }
-

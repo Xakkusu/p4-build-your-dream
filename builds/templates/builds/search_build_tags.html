@@ -34,7 +34,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
     <br />
     <template x-for="build in builds.filter(f => tag === 'ALL' || f.tags.includes(tag))">
         <div>
-            <a x-bind:href="build.slug"> class="post-link">
+            <a x-bind:href="build.slug" class="post-link">
                 <h2 x-text="build.build_title"></h2>
                 <p>Author: <span x-text="build.build_author"></span></p>
                 <small x-text="build.tags.join(', ')"></small>
