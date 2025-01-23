@@ -4,25 +4,24 @@
 {% block content %}
 <!--Deletion Information
 used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13-->
-<div class="container">
-    <h1>Dangerzone</h1>
+<div class="container-user">
+    <h1 class="delete-heading">Dangerzone</h1>
     <br>
     <div class="user-status">
         {% if user.is_authenticated %}
         {% else %}
         <p class="text-end m-3">If this is your post you must be logged in to delete it. Login <a
-                class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                href="{% url 'account_login' %}">here</a></p>
+                class="link" aria-current="" href="{% url 'account_login' %}">here</a></p>
         {% endif %}
     </div>
     <br>
     <div class="row justify-content-center ">
         {% if user.is_authenticated %}
-        <div class="col-11 col-md-8 col-lg-6 mt-3">
+        <div class="col-11 col-md-8 col-lg-6 mt-3 text-align">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <p>Are you sure you want to delete "{{object.build_title}}"? It will be gone forever</p>
-                <input type="submit" value="Confirm" class="btn btn-primary w-25">
+                <p class="bolder">Are you sure you want to delete "{{object.build_title}}"? It will be gone forever</p>
+                <input type="submit" value="Confirm" class="btn btn-danger btn-lg">
             </form>
         </div>
         {% endif %}

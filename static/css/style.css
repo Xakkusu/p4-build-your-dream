@@ -458,6 +458,19 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   text-align: center;
 }
 
+/* Delete page */
+.delete-heading {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.bolder {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
   @media (min-width: 470px) {
     .hero-img {
       height: 270px;
