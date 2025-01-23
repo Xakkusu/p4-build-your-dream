@@ -5,19 +5,19 @@
 
 <!-- index.html content starts here -->
 
-<div class="m-5" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
+<div class="m-3" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
     <div class="search-heading">
         <h1>Builds list</h1>
-        <a href="{% url 'create_build_post' %}" class="post-link btn btn-outline-light">
+        <a href="{% url 'create_build_post' %}" class="btn btn-outline-light create-btn">
             Create build post
         </a>
     </div>
     <div class="flex items-center">
         <div class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
-            <button type="button" class="btn btn-outline-primary inline-block"
+            <button type="button" class="btn btn-secondary inline-block tag-btn"
                 @click="tag = $el.textContent">ALL</button>
             {% for tag in tags %}
-            <button type="button" class="btn btn-outline-primary inline-block"
+            <button type="button" class="btn btn-secondary inline-block tag-btn"
                 @click="tag = $el.textContent">{{ tag.name }}</button>
 
             {% endfor %}
@@ -25,10 +25,9 @@
     </div>
     <br />
     <template x-for="build in builds.filter(f => tag === 'ALL' || f.tags.includes(tag))">
-        <div>
-            <a x-bind:href="build.slug" class="post-link">
+        <div class="tag-content">
+            <a x-bind:href="build.slug" class="link">
                 <h2 x-text="build.build_title"></h2>
-                <p>Author: <span x-text="build.build_author"></span></p>
                 <small x-text="build.tags.join(' ')"></small>
             </a>
         </div>
