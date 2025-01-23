@@ -223,6 +223,8 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
 
   .build-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 85%;
     max-width: 1000px;
     border:solid 2px rgba(51, 48, 48, 0.727);
@@ -317,9 +319,80 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   text-decoration: none;
 }
 
+/* Comment styling */
+
 .comment-heading {
   display: flex;
   justify-content: space-between;
+}
+
+.comment-form-container p, .comment-form-container h4 {
+  padding-left: 10px;
+}
+
+.comment-form-container p {
+  color: #a8b3bc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-top: -2px;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.comment-counts {
+  font-weight: bolder;
+  font-size: 1.3rem;
+  padding-right: 10px;
+}
+
+.comment-form-container {
+  width: 95%;
+  border:solid 2px rgba(51, 48, 48, 0.727);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+
+
+.comments-div {
+  padding-top: 5px;
+}
+
+.commented-container {
+  background-color: rgb(75, 109, 138);
+  border-radius: 20px;
+  margin-top: 5px;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.comment-content {
+  padding-top: 5px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.comment-body {
+  padding-left: 20px;
+}
+
+.btn-warning, .btn-danger {
+  margin: 5px;
+}
+
+.approval {
+  color: #a8b3bc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-top: -2px;
+  text-decoration: none;
+  margin-bottom: 2px;
 }
   
   @media (min-width: 470px) {
@@ -389,7 +462,9 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     #user-hint {
       margin-top: -4px;
     }
-
+    .comment-form {
+      padding-left: 10px;
+    }
   }
 
   @media (min-width: 992px) {
