@@ -436,6 +436,28 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     text-decoration: underline;
 }
 
+.btn-close {
+  background-color: #a8b3bc98;
+  padding: 5px !important;
+  margin-top: 15px;
+}
+
+.container-user {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.text-align {
+  text-align: center;
+}
+
   @media (min-width: 470px) {
     .hero-img {
       height: 270px;

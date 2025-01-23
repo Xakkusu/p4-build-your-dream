@@ -63,7 +63,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                             {% endif %}
                             <h4 class="card-title mt-0 "><a class="text-dark smaller-heading"
                                     href="{% url 'show_build_post' build.slug %}">{{build.build_title}}</a></h4>
-                            <small><i class="far fa-clock"></i>{{build.created_on}}</small>
+                            <small><i class="far fa-clock"></i> {{build.created_on}} | by {{build.build_author}}</small>
                         </div>
                         <div class="card-footer">
                             <div class="media">
