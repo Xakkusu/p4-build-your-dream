@@ -130,10 +130,6 @@ footer a {
   font-family: Roboto, sans-serif;
 }
 
-.pagination-section > .pagination > .step-links > a {
-  text-decoration: none;
-}
-
 /** Card styles 
 used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 **/
@@ -315,10 +311,6 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   margin-top: -2px;
 }
 
-#user-hint a {
-  text-decoration: none;
-}
-
 /* Comment container styling */
 
 .comment-heading {
@@ -434,7 +426,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 }
 
 .link {
-  color: #a8b3bc;
+  color: #819db7;
   text-decoration: none;
 }
 

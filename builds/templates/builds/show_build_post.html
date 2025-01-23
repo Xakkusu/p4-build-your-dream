@@ -56,8 +56,8 @@
                     {% else %}
                     <i class="far fa-heart heart-like"></i><strong
                         class="like-counter">{{build.liked.all.count}}</strong>
-                    <span id="user-hint"><a href="{% url 'account_login' %}">Login</a> or <a
-                            href="{% url 'account_signup' %}">sign up</a> to like this post</span>
+                    <span id="user-hint"><a href="{% url 'account_login' %}" class="link">Login</a> or <a
+                            href="{% url 'account_signup' %}" class="link">sign up</a> to like this post</span>
                     {% endif %}
                 </div>
                 <!-- Delete & Edit Buttons -->
@@ -100,8 +100,8 @@
                     </form> 
                 </div>
                 {% else %}
-                <p class="">You need be be <a href="{% url 'account_login' %}">logged in</a> to create a comment, don't
-                    have an account yet? Get <a class="" aria-current="" href="{% url 'account_signup' %}">signed
+                <p class="">You need be be <a href="{% url 'account_login' %}" class="link">logged in</a> to create a comment, don't
+                    have an account yet? Get <a aria-current="" href="{% url 'account_signup' %}" class="link">signed
                         up</a>!</p>
                 {% endif %}
             </div>

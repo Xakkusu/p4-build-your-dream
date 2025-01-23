@@ -109,8 +109,8 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
             </span>
 
             {% if builds.has_next %}
-            <a href="?page={{ builds.next_page_number }}">next</a>
-            <a href="?page={{ builds.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ builds.next_page_number }}" class="link">next</a>
+            <a href="?page={{ builds.paginator.num_pages }}" class="link">last &raquo;</a>
             {% endif %}
         </span>
     </div>
