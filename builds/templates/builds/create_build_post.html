@@ -4,27 +4,28 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <!--Create Build Form-->
-<div class="container">
-    <h1>Create your very own build Post</h1>
-    <br>
+<div class="">
+    <div class="search-heading m-3">
+        <h1>Create your very own build Post</h1>
+    </div>
+    <hr>
     <div class="user-status">
         {% if user.is_authenticated %}
         {% else %}
-        <p class="text-end m-3">You need be be logged in to create a post, don't have an account yet? Get <a class="{% if request.path == signup_url %}active" aria-current="page{% endif %}" href="{% url 'account_signup' %}">signed up</a>!</p>
+        <p class="text-center">You need be be logged in to create a post, don't have an account yet? Get <a class="link"
+                aria-current="" href="{% url 'account_signup' %}">signed up</a>!</p>
+        <hr>
         {% endif %}
     </div>
-    <br>
-    <div class="row justify-content-center ">
-        {% if user.is_authenticated %}
-        <div class="col-11 col-md-8 col-lg-6 mt-3">
-            <form method="post" enctype="multipart/form-data">
-                {{ form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-outline-dark">Create your build post</button>
-            </form>
-        </div>
-        {% endif %}
+    {% if user.is_authenticated %}
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data" class="form-center">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-light max-btn">Create your build post</button>
+        </form>
     </div>
+    {% endif %}
 </div>
 
 {%endblock%}

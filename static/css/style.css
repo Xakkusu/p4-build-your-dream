@@ -470,6 +470,31 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   font-size: 1.5rem;
 }
 
+/* Create build post */
+.form-container{
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  width: 95%;
+  padding: .375rem .25rem;
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.max-btn {
+  max-width: 160px;
+  margin-top: 10px;
+}
+
+
 
   @media (min-width: 470px) {
     .hero-img {
