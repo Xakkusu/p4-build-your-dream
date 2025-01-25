@@ -87,7 +87,29 @@
             </div>
         </div>
 </section>
+<section class="pagination-section">
+    <!-- Pagination 
+        used this for help with the code:  https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django
+        -->
 
+    <div class="pagination">
+        <span class="step-links">
+            {% if reqs.has_previous %}
+            <a href="?page=1" class="link">&laquo; first</a>
+            <a href="?page={{ reqs.previous_page_number }}" class="link">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ reqs.number }} of {{ reqs.paginator.num_pages }}.
+            </span>
+
+            {% if reqs.has_next %}
+            <a href="?page={{ reqs.next_page_number }}" class="link">next</a>
+            <a href="?page={{ reqs.paginator.num_pages }}" class="link">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</section>
 
 <!-- future_content.html content ends here -->
 {% endblock %}
