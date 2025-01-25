@@ -494,6 +494,10 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   margin-top: 10px;
 }
 
+/* Edit buildd post */
+#div_id_image_of_build .input-group {
+  width: 98%;
+}
 
 
   @media (min-width: 470px) {
@@ -509,6 +513,10 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
       letter-spacing: 1px;
       font-size: 1.1rem;
     }
+    #div_id_image_of_build .input-group {
+      width: 97%;
+    }
+    
   }
 
   @media (min-width: 685px) {
@@ -519,6 +527,9 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     .pagination-section {
       width: 95%;
       max-width: 640px;
+    }
+    #div_id_image_of_build .input-group {
+      width: 96%;
     }
   }
 
@@ -589,6 +600,19 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
         font-size: 1.1rem;
     }
   }
+
+@media (min-width: 900px) {
+  #div_id_image_of_build {
+    max-width: 770px;
+  }
+  
+  #id_image_of_build {
+    width: 99%;
+  }
+  #div_id_image_of_build .input-group {
+    width: 100%;
+  }
+}
 
 @media (min-width: 1020px) {
   .li-paddding-r {
