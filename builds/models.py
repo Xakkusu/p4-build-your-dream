@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
@@ -21,7 +22,7 @@ class BuildPost(models.Model):
        null=False, blank=False
     )
     build_description = models.TextField()
-    money_spent = models.DecimalField(max_digits=8, decimal_places=2)
+    money_spent = models.DecimalField(max_digits=8, decimal_places=2, validators=[MaxValueValidator(999999,99), MinValueValidator(0,00)])
     year_build = models.DateField()
     created_on = models.DateTimeField(auto_now_add=True)
     status_build_post = models.IntegerField(choices=STATUS, default=0)
