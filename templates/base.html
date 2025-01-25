@@ -104,45 +104,38 @@
 
         <!-- displaying Django messages, used from Code Insitute's template-->
         <div class="message-container">
-                <div class="message-content ">
-                    {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show container-border alert-light" id="msg" role="alert">
-                        {{ message | safe }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    {% endfor %}
+            <div class="message-content ">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show container-border alert-light" id="msg"
+                    role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                {% endfor %}
+            </div>
         </div>
 
-        <div class="flex-shrink-0 main-bg">
+        <div class="flex-shrink-0 main-bg mb-5">
 
             {% block content %}
             <!-- Content Goes here -->
             {% endblock content %}
-
-            <div class="user-status">
-                {% if user.is_authenticated %}
-                <p class="text-end m-3">{{ user }}, you are now logged in, share some builds! </p>
-                {% else %}
-                <p class="text-end m-3">You are not logged in, don't have an account yet? Get <a
-                        class="{% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_signup' %}">signed up</a>!</p>
-                {% endif %}
-            </div>
-
         </div>
     </main>
     <!-- Footer -->
     <footer class="footer mt-auto py-3 fixed-bottom footer-bg">
         <p class="m-0 text-center ">Project 4 by Xakkusu</p>
         <p class="m-0 text-center text-white">Follow us:
-            <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Opens in a new tab for Twitter.com">
+            <a href="https://twitter.com/" target="_blank" rel="noopener"
+                aria-label="Opens in a new tab for Twitter.com">
                 <i class="fab fa-twitter-square ms-3"></i>
             </a>
-            <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Opens in a new tab for Instagram.com">
+            <a href="https://instagram.com/" target="_blank" rel="noopener"
+                aria-label="Opens in a new tab for Instagram.com">
                 <i class="fab fa-instagram-square ms-3"></i>
             </a>
-            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="Opens in a new tab for Githgub.com">
+            <a href="https://github.com/" target="_blank" rel="noopener"
+                aria-label="Opens in a new tab for Githgub.com">
                 <i class="fab fa-github-square ms-3"></i>
             </a>
         </p>

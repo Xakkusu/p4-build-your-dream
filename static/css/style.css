@@ -2,6 +2,8 @@
   box-sizing: content-box;
 }
 
+/* Base styling */
+
 main{
     padding-top: 70px;
     padding-bottom: 56px;
@@ -23,6 +25,9 @@ footer a {
     justify-content: space-between;
     padding: 0px 10px;
 }
+
+/* Index Styling */
+/* Banner and hero image */
 
 .banner {
   font-family: Lato, sans-serif;
@@ -103,6 +108,8 @@ footer a {
 .manage-div .btn {
   font-weight: 600;
 }
+
+/* Build post cards */
 
 .cards-section {
   width:100%;
@@ -210,56 +217,56 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
   }
 
-  /* Show build post styling */
-  /* Build post container */
-  .page-section {
-    display: flex;
-    justify-content: center;
-    padding-top: 2%;
-  }
+/* Show build post styling */
+/* Build post container */
+.page-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+}
 
-  .content-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 85%;
-    max-width: 1000px;
-    border:solid 2px rgba(51, 48, 48, 0.727);
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
-    padding: 20px;
-    background: #6c757d;
-    background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
-  }
+.content-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 85%;
+  max-width: 1000px;
+  border:solid 2px rgba(51, 48, 48, 0.727);
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  background: #6c757d;
+  background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
+}
 
-  .build-post-container,.request-container {
-    font-family: Lato, sans-serif;
-    font-size: 1.1rem;
-  }
+.build-post-container,.request-container {
+  font-family: Lato, sans-serif;
+  font-size: 1.1rem;
+}
 
-  .title-styling {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 900;
-  }
+.title-styling {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
 
-  .post-subtitle {
-    letter-spacing: 1px;
-    font-size: 1rem;
-  }
+.post-subtitle {
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
 
-  .build-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+.build-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
   
-  .build-image{
-    width: 90%;
-    max-height: 800px;
-    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
-  }
+.build-image{
+  width: 90%;
+  max-height: 800px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
 
 .build-description-container, .info-build-container{
   text-align: justify;
@@ -282,6 +289,8 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 .info-content {
   font-weight: bold;
 }
+
+/* Like Styling */
 
 .like-container {
   padding: 10px;
@@ -313,7 +322,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 
 /* Comment container styling */
 
-.comment-heading {
+.comment-heading, .request-heading {
   display: flex;
   justify-content: space-between;
 }
@@ -333,7 +342,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   margin-bottom: 2px;
 }
 
-.comment-counts {
+.comment-counts, .request-counts {
   font-weight: bolder;
   font-size: 1.3rem;
   padding-right: 10px;
@@ -351,7 +360,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   padding-top: 5px;
 }
 
-.commented-container {
+.commented-container, .requestes-container {
   background-color: rgb(75, 109, 138);
   border-radius: 20px;
   margin-top: 5px;
@@ -360,13 +369,13 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   align-items: center;
 }
 
-.comment-content {
+.comment-content, .request-content {
   padding-top: 5px;
   padding-left: 10px;
   font-weight: bold;
 }
 
-.comment-body {
+.comment-body, .request-body {
   padding-left: 20px;
 }
 
@@ -471,7 +480,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   font-size: 1.5rem;
 }
 
-/* Create build post */
+/* Create build post page */
 .form-container{
   width: 90%;
   max-width: 800px;
@@ -514,143 +523,142 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   bottom: 10%;
   z-index: 1;
 }
+ /* Media Queries */
 
-.message-content {
-  
+@media (min-width: 470px) {
+  .hero-img {
+    height: 270px;
+  }
+  .intro-text h1 {
+    font-size: 150%;
+  }
+  .intro-text, .community {
+    font-weight: 800;
+    color: #000;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+  }
+  #div_id_image_of_build .input-group {
+    width: 97%;
+  }
 }
 
+@media (min-width: 685px) {
+  .manage-div {
+    min-width: 380px;
+    max-width: 640px;
+  }
+  .pagination-section {
+    width: 95%;
+    max-width: 640px;
+  }
+  #div_id_image_of_build .input-group {
+    width: 96%;
+  }
+}
 
-  @media (min-width: 470px) {
-    .hero-img {
-      height: 270px;
-    }
-    .intro-text h1 {
-      font-size: 150%;
-    }
-    .intro-text, .community {
-      font-weight: 800;
-      color: #000;
-      letter-spacing: 1px;
-      font-size: 1.1rem;
-    }
-    #div_id_image_of_build .input-group {
-      width: 97%;
-    }
+@media (min-width: 750px) {
+  .hero-img {
+    height: 300px;
+  }
     
+  .intro-text, .community {
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+    
+  .intro-text h1 {
+    font-weight: 900;
+    color: #491e23;
+    letter-spacing: 2px;
+    font-size: 45px;
   }
 
-  @media (min-width: 685px) {
-    .manage-div {
-      min-width: 380px;
-      max-width: 640px;
-    }
-    .pagination-section {
-      width: 95%;
-      max-width: 640px;
-    }
-    #div_id_image_of_build .input-group {
-      width: 96%;
-    }
+  .manage-div {
+    min-width: 380px;
+    max-width: 645px;
+  }
+  .pagination-section {
+    width: 95%;
+    max-width: 645px;
   }
 
-
-  @media (min-width: 750px) {
-    .hero-img {
-      height: 300px;
-    }
+  .build-description-container, .info-build-container {
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
     
-    .intro-text, .community {
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+  .like-counter {
+    padding-left: 7px;
+    margin-top: -4px;
+  }
     
-    .intro-text h1 {
-      font-weight: 900;
-      color: #491e23;
-      letter-spacing: 2px;
-      font-size: 45px;
-    }
-
-    .manage-div {
-      min-width: 380px;
-      max-width: 645px;
-    }
-    .pagination-section {
-      width: 95%;
-      max-width: 645px;
-    }
-
-    .build-description-container, .info-build-container {
-      line-height: 1.8rem;
-      font-size: 1.3rem;
-      font-weight: 400;
-    }
-    
-    .like-counter {
-      padding-left: 7px;
-      margin-top: -4px;
-    }
-    
-    #user-hint {
-      margin-top: -4px;
-    }
-    .comment-form {
-      padding-left: 10px;
-    }
+  #user-hint {
+    margin-top: -4px;
   }
 
-  @media (min-width: 900px) {
-    #div_id_image_of_build {
-      max-width: 770px;
-    }
-    
-    #id_image_of_build {
-      width: 99%;
-    }
-    #div_id_image_of_build .input-group {
-      width: 100%;
-    }
+  .comment-form {
+    padding-left: 10px;
   }
+}
+
+@media (min-width: 900px) {
+  #div_id_image_of_build {
+    max-width: 770px;
+  }
+    
+  #id_image_of_build {
+    width: 99%;
+  }
+
+  #div_id_image_of_build .input-group {
+    width: 100%;
+  }
+}
   
 
-  @media (min-width: 992px) {
-    #li-paddding-r {
-        padding-right: 10px;
-    }
-    
-    #label-fw {
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    
-    #navbar-fw {
-        font-family: Lato, sans-serif;
-        font-size: 1.25rem;
-        font-weight: 500;
-
-    }
-    .footer-bg{
-        padding: 0px 50px;
-        font-size: 1.1rem;
-    }
+@media (min-width: 992px) {
+  #li-paddding-r {
+    padding-right: 10px;
   }
+    
+  #label-fw {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+    
+  #navbar-fw {
+    font-family: Lato, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+
+  }
+  .footer-bg{
+    padding: 0px 50px;
+    font-size: 1.1rem;
+  }
+}
 
 @media (min-width: 1020px) {
   .li-paddding-r {
-      display:unset;
-      font-weight: 800;
-      padding-right: 10px;
+    display:unset;
+    font-weight: 800;
+    padding-right: 10px;
   }
+
   .cards-section {
     max-width: 1390px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .manage-div {
     width: 100%;
     min-width: 645x;
     max-width: 980px;
   }
+
  .pagination-section {
     width: 95%;
     max-width: 980px;
@@ -662,6 +670,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     min-width: 980x;
     max-width: 1325px;
   }
+  
   .pagination-section {
     max-width: 1325px;
   }

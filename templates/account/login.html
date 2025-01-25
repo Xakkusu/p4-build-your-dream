@@ -14,9 +14,11 @@
 
     <p>{% blocktrans %}Hello there! Long time no see, in order to leave a comment or like a post, please log in.
         <hr>
-        <p>If you have not created an account yet, then <span><a class="link" href="{{ signup_url }}">sign up</a></span> first.</p>
+        <p>If you have not created an account yet, then <span><a class="link" href="{{ signup_url }}">sign up</a></span>
+            first.</p>
         <hr>
-        {% endblocktrans %}</p>
+        {% endblocktrans %}
+    </p>
     <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}

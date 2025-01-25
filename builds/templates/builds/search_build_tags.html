@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
+<!-- search build content -->
 
 <div class="m-3" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
     <div class="search-heading">
@@ -33,5 +33,5 @@
         </div>
     </template>
 </div>
-<!-- index.html content ends here -->
+<!-- search build content ends here -->
 {% endblock %}

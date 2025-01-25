@@ -40,13 +40,13 @@
                 </div>
             </div>
             <!-- Displaying count of requests -->
-            <div class="comment-container">
+            <div class="request-container">
                 <!-- Displaying reuqests -->
-                <div class="comment-info">
-                    <div class="comment-heading">
+                <div class="request-info">
+                    <div class="request-heading">
                         <h3>To be implemented</h3>
                         <!-- Displaying count of requests -->
-                        <div class="comment-counts text-white">
+                        <div class="request-counts text-white">
                             <p class="">
                                 <i class="fas fa-database"></i> {{ future_content_request_count }}
                             </p>
@@ -54,35 +54,20 @@
                     </div>
                 </div>
                 <!-- Displaying approved requests -->
-                <div class="comments-div">
+                <div class="reuqest-div">
                     {% for implementedRequest in future_content_request %}
-                    <div class="p-2 commented-container">
-                        <p class="comment-content">
+                    <div class="p-2 requestes-container">
+                        <p class="request-content">
                             Request by: {{implementedRequest.future_content_author}} |
                             <span class="">
                                 Made on: {{implementedRequest.created_on}}
                             </span>
                         </p>
-                        <div class="comment-body" id="comment{{ comment.id }}">
+                        <div class="request-body">
                             {{implementedRequest.future_content_description | safe}}
                         </div>
                     </div>
                     {% endfor %}
-                </div>
-                <div>
-                    {% if is_paginated %}
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            {% if page_obj.has_previous %}
-                            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-                            </li>
-                            {% endif %}
-                            {% if page_obj.has_next %}
-                            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                    {% endif %}
                 </div>
             </div>
         </div>
