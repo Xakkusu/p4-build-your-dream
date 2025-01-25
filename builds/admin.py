@@ -14,5 +14,5 @@ class PostAdmin(SummernoteModelAdmin):
     def get_tags(self, obj):
         return ", ".join(o for o in obj.tags.names())
 
-# Register your models here.
+# Register models here.
 admin.site.register(Comment)

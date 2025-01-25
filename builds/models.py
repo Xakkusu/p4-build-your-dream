@@ -4,7 +4,6 @@ from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-# Create your models here.
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
 
 class BuildPost(models.Model):
@@ -26,7 +25,6 @@ class BuildPost(models.Model):
     year_build = models.DateField()
     created_on = models.DateTimeField(auto_now_add=True)
     status_build_post = models.IntegerField(choices=STATUS, default=0)
-    #should be automated from the description field
     excerpt = models.TextField(max_length=180, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     tags = TaggableManager()

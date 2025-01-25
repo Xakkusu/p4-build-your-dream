@@ -86,42 +86,6 @@ def show_build_post(request, slug):
     )
 
 
-#class CreateBuildPost(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
-#    """
-#    das hier mal probieren:
-#
-#    https://www.youtube.com/watch?v=wzZiONbtwiA
-#
-#    A logged in user can add a build post to the database through this class
-#    1. create form in forms.py
-#    2. add success message & link url
-#    3. validate build post method
-#    4. show success message method
-#    """
-#    form_class = CreateBuildsPost
-#    template_name = 'create_build_post.html'
-#    success_message = "Build post was created successfully"
-#
-#    def form_valid(self, form):
-#        """
-#        When valid form has been added to form fields,
-#        logged in user will become the author automatically
-#        """
-#        form.instance.build_author = self.request.user
-#        return super(CreateBuildPost, self).form_valid(form)
-#
-#    #look more into it before I use it --> way we did it in class might be better tbh
-#    # Source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
-#    # here other source: https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views (put in method description.....)
-#    def get_success_message(self, cleaned_data):
-#        """
-#        Overwrite default succes message method
-#        """
-#        return self.success_message % dict(
-#            cleaned_data,
-#            title=self.object.title,
-#        )
-
 def edit_comment(request, slug, comment_id):
     """
     user can edit comment
@@ -151,7 +115,6 @@ def delete_comment(request, slug, comment_id):
     build = get_object_or_404(builds, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
-    #  "user = commenter" check
     if comment.comment_author == request.user:
         comment.delete()
         messages.add_message(
@@ -247,7 +210,7 @@ class DeleteBuildPost(SuccessMessageMixin, LoginRequiredMixin, UserPassesTestMix
         True will delete
         """
         return self.request.user == self.get_object().build_author
-    # do I need a success message for deletion? nooo don't think sooooo
+        
     def delete(self, request, *args, **kwargs):
         """
         after succesfull deletion a sucess message i displayed

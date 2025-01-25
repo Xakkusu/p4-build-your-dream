@@ -12,7 +12,7 @@ class CreateBuildsPostForm(forms.ModelForm):
         in the form
         """
         model = BuildPost
-        fields =["build_title", "image_of_build", "image_alt", 
+        fields =["build_title", "image_of_build",  
                 "build_description", "money_spent", "year_build"]
 
 class CreateCommentForm(forms.ModelForm):

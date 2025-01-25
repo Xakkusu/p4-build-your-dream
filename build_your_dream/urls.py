@@ -23,5 +23,4 @@ urlpatterns = [
     path("future-content/", include("future_content.urls"), name="future-content-urls"),
     path('summernote/', include('django_summernote.urls')),
     path("", include("builds.urls"), name="builds-urls"),
-    #path('show-my-build/', include("builds.urls"), name="builds.urls"),
 ]
