@@ -3,14 +3,15 @@ from django.views import generic
 from .models import FutureContentRequest
 from .forms import FutureContentRequestForm
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 
 def create_future_content_request(request):
     """
+    View for the user to give future request inpit
     """
-    paginate_by = 4
 
     if request.method == "POST":
         future_content_request_form = FutureContentRequestForm(data=request.POST)
@@ -26,10 +27,19 @@ def create_future_content_request(request):
     future_content_request_form = FutureContentRequestForm()
     future_content_request_count = future_content_request.filter(status_of_request = 2).count()
 
+    paginate_by = 4
+
+    paginator = Paginator(FutureContentRequest.objects.filter(status_of_request=2).order_by("created_on"), 4)
+
+    page_number = request.GET.get('page')
+
+    reqs = paginator.get_page(page_number)
+
     return render(
         request,
         "future_content/future_content.html",
         {"future_content_request": future_content_request,
+         "reqs" : reqs,
          "paginate_by": paginate_by,
          "future_content_request_count":future_content_request_count,
          "future_content_request_form": future_content_request_form},

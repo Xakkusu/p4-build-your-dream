@@ -212,13 +212,13 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 
   /* Show build post styling */
   /* Build post container */
-  .show-build {
+  .page-section {
     display: flex;
     justify-content: center;
     padding-top: 2%;
   }
 
-  .build-container {
+  .content-container {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 85%;
@@ -233,12 +233,12 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
   }
 
-  .build-post-container {
+  .build-post-container,.request-container {
     font-family: Lato, sans-serif;
     font-size: 1.1rem;
   }
 
-  .post-title {
+  .title-styling {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
@@ -579,6 +579,20 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     }
   }
 
+  @media (min-width: 900px) {
+    #div_id_image_of_build {
+      max-width: 770px;
+    }
+    
+    #id_image_of_build {
+      width: 99%;
+    }
+    #div_id_image_of_build .input-group {
+      width: 100%;
+    }
+  }
+  
+
   @media (min-width: 992px) {
     #li-paddding-r {
         padding-right: 10px;
@@ -600,19 +614,6 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
         font-size: 1.1rem;
     }
   }
-
-@media (min-width: 900px) {
-  #div_id_image_of_build {
-    max-width: 770px;
-  }
-  
-  #id_image_of_build {
-    width: 99%;
-  }
-  #div_id_image_of_build .input-group {
-    width: 100%;
-  }
-}
 
 @media (min-width: 1020px) {
   .li-paddding-r {

@@ -3,12 +3,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<section class="show-build">
-    <div class="build-container">
+<section class="page-section">
+    <div class="content-container">
         <div class="build-post-container">
             <div class="masthead-text">
-                <h1 class="post-title">{{ build.build_title }}</h1>
-                <p class="post-subtitle">From: {{ build.build_author }} | created: {{ build.created_on }} | last
+                <h1 class="title-styling">{{ build.build_title }}</h1>
+                <p class="content-subtitle">From: {{ build.build_author }} | created: {{ build.created_on }} | last
                     updated: {{ build.updated_on }}</p>
             </div>
             <div class="build-image-container">
@@ -105,6 +105,7 @@
                         up</a>!</p>
                 {% endif %}
             </div>
+            <!-- show comments -->
             <div class="comments-div">
                 {% for comment in comments %}
                 <div
