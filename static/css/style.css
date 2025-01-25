@@ -440,6 +440,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   background-color: #a8b3bc98;
   padding: 5px !important;
   margin-top: 15px;
+  margin-right: 5px;
 }
 
 .container-user {
@@ -483,7 +484,8 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   padding: .375rem .25rem;
 }
 
-.form-center {
+.form-center, .message-content,
+.message-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -497,6 +499,24 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 /* Edit buildd post */
 #div_id_image_of_build .input-group {
   width: 98%;
+}
+
+/* message-box */
+.message-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  margin-inline: auto; 
+  bottom: 10%;
+  z-index: 1;
+}
+
+.message-content {
+  
 }
 
 

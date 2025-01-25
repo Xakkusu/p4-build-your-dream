@@ -103,17 +103,15 @@
         </nav>
 
         <!-- displaying Django messages, used from Code Insitute's template-->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-1">
+        <div class="message-container">
+                <div class="message-content ">
                     {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible fade show container-border" id="msg" role="alert">
+                    <div class="alert {{ message.tags }} alert-dismissible fade show container-border alert-light" id="msg" role="alert">
                         {{ message | safe }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     {% endfor %}
                 </div>
-            </div>
         </div>
 
         <div class="flex-shrink-0 main-bg">
