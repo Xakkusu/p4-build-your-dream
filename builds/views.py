@@ -55,6 +55,7 @@ class BuildListAPIView (ListAPIView):
 def show_build_post(request, slug):
     """
     Displays/Shows singular build post with all it's content
+    Comments can be created on this content
     """
     queryset = BuildPost.objects.filter(status_build_post=2)
     build = get_object_or_404(queryset, slug=slug)

@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- search build content -->
-
+<!-- Tags for being able to search through the tags & filter stuff used Tutorial & code from this Video: https://www.youtube.com/watch?v=213swbH8j_o  -->
 <div class="m-3" x-data="{tag : 'ALL', builds: []}" x-init="builds = await (await fetch('/build-list')).json()">
     <div class="search-heading">
         <h1>Builds list</h1>
@@ -19,7 +19,6 @@
             {% for tag in tags %}
             <button type="button" aria-label="Searcch via {{ tag.name }}" class="btn btn-secondary inline-block tag-btn"
                 @click="tag = $el.textContent">{{ tag.name }}</button>
-
             {% endfor %}
         </div>
     </div>

@@ -3,9 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<!-- Search build content -->
+<!-- Show build content -->
 <section class="page-section">
     <div class="content-container">
+        <!-- Build Post -->
         <div class="build-post-container">
             <div class="masthead-text">
                 <h1 class="title-styling">{{ build.build_title }}</h1>
@@ -131,7 +132,6 @@
                     <button class="btn btn-delete btn-danger" data-comment_id="{{ comment.id }}" aria-label="Delete comment">Delete</button>
                     {% endif %}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>

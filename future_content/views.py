@@ -8,7 +8,8 @@ from django.core.paginator import Paginator
 
 def create_future_content_request(request):
     """
-    View for the user to give future request inpit
+    View for the user to give future request input
+    and paginate the requests
     """
 
     if request.method == "POST":

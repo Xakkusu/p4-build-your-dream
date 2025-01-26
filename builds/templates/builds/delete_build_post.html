@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<!--Deletion Information
+<!--Deletion Post
 used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13-->
 <div class="container-user">
     <h1 class="delete-heading">Dangerzone</h1>
@@ -10,8 +10,8 @@ used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSf
     <div class="user-status">
         {% if user.is_authenticated %}
         {% else %}
-        <p class="text-end m-3">If this is your post you must be logged in to delete it. Login <a
-                class="link" href="{% url 'account_login' %}" aria-label="Redirects user to the login page">here</a></p>
+        <p class="text-end m-3">If this is your post you must be logged in to delete it. Login <a class="link"
+                href="{% url 'account_login' %}" aria-label="Redirects user to the login page">here</a></p>
         {% endif %}
     </div>
     <br>
@@ -21,7 +21,7 @@ used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSf
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <p class="bolder">Are you sure you want to delete "{{object.build_title}}"? It will be gone forever</p>
-                <input type="submit" value="Confirm" class="btn btn-danger btn-lg"  aria-label="Delete post">
+                <input type="submit" value="Confirm" class="btn btn-danger btn-lg" aria-label="Delete post">
             </form>
         </div>
         {% endif %}

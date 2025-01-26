@@ -3,7 +3,7 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<!--Create Build Form based on code institue template-->
+<!--Create Build Post Form based on code institue template-->
 <div>
     <div class="search-heading m-3">
         <h1>Create your very own build Post</h1>
@@ -22,7 +22,8 @@
         <form method="post" enctype="multipart/form-data" class="form-center">
             {{ form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-outline-light max-btn" aria-label="Create build post">Create your build post</button>
+            <button type="submit" class="btn btn-outline-light max-btn" aria-label="Create build post">Create your build
+                post</button>
         </form>
     </div>
     {% endif %}
