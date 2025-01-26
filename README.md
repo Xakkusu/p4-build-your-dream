@@ -185,124 +185,166 @@ All pages have the following in common:
 
 ## TESTING
 ### Accessibility
-#### Wave Testing
 #### Lighthouse Testing
 The main problem with my Best Practice score is that cloudinary uses http:// insteast of https:/ when transfering images.
 Moreover as the user can upload images whichever format and they are made to fit the cards, the performance suffers through this, especially in mobile view as a third-party cloud-based platform can create succh problems.
 
 
 ##### Desktop
-Index:
+Index Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-index.png" width="60%" alt="Lighthouse desktop index rating">
 
 
-Show Build Post:
+Show Build Post Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-show-build-post.png" width="60%" alt="Lighthouse desktop show build post rating">
 
 
-Create Build Post:
+Create Build Post Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-create-build-post.png" width="60%" alt="Lighthouse desktop create build post rating">
 
 
-Edit Build Post:
+Edit Build Post Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-edit-build-post.png" width="60%" alt="Lighthouse desktop edit build post rating">
 
 
-Delete Build Post:
+Delete Build Post Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-delete-build-post.png" width="60%" alt="Lighthouse desktop delete build post rating">
 
 
-Search Build via Tags:
+Search Build via Tags Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-search-via-tags.png" width="60%" alt="Lighthouse desktop search via build tags rating">
 
 
-Future Content:
+Future Content Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-future-content.png" width="60%" alt="Lighthouse desktop future content rating">
 
 
-Sign-Up:
+Sign-Up Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-sign-up.png" width="60%" alt="Lighthouse desktop sign up rating">
 
 
-Sign-In:
+Sign-In Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-login.png" width="60%" alt="Lighthouse desktop login rating">
 
 
-Logout:
+Logout Page:
 
 <img src="documentation/lighthouse/desktop-lighthouse-logout.png" width="60%" alt="Lighthouse desktop logout rating">
 
 
-404:
+404 Page:
 
 <img src="documentation/lighthouse//desktop-lighthouse-404.png" width="60%" alt="Lighthouse desktop 404 rating">
 
 
 
 ##### Mobile
-Index:
+Index Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-index.png" width="60%" alt="Lighthouse mobile index rating">
 
 
-Show Build Post:
+Show Build Post Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-show-build-post.png" width="60%" alt="Lighthouse mobile show build post rating">
 
 
-Create Build Post:
+Create Build Post Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-create-build-post.png" width="60%" alt="Lighthouse mobile create build post rating">
 
 
-Edit Build Post:
+Edit Build Post Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-edit-build-post.png" width="60%" alt="Lighthouse mobile edit build post rating">
 
 
-Delete Build Post:
+Delete Build Post Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-delete-build-post.png" width="60%" alt="Lighthouse mobile delete build post rating">
 
 
-Search Build via Tags:
+Search Build via Tags Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-search-via-tags.png" width="60%" alt="Lighthouse mobile search via build tags rating">
 
 
-Future Content:
+Future Content Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-future-content.png" width="60%" alt="Lighthouse mobile future content rating">
 
 
-Sign-Up:
+Sign-Up Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-sign-up.png" width="60%" alt="Lighthouse mobile sign up rating">
 
 
-Sign-In:
+Sign-In Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-login.png" width="60%" alt="Lighthouse mobile login rating">
 
 
-Logout:
+Logout Page:
 
 <img src="documentation/lighthouse/mobile-lighthouse-logout.png" width="60%" alt="Lighthouse mobile logout rating">
 
 
-404:
+404 Page:
 
 <img src="documentation/lighthouse//mobile-lighthouse-404.png" width="60%" alt="Lighthouse mobile 404 rating">
 
+
+#### Wave Testing
+As Wave did not let me sign-in to test pages that only appear as a logged in user, only the pages that are shown without being logged in were tested.
+There are some contrast-errors, but as neither lighthouse nor personal testers with minor vision disabilities had problems with them I decided to keep the contrast as it is.
+
+Index Page:
+
+<img src="documentation/wave/index-wave.png" alt="Wave index rating" width="40%">
+
+
+Show Build Post Page:
+
+<img src="documentation/wave/show-build-post-wave.png" alt="Wave show build post rating" width="40%">
+
+
+Create Build Post Page:
+
+<img src="documentation/wave/create-build-post-wave.png" alt="Wave create build post rating" width="40%">
+
+
+Search Build via Tags Page:
+
+<img src="documentation/wave/search-via-tags-wave.png" alt="Wave search build via tags rating" width="40%">
+
+
+Future Content Page:
+
+<img src="documentation/wave/future-content-wave.png" alt="Wave future content rating" width="40%">
+
+
+Sign-Up Page:
+
+<img src="documentation/wave/register-wave.png" alt="Wave sign-up rating" width="40%">
+
+
+Sign-In Page:
+
+<img src="documentation/wave/login-wave.png" alt="Wave login rating" width="40%">
+
+
+404 Page:
+
+<img src="documentation/wave/404-wave.png" alt="Wave 404 rating" width="40%">
 
 
 ### W3C Validators
