@@ -381,12 +381,17 @@ Future Content Page
 
 Sign-In Page
 
-<img src="documentation/validators/html-val-sign-in.png.png" alt="W3C HTML validator sign-in" width=60%>
+<img src="documentation/validators/html-val-sign-in.png" alt="W3C HTML validator sign-in" width=60%>
 
 
 Logout Page
 
 <img src="documentation/validators//html-val-logout.png" alt="W3C HTML validator logout" width=60%>
+
+
+Sign-Up Page
+
+<img src="documentation/validators/html-val-sign-up.png" alt="W3C HTML validator Sign-up" width=60%>
 
 </details>
 
@@ -400,14 +405,7 @@ Search via tags Page
 
 As I used the taggit application by following this tutorial: https://www.youtube.com/watch?v=213swbH8j_o I sticked to the tutorial and the [taggit documentation](https://django-taggit.readthedocs.io/en/latest/). I am guessing that this documentation and user examples are not included in the W3C validator. Maybe it will be included in later versions and these errors will not appear anymore.
 
-
-Sign-Up Page
-
-<img src="documentation/validators/html-val-sign-up.png" alt="W3C HTML validator Sign-up" width=60%>
-
-I implemented my user authentication the way we learned in in our course. Since the lines with the errors all appear to have a mathing closing/opening tag and they refer to lines I have not changed/written I decided to leave this error in.
-
-
+</details>
 
 #### CSS
 For my own code there were no errors were returned for the CSS stylesheet from the W3C CSS Validator, however the [code I implemented](https://codepen.io/creativemanner/pen/NWrNWrd) had a parse error. No matter how many times I tried to fix this with deleting and implementing {}, I looked it up online and there were always people that complained that the W3C validator is not always up to date with working code and frameworks being used. Hence I only got the following error:
