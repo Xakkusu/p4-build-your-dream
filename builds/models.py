@@ -25,7 +25,6 @@ class BuildPost(models.Model):
     year_build = models.DateField()
     created_on = models.DateTimeField(auto_now_add=True)
     status_build_post = models.IntegerField(choices=STATUS, default=0)
-    excerpt = models.TextField(max_length=180, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
     liked = models.ManyToManyField(User, default=None, blank=True, related_name="liked")

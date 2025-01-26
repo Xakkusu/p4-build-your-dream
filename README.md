@@ -402,7 +402,7 @@ Sign-Up Page
 
 
 #### CSS
-For my own code there were no errors were returned for the CSS stylesheet from the W3C CSS Validator, however the [code I implemented](https://codepen.io/creativemanner/pen/NWrNWrd) had a parse error. No matter how many times I tried to fix this with deleting and implementing {}, I looked it up online and there were always people that complained that the W3C validator is not always up to date with working code and frameworks being used. Hence I only got the following error:
+No errors were returned for the CSS stylesheet from the W3C CSS Validator:
 
 <img src="documentation/validators/html-val-CSS.png" alt="W3C CSS validator" width=60%>
 
