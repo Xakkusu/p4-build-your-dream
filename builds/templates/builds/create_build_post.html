@@ -13,7 +13,7 @@
         {% if user.is_authenticated %}
         {% else %}
         <p class="text-center">You need be be logged in to create a post, don't have an account yet? Get <a class="link"
-                aria-current="" href="{% url 'account_signup' %}">signed up</a>!</p>
+                aria-label="Redirects user to the sign-up page" href="{% url 'account_signup' %}">signed up</a>!</p>
         <hr>
         {% endif %}
     </div>
@@ -22,7 +22,7 @@
         <form method="post" enctype="multipart/form-data" class="form-center">
             {{ form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-outline-light max-btn">Create your build post</button>
+            <button type="submit" class="btn btn-outline-light max-btn" aria-label="Create build post">Create your build post</button>
         </form>
     </div>
     {% endif %}

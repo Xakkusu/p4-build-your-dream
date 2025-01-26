@@ -13,7 +13,7 @@
         {% if user.is_authenticated %}
         {% else %}
         <p class="text-center">You need be be logged in to edit your post, login <a class="link"
-                aria-current="" href="{% url 'account_login' %}">here</a>!</p>
+            aria-label="Redirects user to the login page" href="{% url 'account_login' %}">here</a>!</p>
         <hr>
         {% endif %}
     </div>
@@ -22,7 +22,7 @@
             <form method="post" enctype="multipart/form-data" class="form-center">
                 {{ form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-outline-light max-btn">Edit your build</button>
+                <button type="submit" class="btn btn-outline-light max-btn" aria-label="Edit build post">Edit your build</button>
             </form>
         </div>
         {% endif %}

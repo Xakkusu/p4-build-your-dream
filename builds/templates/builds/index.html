@@ -24,17 +24,17 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
                 {% else %}
                 <p>Want to become part of our community?</p>
                 <div class="community-buttons">
-                    <a class="btn btn-secondary" aria-current="" href="{% url 'account_signup' %}">Sign Up</a>
-                    <a class="btn btn-secondary" aria-current="" href="{% url 'account_login' %}">Login</a>
+                    <a class="btn btn-secondary" aria-label="Redirects user to the sign-up page" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="btn btn-secondary" aria-label="Redirects user to the login page" href="{% url 'account_login' %}">Login</a>
                 </div>
                 {% endif %}
             </div>
         </div>
         <div class="manage-div">
-            <span><a href="{% url 'search_build_tags' %}" class="post-link btn btn-outline-light">
+            <span><a href="{% url 'search_build_tags' %}" class="post-link btn btn-outline-light" aria-label="Search post via tags">
                     Search builds via tags
                 </a></span>
-            <span><a href="{% url 'create_build_post' %}" class="post-link btn btn-outline-light">
+            <span><a href="{% url 'create_build_post' %}" class="post-link btn btn-outline-light" aria-label="Create post">
                     Create build post
                 </a></span>
         </div>
@@ -46,7 +46,7 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
         <div class="card-container">
 
             <div class="card text-dark card-has-bg click-col">
-                <a href="{% url 'show_build_post' build.slug %}" class="post-link">
+                <a href="{% url 'show_build_post' build.slug %}" class="post-link" aria-label="Redirects user to the post">
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <small class="card-meta mb-2">
@@ -91,8 +91,8 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
     <div class="pagination">
         <span class="step-links">
             {% if builds.has_previous %}
-            <a href="?page=1" class="link">&laquo; first</a>
-            <a href="?page={{ builds.previous_page_number }}" class="link">previous</a>
+            <a href="?page=1" class="link" aria-label="Redirects user to the first page">&laquo; first</a>
+            <a href="?page={{ builds.previous_page_number }}" class="link" aria-label="Redirects user to the previous page">previous</a>
             {% endif %}
 
             <span class="current">
@@ -100,8 +100,8 @@ Tailwind also has styling for cards, if I don't find anything appealing wwith bo
             </span>
 
             {% if builds.has_next %}
-            <a href="?page={{ builds.next_page_number }}" class="link">next</a>
-            <a href="?page={{ builds.paginator.num_pages }}" class="link">last &raquo;</a>
+            <a href="?page={{ builds.next_page_number }}" class="link" aria-label="Redirects user to the next page">next</a>
+            <a href="?page={{ builds.paginator.num_pages }}" class="link" aria-label="Redirects user to the last page">last &raquo;</a>
             {% endif %}
         </span>
     </div>

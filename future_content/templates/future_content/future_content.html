@@ -21,7 +21,7 @@
                     {% if user.is_authenticated %}
                     {% else %}
                     <p class="text-center">You need be be logged in to create a post, don't have an account yet? Get <a
-                            class="link" aria-current="" href="{% url 'account_signup' %}">signed up</a>!</p>
+                            class="link"  aria-label="Redirects user to the sign-up page" href="{% url 'account_signup' %}">signed up</a>!</p>
                     <hr>
                     {% endif %}
                 </div>
@@ -33,7 +33,7 @@
                         <form method="post" enctype="multipart/form-data">
                             {{ future_content_request_form | crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-outline-light">Send your request</button>
+                            <button type="submit" class="btn btn-outline-light"  aria-label="Submit request">Send your request</button>
                         </form>
                     </div>
                     {% endif %}
@@ -80,8 +80,8 @@
     <div class="pagination">
         <span class="step-links">
             {% if reqs.has_previous %}
-            <a href="?page=1" class="link">&laquo; first</a>
-            <a href="?page={{ reqs.previous_page_number }}" class="link">previous</a>
+            <a href="?page=1" class="link"  aria-label="Redirects user to the first page">&laquo; first</a>
+            <a href="?page={{ reqs.previous_page_number }}" class="link" aria-label="Redirects user to the previous page">previous</a>
             {% endif %}
 
             <span class="current">
@@ -89,8 +89,8 @@
             </span>
 
             {% if reqs.has_next %}
-            <a href="?page={{ reqs.next_page_number }}" class="link">next</a>
-            <a href="?page={{ reqs.paginator.num_pages }}" class="link">last &raquo;</a>
+            <a href="?page={{ reqs.next_page_number }}" class="link"  aria-label="Redirects user to the next page">next</a>
+            <a href="?page={{ reqs.paginator.num_pages }}" class="link"  aria-label="Redirects user to the last page">last &raquo;</a>
             {% endif %}
         </span>
     </div>

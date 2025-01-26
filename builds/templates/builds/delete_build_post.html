@@ -11,7 +11,7 @@ used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSf
         {% if user.is_authenticated %}
         {% else %}
         <p class="text-end m-3">If this is your post you must be logged in to delete it. Login <a
-                class="link" aria-current="" href="{% url 'account_login' %}">here</a></p>
+                class="link" href="{% url 'account_login' %}" aria-label="Redirects user to the login page">here</a></p>
         {% endif %}
     </div>
     <br>
@@ -21,7 +21,7 @@ used Tutorial: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSf
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <p class="bolder">Are you sure you want to delete "{{object.build_title}}"? It will be gone forever</p>
-                <input type="submit" value="Confirm" class="btn btn-danger btn-lg">
+                <input type="submit" value="Confirm" class="btn btn-danger btn-lg"  aria-label="Delete post">
             </form>
         </div>
         {% endif %}

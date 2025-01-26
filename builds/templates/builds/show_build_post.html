@@ -21,7 +21,7 @@
             </div>
             <div class="build-description-container">
                 <div class="description">
-                    <p class="">
+                    <p>
                         {{ build.build_description | safe}}
                     </p>
                 </div>
@@ -45,11 +45,11 @@
                         {% csrf_token %}
                         {% if liked %}
                         <button type="submit" name="buildpost_id" value="{{build.slug}}"
-                            class="btn btn-like text-white"><i class="fas fa-heart heart-like"></i></button>
+                            class="btn btn-like text-white" aria-label="Unlike the post"><i class="fas fa-heart heart-like"></i></button>
                         <span><strong class="like-counter-btn">{{build.liked.all.count}}</strong></span>
                         {% else %}
                         <button type="submit" name="buildpost_id" value="{{build.slug}}"
-                            class="btn btn-like text-white">
+                            class="btn btn-like text-white" aria-label="Like the post">
                             <i class="far fa-heart heart-like"></i></button>
                         <span><strong class="like-counter-btn">{{build.liked.all.count}}</strong></span>
                         {% endif %}
@@ -57,17 +57,17 @@
                     {% else %}
                     <i class="far fa-heart heart-like"></i><strong
                         class="like-counter">{{build.liked.all.count}}</strong>
-                    <span id="user-hint"><a href="{% url 'account_login' %}" class="link">Login</a> or <a
-                            href="{% url 'account_signup' %}" class="link">sign up</a> to like this post</span>
+                    <span id="user-hint"><a href="{% url 'account_login' %}" class="link" aria-label="Redirects user to the login page">Login</a> or <a
+                            href="{% url 'account_signup' %}" class="link" aria-label="Redirects user to the sign-up page">sign up</a> to like this post</span>
                     {% endif %}
                 </div>
                 <!-- Delete & Edit Buttons -->
                 {% if user.is_authenticated and build.build_author == user %}
                 <div><span>
-                        <a href="{% url 'edit_build_post' build.id %}" class="btn btn-warning">Edit this post</a>
+                        <a href="{% url 'edit_build_post' build.id %}" class="btn btn-warning" aria-label="Edit post">Edit this post</a>
                     </span>
                     <span>
-                        <a href="{% url 'delete_build_post' build.id %}" class="btn btn-danger">Delete this
+                        <a href="{% url 'delete_build_post' build.id %}" class="btn btn-danger" aria-label="Delete post">Delete this
                             post</a>
                     </span></div>
                 {% endif %}
@@ -96,13 +96,13 @@
                     <form id="commentForm" method="post" enctype="multipart/form-data">
                         {{ create_comment_form | crispy }}
                         {% csrf_token %}
-                        <button type="submit" id="submitButton" class="btn btn-outline-light">Create your
+                        <button type="submit" id="submitButton" class="btn btn-outline-light" aria-label="Create comment">Create your
                             comment</button>
                     </form> 
                 </div>
                 {% else %}
-                <p class="">You need be be <a href="{% url 'account_login' %}" class="link">logged in</a> to create a comment, don't
-                    have an account yet? Get <a aria-current="" href="{% url 'account_signup' %}" class="link">signed
+                <p class="">You need be be <a href="{% url 'account_login' %}" class="link" aria-label="Redirects user to the login page">logged in</a> to create a comment, don't
+                    have an account yet? Get <a  aria-label="Redirects user to the sign-up page" href="{% url 'account_signup' %}" class="link">signed
                         up</a>!</p>
                 {% endif %}
             </div>
@@ -127,8 +127,8 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and request.user == comment.comment_author %}
-                    <button class="btn btn-edit btn-warning" data-comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-delete btn-danger" data-comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit btn-warning" data-comment_id="{{ comment.id }}" aria-label="Edit comment">Edit</button>
+                    <button class="btn btn-delete btn-danger" data-comment_id="{{ comment.id }}" aria-label="Delete comment">Delete</button>
                     {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
@@ -150,9 +150,9 @@
                     This action cannot be undone.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
                     <a id="deleteConfirm" href="#" class="btn
-                    btn-danger">Delete</a>
+                    btn-danger" aria-label="confirm delete comment">Delete</a>
                 </div>
             </div>
         </div>
