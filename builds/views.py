@@ -12,15 +12,18 @@ from .serializers import BuildPostSerializer
 from rest_framework.generics import ListAPIView
 from django.core.paginator import Paginator
 
+
 # Create your views here.
 def build_post_list(request):
     """
-    Returns all published  build-posts and displays 8 posts 
+    Returns all published  build-posts and displays 8 posts
     per page paginated based on the date of creation.
     """
     tags = Tag.objects.all()
-    
-    paginator = Paginator(BuildPost.objects.filter(status_build_post=2).order_by("created_on"), 8)
+
+    paginator = Paginator(BuildPost.objects.
+                          filter(status_build_post=2).
+                          order_by("created_on"), 8)
 
     page_number = request.GET.get('page')
 
@@ -28,21 +31,29 @@ def build_post_list(request):
 
     paginate_by = 8
     user = request.user
-    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by, 'user': user}
+    context = {
+              'builds': builds,
+              'tags': tags,
+              "paginate_by": paginate_by,
+              'user': user
+              }
     return render(request, 'builds/index.html', context)
+
 
 def search_build_tags_list(request):
     """
-    Returns all published  build-posts and displays 8 posts 
+    Returns all published  build-posts and displays 8 posts
     per page paginated based on the date of creation.
     Also shows tags, for tags/taggit I used this Tutorial:
     https://www.youtube.com/watch?v=213swbH8j_o
     """
-    builds = BuildPost.objects.filter(status_build_post=2).order_by("created_on")
+    builds = BuildPost.objects.filter(
+             status_build_post=2).order_by("created_on")
     tags = Tag.objects.all()
     paginate_by = 8
-    context = {'builds': builds, 'tags': tags, "paginate_by":paginate_by}
+    context = {'builds': builds, 'tags': tags, "paginate_by": paginate_by}
     return render(request, 'builds/search_build_tags.html', context)
+
 
 class BuildListAPIView (ListAPIView):
     """
@@ -61,7 +72,7 @@ def show_build_post(request, slug):
     build = get_object_or_404(queryset, slug=slug)
     comments = build.comments.all().order_by("-created_on")
     comment_count = build.comments.filter(approved=True).count()
-    
+
     if request.method == "POST":
         create_comment_form = CreateCommentForm(data=request.POST)
         if create_comment_form.is_valid():
@@ -71,7 +82,7 @@ def show_build_post(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                "We recceived your comment, after it is approved it will be added to the post!"
+                "We recceived your comment, it is waiting for approval!"
             )
     create_comment_form = CreateCommentForm()
 
@@ -95,8 +106,10 @@ def edit_comment(request, slug, comment_id):
         builds = BuildPost.objects.all()
         build = get_object_or_404(builds, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
-        create_comment_form = CreateCommentForm(data=request.POST, instance=comment)
-        if create_comment_form.is_valid() and comment.comment_author == request.user:
+        create_comment_form = CreateCommentForm(data=request.POST,
+                                                instance=comment)
+        if create_comment_form.is_valid() and \
+           comment.comment_author == request.user:
             comment = create_comment_form.save(commit=False)
             comment.build_post = build
             comment.approved = False
@@ -130,13 +143,14 @@ def delete_comment(request, slug, comment_id):
 class CreateBuildPost(SuccessMessageMixin, generic.CreateView):
     """"
     A logged in user can add a build post to the database through this class
-    Help from: https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10
+    Help from: https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=
+    PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10
     """
     template_name = "builds/create_build_post.html"
     model = BuildPost
     form_class = CreateBuildsPostForm
     success_url = "/"
-    success_message = "Your build was uploaded successfully and is waiting for approval."
+    success_message = "Your build is waiting for approval."
 
     def form_valid(self, form):
         """
@@ -150,18 +164,21 @@ class CreateBuildPost(SuccessMessageMixin, generic.CreateView):
         """
         display success message
         Source: https://docs.djangoproject.com/en/4.0/ref/contrib/messages/
-        here other source: https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views 
-        """ 
+        here other source:
+        https://stackoverflow.com/questions/4802482/how-to-send-success-message
+        -if-we-use-django-generic-views
+        """
         return self.success_message % dict(
             cleaned_data,
             build_title=self.object.build_title,
         )
-        
 
 
-class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin, SuccessMessageMixin, generic.UpdateView):
+class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin,
+                    SuccessMessageMixin, generic.UpdateView):
     """
-    used tutorial from: https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14
+    used tutorial from: https://www.youtube.com/watch?v=JzDBCZTgVyw&list=
+    PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14
     to edit a Post and redirect the user to a seperate html
     to make the edit
     Only the user that wrote the post can edit it.
@@ -170,7 +187,7 @@ class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin, SuccessMessageMixi
     template_name = "builds/edit_build_post.html"
     form_class = CreateBuildsPostForm
     success_message = "Your build post has been successfully edited"
-    
+
     def test_func(self):
         """
         is needed for the UserPassesTestMixin to work
@@ -182,19 +199,22 @@ class EditBuildPost(LoginRequiredMixin,  UserPassesTestMixin, SuccessMessageMixi
     def get_success_url(self, **kwargs):
         """
         display success message when editing a post
-        used: https://stackoverflow.com/questions/26897050/django-success-url-using-kwargs
+        used: https://stackoverflow.com/questions/26897050/
+        django-success-url-using-kwargs
         since the one for create builddpost did not work
         """
         if self.object.id is not None:
             return reverse('show_build_post', args=[self.object.slug])
         else:
             return reverse('home')
-    
 
 
-class DeleteBuildPost(SuccessMessageMixin, LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+class DeleteBuildPost(SuccessMessageMixin, LoginRequiredMixin,
+                      UserPassesTestMixin, generic.DeleteView):
     """
-    used tutorial from: https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=13
+    used tutorial from:
+    https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCS
+    fiLNb2f1FOs8viArjWy&index=13
     to delete a Post and redirect the user to a seperate html
     to confirm the deletion
     Only the user that wrote the post can delete it
@@ -211,20 +231,23 @@ class DeleteBuildPost(SuccessMessageMixin, LoginRequiredMixin, UserPassesTestMix
         True will delete
         """
         return self.request.user == self.get_object().build_author
-        
+
     def delete(self, request, *args, **kwargs):
         """
         after succesfull deletion a sucess message i displayed
-        Used to show success message: https://stackoverflow.com/questions/24822509/
+        Used to show success message:
+        https://stackoverflow.com/questions/24822509/
         success-message-in-deleteview-not-shown
         """
         messages.SUCCESS(self.request, self.success_message)
         return super(DeleteBuildPost, self).delete(request, *args, **kwargs)
 
+
 def like_buildpost(request, slug, *args, **kwargs):
     """
     Select and unselect the like-button
-    got a tutorial and how to write the code instruction from: https://github.com/FlorianS4/project_4_django
+    got a tutorial and how to write the code instruction from:
+    https://github.com/FlorianS4/project_4_django
     """
     if request.method == "POST":
         buildpost = get_object_or_404(BuildPost, slug=slug)
@@ -233,5 +256,3 @@ def like_buildpost(request, slug, *args, **kwargs):
         else:
             buildpost.liked.add(request.user)
     return HttpResponseRedirect(reverse('show_build_post', args=[slug]))
-
-

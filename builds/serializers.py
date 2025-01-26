@@ -8,6 +8,7 @@ from taggit.serializers import (TagListSerializerField,
                                 TaggitSerializer)
 from .models import BuildPost
 
+
 class BuildPostSerializer(TaggitSerializer, serializers.ModelSerializer):
     """
     Convert Data to be used & transmitted for tags in the project
@@ -21,4 +22,3 @@ class BuildPostSerializer(TaggitSerializer, serializers.ModelSerializer):
         """
         model = BuildPost
         fields = ("id", "build_title", "build_author", "tags", "slug")
-

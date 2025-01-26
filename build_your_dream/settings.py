@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-xakkusu-p4buildyourdrea-zbw6jk1ztx3.ws.codeinstitute-ide.net",".herokuapp.com"]
+ALLOWED_HOSTS = [
+    "8000-xakkusu-p4buildyourdrea-zbw6jk1ztx3.ws.codeinstitute-ide.net",
+    ".herokuapp.com"
+    ]
 
 
 # Application definition
@@ -44,9 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'django.contrib.sites',
-	'allauth',
-	'allauth.account',
-	'allauth.socialaccount',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'crispy_forms',
     'crispy_bootstrap5',
     'builds',
@@ -81,7 +84,8 @@ ROOT_URLCONF = 'build_your_dream.urls'
 
 TEMPLATES_DIR = [os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'builds', 'templates', 'builds'),
-                 os.path.join(BASE_DIR, 'future_content', 'templates', 'future_content'),]
+                 os.path.join(BASE_DIR, 'future_content', 'templates',
+                              'future_content'), ]
 
 TEMPLATES = [
     {
@@ -105,20 +109,20 @@ WSGI_APPLICATION = 'build_your_dream.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
-	"https://*.codeinstitute-ide.net/",
-	"https://*.herokuapp.com" 
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
 ]
 
 
@@ -127,16 +131,21 @@ CSRF_TRUSTED_ORIGINS = [
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation'
+        + '.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -158,8 +167,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 CLOUDINARY = {
-      'CLOUDINARY_CLOUD_NAME': os.environ.get("CLOUDINARY_CLOUD_NAME"),  
-      'CLOUDINARY_API_KEY': os.environ.get("CLOUDINARY_API_KEY"),  
+      'CLOUDINARY_CLOUD_NAME': os.environ.get("CLOUDINARY_CLOUD_NAME"),
+      'CLOUDINARY_API_KEY': os.environ.get("CLOUDINARY_API_KEY"),
       'CLOUDINARY_API_SECRET': os.environ.get("CLOUDINARY_API_SECRET"),
 }
 

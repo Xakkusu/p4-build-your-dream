@@ -1,6 +1,7 @@
 from django import forms
 from .models import BuildPost, Comment
 
+
 class CreateBuildsPostForm(forms.ModelForm):
     """
     Class to create the form fields needed to create
@@ -12,8 +13,9 @@ class CreateBuildsPostForm(forms.ModelForm):
         in the form
         """
         model = BuildPost
-        fields =["build_title", "image_of_build",  
-                "build_description", "money_spent", "year_build"]
+        fields = ["build_title", "image_of_build",
+                  "build_description", "money_spent", "year_build"]
+
 
 class CreateCommentForm(forms.ModelForm):
     """
@@ -26,4 +28,4 @@ class CreateCommentForm(forms.ModelForm):
         in the form
         """
         model = Comment
-        fields =["comment_body"]
+        fields = ["comment_body"]

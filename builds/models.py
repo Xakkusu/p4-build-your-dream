@@ -6,6 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 STATUS = ((0, "Draft"), (1, "In Progress"), (2, "Approved"))
 
+
 class BuildPost(models.Model):
     """
     Model to store a single build post entry related to :model:`auth.User`.
@@ -21,13 +22,16 @@ class BuildPost(models.Model):
        null=False, blank=False
     )
     build_description = models.TextField()
-    money_spent = models.DecimalField(max_digits=8, decimal_places=2, validators=[MaxValueValidator(999999,99), MinValueValidator(0,00)])
+    money_spent = models.DecimalField(max_digits=8, decimal_places=2,
+                                      validators=[MaxValueValidator(999999.99),
+                                                  MinValueValidator(0.00)])
     year_build = models.DateField()
     created_on = models.DateTimeField(auto_now_add=True)
     status_build_post = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
-    liked = models.ManyToManyField(User, default=None, blank=True, related_name="liked")
+    liked = models.ManyToManyField(User, default=None, blank=True,
+                                   related_name="liked")
 
     class Meta:
         ordering = ["-created_on"]
@@ -42,6 +46,7 @@ class BuildPost(models.Model):
         """
         return self.liked.all().count()
 
+
 LIKE_CHOICES = (("Like", "Like"), ("Unlike", "Unlike"))
 
 
@@ -51,7 +56,7 @@ class Comment(models.Model):
     and :model:`build_dream.BuildPost`. Needs to be approved
     """
     build_post = models.ForeignKey(BuildPost, on_delete=models.CASCADE,
-                             related_name="comments")
+                                   related_name="comments")
     comment_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
     comment_body = models.TextField()
@@ -61,5 +66,6 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["created_on"]
+
     def __str__(self):
         return f"Comment {self.comment_body} by {self.comment_author}"
