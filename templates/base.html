@@ -68,38 +68,38 @@
                     <ul class="navbar-nav ms-auto mb-2" id="navbar-fw">
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="/">Home</a>
+                                href="/" aria-label="Redirects user to the landing page">Home</a>
                         </li>
                         <!-- Form for search bar
                 Used the following tutorial:  https://www.youtube.com/watch?v=LsU79aY79UA&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=15
                 -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == search_build_tags_url %}active{% endif %}"
-                                aria-current="page" href="/search/">Search via tags</a>
+                                aria-current="page" href="/search/" aria-label="Redirects user to the search via tags page">Search via tags</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
-                                aria-current="page" href="/createbuildpost/">Upload your build!</a>
+                                aria-current="page" href="/createbuildpost/" aria-label="Redirects user to the Create Build Post page">Upload your build!</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == future_content_url %}active{% endif %}"
-                                aria-current="page" href="/future-content/">Future Content</a>
+                                aria-current="page" href="/future-content/" aria-label="Redirects user to the future-content page">Future Content</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'account_logout' %}"><span
-                                    class="font-weight-bolder li-paddding-r">|</span> Logout</a>
+                                    class="font-weight-bolder li-paddding-r" aria-label="Redirects user to the logout page">|</span> Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                                 href="{% url 'account_signup' %}"><span
-                                    class="font-weight-bolder li-paddding-r">|</span> Register</a>
+                                    class="font-weight-bolder li-paddding-r" aria-label="Redirects user to the sign-up page">|</span> Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'account_login' %}">Login</a>
+                                href="{% url 'account_login' %}" aria-label="Redirects user to the login page">Login</a>
                         </li>
                         {% endif %}
                     </ul>

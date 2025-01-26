@@ -1,5 +1,12 @@
 # Build your Dream
+Build your dream is a imaginary blog where users can share their own pc builds, find inspiration from other builds and interact with other pc-builders. Here everyone can see what is out there before, during and after building your own computer. 
 
+It is meant to be a place for people to exchange information and just show off their work. Hence the target audience are pc enthusiats who want to present their own build with helpful imformation for future pc builders and for those future pc-builders to get inspired by others work.
+The post will have professional tags by the build-your-dream-team so that users can search through the contents by parts and characteristics they are looking for. Moreover users can express their feelings about a post via comments and a like function.
+
+Moreover as this imaginary website is still new and wants to adapt to the users' needs, users can give recommendation of what changes and possible features they would implement on the blog. Therefore, Build Your Dream tries to build a growing community of builders that want to exchange information with one another in a respectful way.
+
+[Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
 ## Contents
 - [SITE OWNER GOALS](#site-owner-goals)
@@ -21,6 +28,8 @@
     - [Future Content](#future-)
     - [404 Page](#404-page)
     - [403 Page](#403-page)
+- [AGILE](#agile)
+- [DATA MODEL](#data-model)
 - [TESTING](#testing)
     - [Accessibility](#accessibility)
     - [W3C Validators](#w3c-validators)
@@ -165,6 +174,11 @@ All pages have the following in common:
 
 ### Future Content Page
 
+
+## AGILE
+
+
+## DATA MODEL
 
 
 ## TESTING
