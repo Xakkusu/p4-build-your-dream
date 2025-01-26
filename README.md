@@ -32,6 +32,8 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - [DATA MODEL](#data-model)
 - [TESTING](#testing)
     - [Accessibility](#accessibility)
+        - [Wave Testing](#wave-testing)
+        - [Lighthouse Testing](#lighthouse-testing)
     - [W3C Validators](#w3c-validators)
     - [JSHint](#jshint)
     - [PEP8](#pep8)
@@ -183,26 +185,124 @@ All pages have the following in common:
 
 ## TESTING
 ### Accessibility
+#### Wave Testing
 #### Lighthouse Testing
-##### Mobile
-Index:
+The main problem with my Best Practice score is that cloudinary uses http:// insteast of https:/ when transfering images.
+Moreover as the user can upload images whichever format and they are made to fit the cards, the performance suffers through this, especially in mobile view as a third-party cloud-based platform can create succh problems.
 
-<img src="x" width="60%" alt="Lighthouse mobile index rating">
-
-
-404:
-
-<img src="x" width="60%" alt="Lighthouse mobile index rating">
 
 ##### Desktop
 Index:
 
-<img src="x" width="60%" alt="Lighthouse desktop index rating">
+<img src="documentation/lighthouse/desktop-lighthouse-index.png" width="60%" alt="Lighthouse desktop index rating">
+
+
+Show Build Post:
+
+<img src="documentation/lighthouse/desktop-lighthouse-show-build-post.png" width="60%" alt="Lighthouse desktop show build post rating">
+
+
+Create Build Post:
+
+<img src="documentation/lighthouse/desktop-lighthouse-create-build-post.png" width="60%" alt="Lighthouse desktop create build post rating">
+
+
+Edit Build Post:
+
+<img src="documentation/lighthouse/desktop-lighthouse-edit-build-post.png" width="60%" alt="Lighthouse desktop edit build post rating">
+
+
+Delete Build Post:
+
+<img src="documentation/lighthouse/desktop-lighthouse-delete-build-post.png" width="60%" alt="Lighthouse desktop delete build post rating">
+
+
+Search Build via Tags:
+
+<img src="documentation/lighthouse/desktop-lighthouse-search-via-tags.png" width="60%" alt="Lighthouse desktop search via build tags rating">
+
+
+Future Content:
+
+<img src="documentation/lighthouse/desktop-lighthouse-future-content.png" width="60%" alt="Lighthouse desktop future content rating">
+
+
+Sign-Up:
+
+<img src="documentation/lighthouse/desktop-lighthouse-sign-up.png" width="60%" alt="Lighthouse desktop sign up rating">
+
+
+Sign-In:
+
+<img src="documentation/lighthouse/desktop-lighthouse-login.png" width="60%" alt="Lighthouse desktop login rating">
+
+
+Logout:
+
+<img src="documentation/lighthouse/desktop-lighthouse-logout.png" width="60%" alt="Lighthouse desktop logout rating">
 
 
 404:
 
-<img src="x" width="60%" alt="Lighthouse desktop index rating">
+<img src="documentation/lighthouse//desktop-lighthouse-404.png" width="60%" alt="Lighthouse desktop 404 rating">
+
+
+
+##### Mobile
+Index:
+
+<img src="documentation/lighthouse/mobile-lighthouse-index.png" width="60%" alt="Lighthouse mobile index rating">
+
+
+Show Build Post:
+
+<img src="documentation/lighthouse/mobile-lighthouse-show-build-post.png" width="60%" alt="Lighthouse mobile show build post rating">
+
+
+Create Build Post:
+
+<img src="documentation/lighthouse/mobile-lighthouse-create-build-post.png" width="60%" alt="Lighthouse mobile create build post rating">
+
+
+Edit Build Post:
+
+<img src="documentation/lighthouse/mobile-lighthouse-edit-build-post.png" width="60%" alt="Lighthouse mobile edit build post rating">
+
+
+Delete Build Post:
+
+<img src="documentation/lighthouse/mobile-lighthouse-delete-build-post.png" width="60%" alt="Lighthouse mobile delete build post rating">
+
+
+Search Build via Tags:
+
+<img src="documentation/lighthouse/mobile-lighthouse-search-via-tags.png" width="60%" alt="Lighthouse mobile search via build tags rating">
+
+
+Future Content:
+
+<img src="documentation/lighthouse/mobile-lighthouse-future-content.png" width="60%" alt="Lighthouse mobile future content rating">
+
+
+Sign-Up:
+
+<img src="documentation/lighthouse/mobile-lighthouse-sign-up.png" width="60%" alt="Lighthouse mobile sign up rating">
+
+
+Sign-In:
+
+<img src="documentation/lighthouse/mobile-lighthouse-login.png" width="60%" alt="Lighthouse mobile login rating">
+
+
+Logout:
+
+<img src="documentation/lighthouse/mobile-lighthouse-logout.png" width="60%" alt="Lighthouse mobile logout rating">
+
+
+404:
+
+<img src="documentation/lighthouse//mobile-lighthouse-404.png" width="60%" alt="Lighthouse mobile 404 rating">
+
 
 
 ### W3C Validators
