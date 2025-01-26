@@ -349,7 +349,7 @@ Sign-In Page:
 
 ### W3C Validators
 #### HTML
-There were some errors shown in the W3C Markup Validator which I was able to fix like errors with the alpine.js. Here are all the W3C results with minor warnings and tips, which will be looked at when time resource freem themselves:
+There were some errors shown in the W3C Markup Validator which I was able to fix like errors with the alpine.js. Here are all the W3C results with minor warnings and tips, which will be looked at when time resource free themselves:
 
 <details>
 <summary>No Errors</summary>
