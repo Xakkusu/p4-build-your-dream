@@ -159,13 +159,12 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     min-height:400px;
     width: 300px;
     box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
-
   
-   &.card-has-bg{
-   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    background-size:120%;
-    background-repeat:no-repeat;
-    background-position: center center;
+    &.card-has-bg{
+      transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+      background-size:120%;
+      background-repeat:no-repeat;
+      background-position: center center;}
     &:before {
       content: '';
       position: absolute;
@@ -191,7 +190,6 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
         background: #6c757d;
        background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(26, 39, 50, 0.903) 100%);
        }
-    }
   }
    .card-footer{
     background: none;
@@ -205,10 +203,8 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
     }
    .card-body{ 
      transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-      size: 90%;
-  
     }
-   &:hover {
+  &:hover {
      .card-body{
        margin-top:30px;
        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -217,9 +213,8 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
   }
    .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-   background: #6c757d;
-  background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);
-  }
+    background: #6c757d;
+    background: linear-gradient(0deg, rgba(83, 120, 152,0.5) 0%, rgba(108,117,125,1) 100%);}
   }
 
 /* Show build post styling */
@@ -667,7 +662,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 
   .manage-div {
     width: 100%;
-    min-width: 645x;
+    min-width: 645px;
     max-width: 980px;
   }
 
@@ -679,7 +674,7 @@ used this design: https://codepen.io/creativemanner/pen/NWrNWrd
 
 @media (min-width: 1365px) {
   .manage-div {
-    min-width: 980x;
+    min-width: 980px;
     max-width: 1325px;
   }
   

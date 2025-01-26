@@ -12,13 +12,12 @@
 <div class="container-user">
     <h3>{% trans "Sign In" %}</h3>
 
-    <p>{% blocktrans %}Hello there! Long time no see, in order to leave a comment or like a post, please log in.
+    {% blocktrans %}Hello there! Long time no see, in order to leave a comment or like a post, please log in.
         <hr>
         <p>If you have not created an account yet, then <span><a class="link" href="{{ signup_url }}" aria-label="Redirects user to the sign-up page">sign up</a></span>
             first.</p>
         <hr>
         {% endblocktrans %}
-    </p>
     <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
