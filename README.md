@@ -12,6 +12,8 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - [SITE OWNER GOALS](#site-owner-goals)
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [WIREFRAMES](#wireframes)
+- [AGILE](#agile)
+- [DATA MODEL](#data-model)
 - [FINAL DESIGN](#final-design)
     - [Imagery](#imagery)
     - [Color Scheme](#color-scheme)
@@ -28,8 +30,6 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
     - [Future Content](#future-)
     - [404 Page](#404-page)
     - [403 Page](#403-page)
-- [AGILE](#agile)
-- [DATA MODEL](#data-model)
 - [TESTING](#testing)
     - [Accessibility](#accessibility)
         - [Wave Testing](#wave-testing)
@@ -94,32 +94,90 @@ Wireframes were produced using Balsamiq.
 
  <details>
 
- <summary>Desktop Wireframe</summary>
+ <summary>Desktop Wireframes</summary>
 Index Page:
-<img src="#" alt="Desktop Index Wireframe">
+<img src="documentation/wireframes/Index - Desktop.png" alt="Desktop Index Wireframe">
 
- Page:
-<img src="#" alt="Desktop  Wireframe">
+Show Build Post Page:
+<img src="documentation/wireframes/Post - Desktop.png" alt="Desktop Show Build Post Wireframe">
+
+Add/Edit Build Post Page:
+<img src="documentation/wireframes/Add_Edit Post - Desktop.png" alt="Desktop Add/Edit Build Post Wireframe">
+
+Delete Build Post Page:
+<img src="documentation/wireframes/Delete Post - Desktop.png" alt="Desktop Delete Build Post Wireframe">
+
+Search build via tags Page:
+<img src="documentation/wireframes/search - desktop.png" alt="Desktop Search build via tags Wireframe">
+
+Future Content Page:
+<img src="documentation/wireframes/Future Content - Desktop.png" alt="Desktop Future Content Wireframe">
+
+Sign-Up Page:
+<img src="documentation/wireframes/Sign-Up - Desktop.png" alt="Desktop Sign-Up Wireframe">
+
+Login Page:
+<img src="documentation/wireframes/Login - Desktop.png" alt="Desktop Login Wireframe">
+
+Logout Page:
+<img src="documentation/wireframes/Logout - Desktop.png" alt="Desktop Logout Wireframe">
 
 404 Page:
-<img src="#" alt="Desktop 404 Wireframe">
+<img src="documentation/wireframes/404 - Desktop.png" alt="Desktop 404 Wireframe">
 
  </details>
 
  <details>
-    <summary>Mobile Wireframe</summary>
-
+    <summary>Mobile Wireframes</summary>
 Index Page:
-<img src="#" alt="Mobile Index Wireframe">
 
- Page:
-<img src="#" alt="Mobile  Wireframe">
+<img src="documentation/wireframes/Index - Mobile.png" alt="Mobile Index Wireframe" width="50%" >
+
+Show Build Post Page:
+
+<img src="documentation/wireframes/Post - Mobile.png" alt="Mobile Show Build Post Wireframe" width="50%" >
+
+Add/Edit Build Post Page:
+
+<img src="documentation/wireframes/Add_Edit Post - Mobile.png" alt="Mobile Add/Edit Build Post Wireframe" width="50%" >
+
+Delete Build Post Page:
+
+<img src="documentation/wireframes/Delete Post - Mobile.png" alt="Mobile Delete Build Post Wireframe" width="50%" >
+
+Search build via tags Page:
+
+<img src="documentation/wireframes/search - mobile.png" alt="Mobile Search build via tags Wireframe" width="50%" >
+
+Future Content Page:
+
+<img src="documentation/wireframes/Future Content - Mobile.png" alt="Mobile Future Content Wireframe" width="50%" >
+
+Sign-Up Page:
+
+<img src="documentation/wireframes/Sign-Up - Mobile.png" alt="Mobile Sign-Up Wireframe" width="50%" >
+
+Login Page:
+
+<img src="documentation/wireframes/Login - mobile.png" alt="Mobile Login Wireframe" width="50%" >
+
+Logout Page:
+
+<img src="documentation/wireframes/Logout - Mobile.png" alt="Mobile Logout Wireframe" width="50%" >
 
 404 Page:
 
-<img src="#" width="50%" alt="Mobile 404 Wireframe">
+<img src="documentation/wireframes/404- Mobile.png" alt="Mobile 404 Wireframe" width="50%" >
 
 </details>
+
+
+
+## AGILE
+
+
+## DATA MODEL
+
 
 
 ## FINAL DESIGN
@@ -196,12 +254,6 @@ All pages have the following in common:
 
 
 ### Future Content Page
-
-
-## AGILE
-
-
-## DATA MODEL
 
 
 ## TESTING
