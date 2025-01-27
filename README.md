@@ -66,14 +66,28 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 
 ## USER EXPERIENCE (UX)
 #### First Time User Goals
+- As a user I can read about pc builds.
+- As a user I can register an account so that post content, comment and give feedback.
+- As a user I can create a post so that I can show off my build for other users to enjoy.
+- As a user I can use any device I want and the design will respond accordingly so that I am not bound to use only one device/browser.
+- As a user I can naviagte through the main topics so that I can jump to whichever topic I want from one menu bar.
 
 
 #### Returning User Goals
+- As a user I can rate the post and it's content so that how I thought about the build is represented.
+- As a user I can modify or delete my comment on a post so that I can correct my opinion or delete my input from the post.
+- As a user I can modify or delete my posts so that I can correct my content or delete it.
+- As a user I can comment on a post so that I can give my opinion on the post.
+- As a user I can see comments on a post so that can read what other people have to say about the post.
 
 
 #### Frequent User Goals
-
-
+- As a user I can create tags on my posts and comments so that it can be searched by them.
+- As a user I can search through the posts so that can find what I want to.
+- As a user I can view all tags so that I can browse through them.
+- As a user I can indicate the status of my input so that I knows if those things will be implemented one day or not.
+- As a user I can give input/feedback so that in the future there will be new features on the website.
+> additionaly the returning user goals apply here as well
 
 ## WIREFRAMES
 Wireframes were produced using Balsamiq. 

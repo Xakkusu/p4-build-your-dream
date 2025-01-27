@@ -12,6 +12,6 @@ class FutureContentRequestForm(forms.ModelForm):
         Specify the model used and which fields will be
         in the form
         """
-        model=FutureContentRequest
-        fields=["future_content_title", "email_for_contact", 
-                "future_content_description"]
+        model = FutureContentRequest
+        fields = ["future_content_title", "email_for_contact",
+                  "future_content_description"]
