@@ -415,28 +415,99 @@ No errors or warnings.
 
 <img src="documentation/js/JSHint-testing.png" alt="comments.js JSHint result">
 </details>
+
 <details>
 <summary>datepiker.js</summary>
 No errors or warnings.
 
 <img src="documentation/js/JSHint-testing-datepicker.png" alt="datepiker.js JSHint result">
 </details>
-<details>
 
 
 ### PEP8 
 No errors were returned for all python files from the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) testing:
 <details>
-<summary>x.py</summary>
-No errors or warnings.
+<summary>build_your_dream</summary>
+No errors or warnings for all python files in build_your_dream.
 
-<img src="x" alt="x.py PEP8 result">
+urls.py:
+
+<img src="documentation/python/pep8-urls.png" alt="urls.py PEP8 result">
+
+
+settings.py:
+
+<img src="documentation/python//pep8-settings.png" alt="settings.py PEP8 result">
+
+
+
 </details>
 <details>
-<summary>x.py</summary>
-No errors or warnings.
+<summary>builds</summary>
+No errors or warnings for all python files in builds.
 
-<img src="x" alt="x.py PEP8 result">
+urls.py:
+
+<img src="documentation/python/pep8-build-urls.png" alt="urls.py PEP8 result">
+
+
+admin.py:
+
+<img src="documentation/python/pep8-build-admin.png" alt="admin.py PEP8 result">
+
+
+forms.py:
+
+<img src="documentation/python/pep8-build-forms.png" alt="forms.py PEP8 result">
+
+
+models.py:
+
+<img src="documentation/python/pep8-build-models.png" alt="models.py PEP8 result">
+
+
+views.py:
+
+<img src="documentation/python/pep8-build-views.png" alt="views.py PEP8 result">
+
+
+serializers.py:
+
+<img src="documentation/python/pep8-build-serializers.png" alt="serializers.py PEP8 result">
+
+
+
+</details>
+<details>
+<summary>future_content</summary>
+No errors or warnings for all python files in future_content.
+
+urls.py:
+
+<img src="documentation/python/pep8-future-url.png" alt="urls.py PEP8 result">
+
+
+admin.py:
+
+<img src="documentation/python/pep8-future-admin.png" alt="admin.py PEP8 result">
+
+
+forms.py:
+
+<img src="documentation/python/pep8-future-forms.png" alt="forms.py PEP8 result">
+
+
+models.py:
+
+<img src="documentation/python/pep8-future-model.png" alt="models.py PEP8 result">
+
+
+views.py:
+
+<img src="documentation/python/pep8-future-view.png" alt="views.py PEP8 result">
+
+
+
 </details>
 
 ### Form Testing
