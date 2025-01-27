@@ -55,7 +55,14 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 
 ## SITE OWNER GOALS
 
-
+- to provide the user with an informative website about pc builds
+- to provide the user with the ability to become part of a community of pc builders
+- to provide the user with the opportunity to upload, edit and delete their own pc build with information about it
+- to provide the user with the opportunity to comment on ones own or others' pc builds, the comments can be edited and deleted
+- to provide the user with the ability to search all posts via their tags
+- to provide the user with the ability to show their appreciation of a post with likes
+- to provide the user with the ability give input on what features the website could need and hence become a part of the development process
+- to provide the user with a save space, where content is approved so bullying and other problematic behaviour is limited
 
 ## USER EXPERIENCE (UX)
 #### First Time User Goals
