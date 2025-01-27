@@ -410,23 +410,19 @@ No errors were returned for the CSS stylesheet from the W3C CSS Validator:
 ### JShint
 [JSHint](https://jshint.com/) was used to validate the JavaScript.
 <details>
-<summary>script.js</summary>
+<summary>comments.js</summary>
 No errors or warnings.
 
-<img src="x" alt="script.js JSHint result">
+<img src="documentation/js/JSHint-testing.png" alt="comments.js JSHint result">
 </details>
 <details>
-<summary>quiz.js</summary>
-No errors. Warnings about semantics that could be confusing, however, as these variables concern variables from another JS-file they do exist due to their size they are just stored in the questions.js
-
-<img src="docs/testing/jshint-quiz.png" alt="quiz.js JSHint result">
-</details>
-<details>
-<summary>questions.js</summary>
+<summary>datepiker.js</summary>
 No errors or warnings.
 
-<img src="docs/testing/jshint-question.png" alt="questions.js JSHint result">
+<img src="documentation/js/JSHint-testing-datepicker.png" alt="datepiker.js JSHint result">
 </details>
+<details>
+
 
 ### PEP8 
 No errors were returned for all python files from the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/) testing:
