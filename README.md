@@ -13,7 +13,7 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - [USER EXPERIENCE (UX)](#user-experience-ux)
 - [WIREFRAMES](#wireframes)
 - [AGILE](#agile)
-- [DATA MODEL](#data-model)
+- [ENTITY RELATIONSHIP DIAGRAM - ERD](#entity-relationship-diagram---erd)
 - [FINAL DESIGN](#final-design)
     - [Imagery](#imagery)
     - [Color Scheme](#color-scheme)
@@ -176,8 +176,12 @@ Logout Page:
 ## AGILE
 
 
-## DATA MODEL
+##  ENTITY RELATIONSHIP DIAGRAM - ERD
+The following diagram illustrates the models used in this project and their relationships to one another:
 
+<img src="documentation/pp4-erd.png" alt="ERD" >
+
+The user model is created by [Django AllAuth](https://docs.allauth.org/en/latest/) library for user authentication, hence it was not written by me but solely installed and used. The taggit_tag was created by the [django-taggit](https://django-taggit.readthedocs.io/en/latest/) application and used for its well developed tagging system.
 
 
 ## FINAL DESIGN
