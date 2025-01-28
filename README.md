@@ -191,15 +191,27 @@ The user model is created by [Django AllAuth](https://docs.allauth.org/en/latest
 
 ## FINAL DESIGN
 ### Imagery
+It was chosen to include no images besides the build post images into this project. This was done after intense research into similar websites as well as question being asked to people that enjoy similar content. As the user can upload an image themselves the superuser can still decide through their approval process if this image is fitting or if it will not be shown.
+The only image used is the one of the default build post and the hero image. Both where chosen in-synch with the projects colour scheme, of which you can find out more [here](#color-scheme). The default images fits the card sizing more as we figured that most people would upload an image of their build to show it off. However, it is still a pleasing image. The hero image was brightened a lot to make it stand out and makle it easier to read the text on it. Both are of greyish pc builds, which is commom for this kind of content. The rathe dry styling fits the theme as well.
 
 
 ### Color Scheme
 
+<img src="documentation/color-scheme.png" alt="Color scheme" >
 
+In tone with most pc build related content A greyish color range was chosen. As most pc build themselves are mostly still black and grey it was seen as fitting for this project. Depending on the content the colors vary. The only exception are edit and delete buttons, with a more yellor and a distinct red color. The colors also do not take away from the content and perfectly keep the users focus on the build post, especially on the uploaded images. It was important to not make the website too dark and hence make it unpleasend to spend more time on the posts. The main color of the font is either complete white as in the bootstrap settings for a lot of the color related keywords or a #fafafa was chosen as it is a tat more pleasing for the eye, but in some cases it does not make the text stand out as much at it needs to be. Hence, especially when bootstrap was used in styling content the #fff (white) color is used. Yet this color still is in line with the color scheme.
 The color palette was created by using the [coolors](https://coolors.co/) website.
 
 ### Typography
-
+- As bootstrap styling devices were used througout this website, the main fallback font where a native font stack is used which selects the best font-family for each OS and device, more on this [here](https://getbootstrap.com/docs/4.0/content/typography/).
+[Google Fonts](https://fonts.google.com/) was used for the following fonts:
+- ![Lato font image](documentation/font-lato.png) 
+[Lato](https://fonts.google.com/specimen/Lato?query=Lato)
+was chosen for all content where the user can either directly see the content of a post and give feedback to it (show build post and future content requests) and the navbar items to make them stand out to the user and indicate that this is their main content to interact with. The font was chosen as it is simple yet it fits the content and pc builds, therefore it stays in line with the website's styling.
+- ![Robotoc font image](documentation/font-roboto.png) 
+[Roboto](https://fonts.google.com/specimen/Roboto?query=Roboto)
+was used for buttons and links that are not directly related to editing content, yet still show the user that they can do something "different" when interacting with it. It is again a simple font that many pc related websites use. 
+- Sans Serif was chosen as a backup font, in case for any reason the main font isn't being imported into the site correctly.
 
 
 ### Final Look
@@ -208,16 +220,47 @@ The color palette was created by using the [coolors](https://coolors.co/) websit
 
 Index Page:
 
-<img src="x" width="90%" alt="Desktop Index Page">
+<img src="documentation/final-look/final-look-index-desktop.png" width="90%" alt="Desktop Index Page">
 
- Page:
+Show Build Page:
 
-<img src="x" width="90%" alt="Desktop Index Page">
+<img src="documentation/final-look/final-look-show-desktop.png" width="90%" alt="Desktop Show Build Page">
 
+Create Build Page:
+
+<img src="documentation/final-look/final-look-create-desktop.png" width="90%" alt="Desktop Create Build Page">
+
+Edit Build Page:
+
+<img src="documentation/final-look/final-look-edit-desktop.png" width="90%" alt="Desktop Edit Build Page">
+
+Delete Build Page:
+
+<img src="documentation/final-look/final-look-delete-desktop.png" width="90%" alt="Desktop Delete Build Page">
+
+Future Content Page:
+
+<img src="documentation/final-look/final-look-future-desktop.png" width="90%" alt="Desktop Future Content Page">
+
+Search Page:
+
+<img src="documentation/final-look/final-look-search-desktop.png" width="90%" alt="Desktop Search Page">
+
+Login Page:
+
+<img src="documentation/final-look/final-look-login-desktop.png" width="90%" alt="Desktop Login Page">
+
+Sign-Up Page:
+
+<img src="documentation/final-look/final-look-sign-up-desktop.png" width="90%" alt="Desktop Sign-Up Page">
+
+Logout Page:
+
+<img src="documentation/final-look/final-look-logout-desktop.png" width="90%" alt="Desktop Logout Page">
 
 404 Page:
 
-<img src="x" width="90%" alt="Desktop Index Page">
+<img src="documentation/final-look/final-look-404-desktop.png" width="90%" alt="Desktop 404 Page">
 
 </details>
 
@@ -226,17 +269,47 @@ Index Page:
 
 Index Page:
 
-<img src="x" width="50%" alt="Mobile Index Page">
+<img src="documentation/final-look/final-look-index-mobile.png" width="50%" alt="Mobile Index Page">
 
+Show Build Page:
 
- Page:
+<img src="documentation/final-look/final-look-show-mobile.png" width="50%" alt="Mobile Show Build Page">
 
-<img src="x" width="50%" alt="Mobile Index Page">
+Create Build Page:
 
+<img src="documentation/final-look/final-look-create-mobile.png" width="50%" alt="Mobile Create Build Page">
+
+Edit Build Page:
+
+<img src="documentation/final-look/final-look-edit-mobile.png" width="50%" alt="Mobile Edit Build Page">
+
+Delete Build Page:
+
+<img src="documentation/final-look/final-look-delete-mobile.png" width="50%" alt="Mobile Delete Build Page">
+
+Future Content Page:
+
+<img src="documentation/final-look/final-look-future-mobile.png" width="50%" alt="Mobile Future Content Page">
+
+Search Page:
+
+<img src="documentation/final-look/final-look-search-mobile.png" width="50%" alt="Mobile Search Page">
+
+Login Page:
+
+<img src="documentation/final-look/final-look-login-mobile.png" width="50%" alt="Mobile Login Page">
+
+Sign-Up Page:
+
+<img src="documentation/final-look/final-look-sign-up-mobile.png" width="50%" alt="Mobile Sign-Up Page">
+
+Logout Page:
+
+<img src="documentation/final-look/final-look-logout-mobile.png" width="50%" alt="Mobile Logout Page">
 
 404 Page:
 
-<img src="x" width="50%" alt="Mobile Index Page">
+<img src="documentation/final-look/final-look-404-mobile.png" width="50%" alt="Mobile 404 Page">
 
 </details>
 
