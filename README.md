@@ -315,28 +315,230 @@ Logout Page:
 
 ## FEATURES
 
+All pages are responsive, if content can be interacted with the cursor will become a pointer . Other things they have the following in common:
 
-All pages have the following in common:
 #### Navbar
-<img src="x" width="50%" alt="x">
+
+Desktop:
+
+<img src="documentation/features/navbar-desktop.png" width="50%" alt="desktop navbar">
+
+- All pages have a navbar fixed at the top of the page.
+- This shows the title which is selectable and redirects the user to the landing page.
+- It also show the main menu items which when hovering have a lighter backdrop and the page you are on is also in a lighter color. This is done to indicate to the user that these things can be selected and on which page thei are.
+- Depending if you are logged in or logged out logout, login or sign-up sections appear in the navbar.
+
+Mobile:
+
+<img src="documentation/features/navbar-mobile-1.png" width="30%" alt="mobille navbar image 1"> <img src="documentation/features/navbar-mobile-2.png" width="30%" alt="mobille navbar image 2">
+
+- When the user is on a mobile device or another smaller screen size the navbar collapses and shows a hamburger menu.
+- The user can hence consume more of the content of the body.
+- When the menu icon is clicked the whole menu can be seen and the user can select one.
+
 
 #### Footer
-<img src="x" width="50%" alt="x">
 
+<img src="documentation/features/footer.png" width="50%" alt="footer">
+
+- All pages have a fixed footer at the bottom of the page.
+- The footer has information about the developer.
+- There are also various social media links to select. These will redirect the user in a different tab to the social media page.
+
+
+#### Success Messga
+<img src="documentation/features/succcess-message.png" width="50%" alt="Success Message">
+
+- Whenever there are features through which you can submit an action (e.g. login, create build post, delete comment) a success message is shown on the lower side of the screen.
+- Selecting the "x" will close the message, otherwise it will be layered on top of the other content.
+- Through this the user will be informed that their action was successful.
 
 
 ### Index Page
-![Index Content](x)
+#### Banner
+![Banner logged out Content](documentation/features/banner-logout.png)
+![Banner logged in Content](documentation/features/banner-login.png)
 
-...
+- The banner is made up of a hero image which is brightened so the dark text is easier to read.
+- The hero image is of a pc build to perfectly fit to what this website is about.
+- When the user is logged out, there are two buttons to either sign-in or create an account. Both buttons have a hover effect.
+- When the user is logged in these buttons disappear.
 
+#### Manage posts
+![Manage post Content](documentation/features/manage-div.png)
+![Manage post button Content](documentation/features/btn-hover.png)
+
+- Two buttons are shown below the banner. The user can select them and either choose to create a build post or search through them via tags.
+- Both buttons have a hover effect to indicate to the user that they can be interacted with.
+
+#### Build post list
+![Build post Content](documentation/features/build-list.png)
+
+![Build post hover Content](documentation/features/card-hover.png)
+
+- The build post are previewed with an image, the title, the tags, the author, the created time and the number of likes.
+- There is a maximum number of posts being shown per page which is 8.
+- When hovering a post the content slightly lowers itself and gets a bit darker. This indicates to the user that it is interactable and when the user selects one post they will be redirected to the post.
+
+#### Pagination
+![Pagination Content](documentation/features/pagination-index.png)
+
+- The landing page, the future content page and the comments themselves have a pagination.
+- If a certain limit of posts (e.g.: 8) is exceeded the user can only see the maximal number of posts on each page. They can select to go to later-, previous-, the first- and the last page.
+- This is done to not overwhelm the user with content and with a very long page.
+
+### Show build post
+#### Build post contend
+![Build post Content](documentation/features/build-content.png)
+
+- After selection a build post the user is redirected to the full post.
+- The title, the author, the creation and updated time is shown on top. Below the build image is shown, if the user does not select one when posting a default image will be selected. Below this a text from the user as well as information about when it was build and how much it costs is shown.
+- The background is colored in line with how the posts are shown on the landing page. Moreover, an easy to read font size was used. This is done to make it as easy as possible for the reader to consume.
+
+#### Buttons on own post
+![Buttons on own post](documentation/features/post-edit.png)
+
+- When a user is on their own post they have the possibility to either edit or delete their own post.
+- The buttons are styled distincctive so the user know that they can do something important with them. Both have a hover effect as well.
+
+##### Edit post
+![Edit post](documentation/features/build-edit.png)
+
+- When selecting the edit post button the user will be forwarded to an edit page that looks nearly identical to the create a build post page (more on that below). The form field are filled in with the posts information & the button says edit post.
+- This is done so that the user will use a familiar form as they already know it when they created the post in the first place.
+
+##### Delete post
+![Delete post](documentation/features/build-delete.png)
+
+- When selection the delete post button the user will be forwarded to a deletion page. This way the user has to confirm the deletion and cannot just delete by one singular click.
+- The heading and the red button indicate that content will be lost once it is deleted.
+
+#### Likes
+![Like logged out Content](documentation/features/like-logout.png)
+
+- Below the build post content a number of likes is shown.
+- If the user is logged out a hint message is shown that in order to like the post one needs to be signed in/ signed up. The links have a hover efffect so the user knows that they can interact with it.
+
+![Like logged in Content](documentation/features/like-login.png)
+
+- If the user is logged in they can like or unlike the post
+
+#### Comments
+![Comments Content](documentation/features/comment.png)
+
+- Approved comments are shown below the post.
+- Each comment is in a bubble, standing out through different coloring.
+- The comment author, when the comment was created and the comment content is displayed.
+
+##### Comment form
+![Comment Form logged out Content](documentation/features/comment-logout.png)
+
+- When the user is not logged in they cannot post a comment.
+- A hint for how to post a comment is displayed to the user.
+- On the top right of the comments a counter for how many comments are approved for the post is shown.
+
+
+![Comment Form logged in Content](documentation/features/comment-login.png)
+
+- When the user is logged in a form appears for the user to use and add a comment.
+- The button has a hover effect to indicate an action.
+
+##### Own comment
+![Waiting for approval Content](documentation/features/comment-approval.png)
+
+- After creating a comment the comment will be shown only to the logged in author.
+- A message that it is waiting for approval will be shown.
+
+![Own comment Content](documentation/features/comment-own.png)
+
+- When being logged in the user can edit and or delete their post.
+- Both buttons again have distinct coloring to indicate an acction.
+
+![Edit comment Content](documentation/features/comment-edit.png)
+
+- When the edit button is selected the comment content will be put into the form above it again.
+- The comment creation button is now an update bottom
+
+![Delete Content](documentation/features/comment-delete.png)
+
+- When the delete button is selected a deletion pop-up is shown.
+- This is again to confirm the deletion and give the user the chance to return from this action.
+- As a comment is not as significant as a post only a pop-up modal is used.
+
+### Create a build post page
+![Create build post Content](documentation/features/create-login.png)
+![Time form Content](documentation/features/create-time.png)
+
+- When the user is logged in they will see a form to fill in in order to create a post.
+- All fields are necessary. However, if there is a problem with the image a default image will be used.
+- After creating them they need to be approved via the admin panel. For internal communication there also is an "in progress" status. Yet this is only for the admin owner to indicate they already looked at the post. More on this below.
+- When selection the year build field a calendar to choose from appears.
+
+![Create build post logged out Content](documentation/features/create-logout.png)
+
+- When the user is logged out they cannot create a post.
+- A hint is shown to log in or create an account in order to do so.
+
+### Search build post via tags
+![Search builds via tags - Tag Content](documentation/features/search-tags.png)
+
+- On the "Search builds via tags"-page there is a section with various buttons.
+- A button to give the option to create a build post.
+- Many buttons with the tags. When selection the ALL Button all posts will be listed.
+
+![Search builds via tags - posts Content](documentation/features/search-builds.png)
+
+- When selection a tag button only posts according to the tag-name will be listed
+- The selected tag button is enlarged to indicate which tag is selected.
+- The build title and tags are shown for each post.
+
+### Future content page
+![Future content - logged out Content](documentation/features/future-logout.png)
+
+- When the user is logged out they cannot make a request for possible future content.
+- There is again a hint to log in or create an account.
+
+![Future content - logged in Content](documentation/features/future-login.png)
+
+- When the user is logged in a form to submit a request is shown.
+- All fields are required and can be submitted via a button.
+
+![Future content approved request Content](documentation/features/future-login.png)
+
+- When a future content request is approved the request will be listed below the form.
+- A number of approved requests is shown as well.
+- Through this users are informed about future features of the website. If the user doesn't want their appproved request to be public the can write it in the form and they will receive an information via mail that their request is approved. This is done manual by the admin through the contact-mail.
+
+### Sign-Up page
+![Sign up Content](documentation/features/sign-up.png)
+
+- The user needs to enter a unique username, an e-mail and a password according to the rules. The same password needs to be confirmed for authentication.
+- There is also the information to be redirected to the login page, in case the user misclicked.
+
+### Login page
+![Login Content](documentation/features/login.png)
+
+- The user can sign-in via entering the username and a password in order to use all features of the page as mentioned above.
+- There is also the information to be redirected to the sign-up page, in case the user misclicked.
+
+### Logout page
+![Logout Content](documentation/features/logout.png)
+
+- When being logged in the user can logout by selecting the logout menu item.
+- The user has to confirm that they want to be logged out.
 
 ### 404 Page
-![404 Page](x)
+![404 Page](documentation/features/404.png)
 
+- When the user enters a page name that does not exist the simple 404 page is shown.
+- A button to redirect the user to the landing page is on this page as well. The button has a hover effect to indicate an action.
 
-### Future Content Page
-
+### Admin Panel
+- The superuser can approve posts, request and comments in the admin panel.
+- The slug is also auto create in the panel.
+- The tags will be selected by the super user as they are more knowing on pc builds and what are good tags compared to the normal user.
+- In case there will me more than one admins in the future there are three status for build posts: Draft, In Progress, Approved.
+- This is for internal communication that it is on progress by an admin and doesn't need to be looked at, as someone is already working on it.
 
 ## TESTING
 ### Accessibility
@@ -504,6 +706,8 @@ Sign-In Page:
 
 ### W3C Validators
 #### HTML
+All testing was done via direct input of the code instead of entering the URL, as I wanted to see immediately if errors were fixed.
+
 There were some errors shown in the W3C Markup Validator which I was able to fix like errors with the alpine.js. Here are all the W3C results with minor warnings and tips, which will be looked at when time resource free themselves:
 
 <details>
@@ -557,6 +761,8 @@ Sign-Up Page
 
 
 #### CSS
+All testing was done via direct input of the code instead of entering the URL, as I wanted to see immediately if errors were fixed.
+
 No errors were returned for the CSS stylesheet from the W3C CSS Validator:
 
 <img src="documentation/validators/html-val-CSS.png" alt="W3C CSS validator" width=60%>
