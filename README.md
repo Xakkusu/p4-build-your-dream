@@ -503,7 +503,7 @@ Mobile:
 - When the user is logged in a form to submit a request is shown.
 - All fields are required and can be submitted via a button.
 
-![Future content approved request Content](documentation/features/future-login.png)
+![Future content approved request Content](documentation/features/future-request.png)
 
 - When a future content request is approved the request will be listed below the form.
 - A number of approved requests is shown as well.
