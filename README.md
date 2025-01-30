@@ -950,12 +950,32 @@ Google dev tools was used to check responsiveness.
 
 
 ### Fixed Bugs
-1. 
+1. I had a lot of problems with the deployment on Heroku and the way my settings and env file were set up:
+    > The first time it was set up wrongly in my settings.py and I had important code commentet out. This cloudinary setup error was easily corrected.
+    > The second time I had many fix commits as my static files were not accepted when uploading. A lot of tries myself, help from Slack and other students did not work. The tutor team gave me advice that I thought I already used with my STATIC_ROOTS, STATICFILES_STORAGE, whitenoise and my env.py, when I implemented that it finally worked. However, I still don't know where my mistake was but since I could not find it out while going through my commits, I'm guessing there was a spelling error in my env file.
+    > My cloudinary files where somehow not able to be deployed on Heroku. After a lot of tries (and waaaay to many commits) I changed the way it was set-up in my env.py as well in settings.py as the API and key was correctly in Heroku, so the problem lied in accessing everything correctly in those files.
 
-2.  
+2.  My templates were not correctly displayed so I had to set up my Templates's DIRS differently in settings.py than what we were thought in our class. I used this until finishing my project, yet I am still wondering if I just made a simple logical spelling mistake when it did not work.
 
 
-3. 
+3. The way I first set up my Create Build Post class in views.py did not work they way I thought it should (as in did not work at all ^^). I commented the old class out until I finally deleted it one week before completion. I solved this by using the following tutorial as another student recommmended me [Dee Mc](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) playlist and especially her videos about creating, editing and deleting posts. This greatly helped me to apply those features on my page and see how just blindly adding code that I thought would work from instructions I read online doesn't make anysense if I do not understand what I am doing myself.
+
+4. My form/view for future content requests did not work at all. At first I struggled a lot with getting it displayed and then the data from the form were not posted to the database. As I tried to do this via using a class in views.py I looked ate other ways to create this, that's how I got the idea to use a method instead as it made more sense in the context. I wired the urls up correctly and got the data to be saved to the database this way easier. In the end my code itself wasn't that much different just the outside "package" was better for the type of code I was writing.
+
+5. Deleting the build load was creating an error before I even implemented the according code to my template through being wrongly set up in views.py and urls.py. As this was also my first time to use Django's mixins I kinda struggled to get that correct at the first try as well. Also when I first saw how others solved the deletion problem/how it was done in the playlist I watched I noticed that I named a lot of the fiels in my models very differntly from the teaching materials so I often got confused this way. As soon as I got over these hurdles and wired it up correctly the delete build post feature worked without issues.
+
+6. When implementing the tags via these two ([1](https://www.youtube.com/watch?v=213swbH8j_o), [2](https://www.youtube.com/watch?v=Wy3yrZ-bbvE&t=41s)) videos I encountered a few problems with my builds view.py. As I created my main list functionality through classes. In order to use the tags on the index page I had to made the build post list into a method. This was in my opinion the easiest way to overcome this as I already changed classes to methods before & kinda knew what I had to do this way.
+
+7. Even though I thought I correctly followed BugBytes [tutorial](https://www.youtube.com/watch?v=Wy3yrZ-bbvE&t=41s) on how to correctly set up my search via tags page, I missed some steps and blindly followed his instructions without realising that my project set-up was different from his so some things needed to be adjusted in order to see build post from search tags page. I had to wire it up differently in the urls.py to fit my own project.
+
+8. My search page and singular build post page did not work well together. When I selected a build post from my search page I got an error. So I had to add "search/" in front of all the pages in urls.py to wire them up correctly and still be able to see my search page and when I chose a build post from this page. As I noticed that in the middle of implementing my like feature that commit is kinda messed up with more than just that correction.
+
+9. They way pagination was thaught in our classes didn't really work with all additional functionality features and was displayed wrong (didn't limit post number and did not add second page) on the index page. After some research I found this [post](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django) on Stackoverflow to solve this problem and limit the amount of posts shown to 8. I later adjusted all other pagination features to the way it was done in the post.
+
+10. When I wanted to edit my comment I created a new one as the JavaScript code had a mistake in it and did not use the upload button but still the create comment button. This was easily fixed, by changing the JavaScript code, however I did this in my staticfiles first and hence had to correct the same mistake twice to focus the correct element and change it to upload. Moreover, I implemented a approve field to the comment model as the comment model did not work as intended with the status field. This also made it possible to show if a comment is waiting for approval.
+
+11. Using alpine.js for the first time caused quite some issues with the validators. Besides the normal validator errors that I correcty, but do not see as "bugs", the alpine.js problems should be mentioned under bugs. Even though it worked on the surface W3C has problems with some markup languagse such as alpine.js. As many developers before me had the same problems they came up with a way to add prefixes that are recognized by W3C. I read through the following [github discussion](https://github.com/alpinejs/alpine/discussions/3397) by icaliman and used the solution there to pass the W3C validator while using alpine.js
+
 
 ### Known Bugs
 
