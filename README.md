@@ -540,6 +540,14 @@ Mobile:
 - In case there will me more than one admins in the future there are three status for build posts: Draft, In Progress, Approved.
 - This is for internal communication that it is on progress by an admin and doesn't need to be looked at, as someone is already working on it.
 
+### Future Features.
+The following user stories should be implemted in the next run:
+
+![Future features](documentation/future-feature.png)
+
+Meaning they were not in the scope of this project yet "nice to haves" if I should work on this project again
+
+
 ## TESTING
 ### Accessibility
 #### Lighthouse Testing
@@ -978,7 +986,7 @@ Google dev tools was used to check responsiveness.
 
 
 ### Known Bugs
-
+I could not figured out how to implemented the approoval process after editing a build post. If I should ever work on this project again this would be implemented after the user stories for the next run are implemented as well.
 
 ## TECHNOLOGIES USED
 ### Languages
