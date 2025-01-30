@@ -74,7 +74,7 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 
 
 #### Returning User Goals
-- As a user I can rate the post and it's content so that how I thought about the build is represented.
+- As a user I can like the post and it's content so that how I thought about the build is represented.
 - As a user I can modify or delete my comment on a post so that I can correct my opinion or delete my input from the post.
 - As a user I can modify or delete my posts so that I can correct my content or delete it.
 - As a user I can comment on a post so that I can give my opinion on the post.
@@ -85,7 +85,7 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - As a user I can create tags on my posts and comments so that it can be searched by them.
 - As a user I can search through the posts so that can find what I want to.
 - As a user I can view all tags so that I can browse through them.
-- As a user I can indicate the status of my input so that I knows if those things will be implemented one day or not.
+- As a user I can indicate the status of my input so that I know if those things will be implemented one day or not.
 - As a user I can give input/feedback so that in the future there will be new features on the website.
 > additionaly the returning user goals apply here as well
 
@@ -470,7 +470,7 @@ Mobile:
 ![Time form Content](documentation/features/create-time.png)
 
 - When the user is logged in they will see a form to fill in in order to create a post.
-- All fields are necessary. However, if there is a problem with the image a default image will be used.
+- All fields are necessary. However, if there is a problem with the image a default image will be used so it looks like it is necessary but can be left out. Since users should use their own image it is made this way.
 - After creating them they need to be approved via the admin panel. For internal communication there also is an "in progress" status. Yet this is only for the admin owner to indicate they already looked at the post. More on this below.
 - When selection the year build field a calendar to choose from appears.
 
@@ -872,6 +872,8 @@ views.py:
 </details>
 
 ### Form Testing
+All forms have been successfully tested if it would submit with missing or wrong data input. Moreover, the [Django AllAuth](https://docs.allauth.org/en/latest/) library made this very easy for all sign-in, sign-up and logout related content.
+
 
 ### Links Testing
 - All internal links are working and redirecting the user to the pages they are meant to redirect them to. 
@@ -885,25 +887,66 @@ The website was successfully tested on the following browsers:
 - Safari
 - Microsoft Edge
 
+
 ### Device Testing
 - This website was viewed and tested on various devices such as smartphones (Iphone X, Samsung Galaxy S20, Iphone 13, Huawei P40 Pro+), laptops and desktops to guarantee that it is responsive for several screen sizes. Full successful testing was performed on all of the devices.
 
+Google dev tools was used to check responsiveness.
 
-- The following websites, besides google dev tools, were used to check responsiveness:
-    - [Am I Responsive - Index Page](https://ui.dev/amiresponsive?url=https://xakkusu.github.io/)
-    - [Am I Responsive -  Page](x)
-    - [Am I Responsive - 404 Page](hx)
-    - [Responsinator - Index Page](x)
-    - [Responsinator - Page](x)
-    - [Responsinator - 404 Page](x)
 
 ### User Stories Testing
 #### First Time User Goals
+- As a user I can read about pc builds.
+
+    As long as other users at least uploaded one post the user can read about pc builds.
+- As a user I can register an account so that post content, comment and give feedback.
+
+    Via the sign-up link in the navbar or throughout the website's content the user cac registrate and use all functionality of the website.
+- As a user I can create a post so that I can show off my build for other users to enjoy.
+
+    When the user is signed up they can upload their own build post.
+- As a user I can use any device I want and the design will respond accordingly so that I am not bound to use only one device/browser.
+
+    The user can use the website whenever they like on whichever device they like, as long as they have internet connection.
+- As a user I can naviagte through the main topics so that I can jump to whichever topic I want from one menu bar.
+
+    Through the navbar the user cann jump from topic to topic.
 
 
 #### Returning User Goals
+- As a user I can like the post and it's content so that how I thought about the build is represented.
+
+    There is a like button a user can use when they are logged in which will show how often someone liked the post.
+- As a user I can modify or delete my comment on a post so that I can correct my opinion or delete my input from the post.
+
+    When being signed in the user can edit and delete their own comment.
+- As a user I can modify or delete my posts so that I can correct my content or delete it.
+
+    When being signed in the user can edit and delete their own build post.
+- As a user I can comment on a post so that I can give my opinion on the post.
+
+    When being signed in the user can create a comment on a post.
+- As a user I can see comments on a post so that can read what other people have to say about the post.
+
+    When comments are approved the user can see them below the build post.
+
 
 #### Frequent User Goals
+- As a user I can create tags on my posts and comments so that it can be searched by them.
+
+    As the user might lack professional knowledge the tags will be picked by the admin, yet they are chosen based on the post. So if good keywords are used they will be used as tags.
+- As a user I can search through the posts so that can find what I want to.
+
+    On the search page all used tags are shown and the user can select one and see all related build posts.
+- As a user I can view all tags so that I can browse through them.
+
+    On the search page all used tags are shown and the user can select one and see all related build posts, all tags can be seleced as well.
+- As a user I can indicate the status of my input so that I know if those things will be implemented one day or not.
+
+    Approved requests are shown on the future content page for all users to see.
+- As a user I can give input/feedback so that in the future there will be new features on the website.
+
+    On the future content page a signed-in user can give input/feedback for future features.
 
 
 ### Fixed Bugs
