@@ -23,7 +23,7 @@ def build_post_list(request):
 
     paginator = Paginator(BuildPost.objects.
                           filter(status_build_post=2).
-                          order_by("created_on"), 8)
+                          order_by("-created_on"), 8)
 
     page_number = request.GET.get('page')
 
