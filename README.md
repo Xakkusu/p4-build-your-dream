@@ -985,6 +985,7 @@ Google dev tools was used to check responsiveness.
 11. Using alpine.js for the first time caused quite some issues with the validators. Besides the normal validator errors that I correcty, but do not see as "bugs", the alpine.js problems should be mentioned under bugs. Even though it worked on the surface W3C has problems with some markup languagse such as alpine.js. As many developers before me had the same problems they came up with a way to add prefixes that are recognized by W3C. I read through the following [github discussion](https://github.com/alpinejs/alpine/discussions/3397) by icaliman and used the solution there to pass the W3C validator while using alpine.js
 
 
+
 ### Known Bugs
 I could not figured out how to implemented the approoval process after editing a build post. If I should ever work on this project again this would be implemented after the user stories for the next run are implemented as well.
 
@@ -993,10 +994,11 @@ I could not figured out how to implemented the approoval process after editing a
 - HTML
 - CSS
 - JavaScript
+- Python
 
 ### Frameworks, Libraries and Programs used
 - [Balsamiq](https://balsamiq.com/wireframes/)- Used to create wireframes.
-- [GitHub](https://GitHub.com/) - Used for version control and hosting.
+- [GitHub](https://GitHub.com/) - Used for version control.
 - [Gitpod](https://gitpod.io/) - IDE to develop the website.
 - [Google Fonts](https://fonts.google.com/) - Used to import  fonts used on the website.
 - [Google Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools)- Used for troubleshooting, debugging, inspecting page's elements, testing responsiveness and styling elements.
@@ -1005,35 +1007,78 @@ I could not figured out how to implemented the approoval process after editing a
 - [W3C HTML Markup Validator](https://validator.w3.org/) Used to validate HTML code.
 - [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) Used to validate CSS code.
 - [JSHint](https://jshint.com/) Used to test all Javascript code.
-- [Am I Responsive](https://ui.dev/amiresponsive) Used to test responsiveness.
-- [Responsinator](http://www.responsinator.com/) Used to verify responsiveness especially usage for mobile devices.
+- [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/#) - Used to validate the Python code.
+- [FontAwesome](https://fontawesome.com/) - Used for various icons on the website.
+- [pexels](https://www.pexels.com/de-de/) - Used for free images.
+- [Favicon.io](https://favicon.io/) - Used for website's favicon.
+- [Django - Python framework](https://www.djangoproject.com/) - Used to create 
+- [Heroku](https://www.heroku.com/) - Used to deploy the project.
+- [Bootstrap - CSS framework](https://getbootstrap.com/) - Used to style HTML elements that I did not style by myself.
+- [alpine.js](https://alpinejs.dev/) - Used to display all search tag related content on saerch build via tags page.
+- [django REST framework](https://www.django-rest-framework.org/#) - Used to return a serlialized list used for the tags which were later used for the search.
+- [django taggit](https://django-taggit.readthedocs.io/en/latest/index.html) - Used to use tags in an easy way for my model.
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Used to style the forms and control rendering behaviour.
+- [jQuery ui - Datepicker](https://jqueryui.com/datepicker/) - Used to pick year build from a calendar in the create build post form. 
+- [cloudinary](https://cloudinary.com/) - Used to was store uploaded images.
+- [Lucid Chart](https://www.lucidchart.com/pages/) - Used to create a ERD.
+- [PostgreSQL](https://www.postgresql.org/) - Used to store database.
 - Code Institute's Gitpod Template to generate IDE workspace.
 
 
 ## DEPLOYMENT
-The steps to deploy this project using GitHub pages were the following:
-1. Go to the Settings tab of your GitHub repository.
-2. On the left-hand sidebar, in the Code and automation section, select "Pages".
-3. Make sure to select the following:
-    - Source is set to 'Deploy from Branch'.
-    - Main branch is selected.
-    - Folder is set to / (root).
-4. Click Save next to /root.
-5. "Your GitHub Pages site is currently being built from the main branch." shows up.
-6. Go back to the Code tab. Wait a few minutes for the build to finish and refresh your repository where a Deployments section will show the deployed project.
+### PostgreSQL
+This project used [PostgreSQL](https://www.postgresql.org/) as its database:
+1. Submit your e-mail adress to [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/) that is used for all course related content.
+2. Create a database.
+3. Receive link to database via mail.
+4. Connect database to the project via env.py and settings.py files.
 
-The live link can be found here - [X](h)
+### Cloudinary
+This project used [cloudinary](https://cloudinary.com/) for the storage of uploaded images.
+1. Sign in on [cloudinary](https://cloudinary.com/).
+2. After verifying your account get Cloudinary cloud name, -key, -API secret and -url.
+3. Copy them through your project via the env.py and settings.py files.
 
-How to run the project locally:
+### Preparations
+Store all dependencies in requirements.txt file.
+
+### Heroku 
+This project was deployed using Code Institute's mock terminal for Heroku.
+1. Go on the [Heroku](https://dashboard.heroku.com/apps) website.
+2. Activate the Heroku Student pack.
+3. Choose the "Create new app" option on the dashboard.
+4. Give name "build-your-dream", select region and go on the "Create app" option.
+5. Go to the settings tab.
+6. Go on "Reveal Config Vars".
+7. Store all sensitive data:
+    - enter key CLOUDINARY_API_KEY and according value from env.py
+    - enter key CLOUDINARY_API_SECRET and according value from env.py
+    - enter key CLOUDINARY_CLOUD_NAME and according value from env.py
+    - enter key CLOUIDNARY_URL and according value from env.py
+    - enter key DATABASE_URL and according value from env.py
+    - enter key SECRET_KEY and according value from env.py
+8. Go to the deploy tab
+9. Select Github as the deployment method.
+10. Confirm the connection to github.
+11. Authorize correct repo to connect.
+12. Go on either "Enable Automatic" or on "Deploy Branch" to deploy the website.
+    - I selected "Deploy branch" while it is selected on main
+13. Go on "View" to see live project.
+14. On the live Website the program will start running automatically. If not, go on the "Run Program" button.
+
+
+The live link can be found here - [Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
+
+#### How to fork/clone the project locally on Github:
 
 Fork the repository:
 - Log in (or sign up) to Github.
-- Go to the repository for: Xakkusu/bioshock-quiz.
+- Go to the repository for: Xakkusu/p4-build-your-dream.
 - Click the Fork button in the top right corner.
 
-#### Clone repository:
+Clone repository:
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for: Xakkusu/bioshock-quiz.
+2. Go to the repository for: Xakkusu/p4-build-your-dream.
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
