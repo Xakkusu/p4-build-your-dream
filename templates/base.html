@@ -17,9 +17,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A website where one can upload a computer build and comment on them">
-    <meta name="keywords"
-        content="pc, build, pc-build, computer, social, tips, community">
-    <meta name="author" content="N.D.">
+    <meta name="keywords" content="pc, build, pc-build, computer, social, tips, community">
+    <meta name="author" content="Naomi Dax">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,7 +41,6 @@
     <!-- Use jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-
     <!-- Use JQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -62,7 +60,8 @@
         <!-- Navigation -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark text-white" id="header-bg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}"><span id="label-fw">build your dream</span></a>
+                <a class="navbar-brand" href="{% url 'home' %}" aria-label="Redirects user to the landing page"><span
+                        id="label-fw">build your dream</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -75,27 +74,30 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == search_build_tags_url %}active{% endif %}"
-                                aria-current="page" href="/search/" aria-label="Redirects user to the search via tags page">Search via tags</a>
+                                aria-current="page" href="/search/"
+                                aria-label="Redirects user to the search via tags page">Search via tags</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == create_build_post_url %}active{% endif %}"
-                                aria-current="page" href="/createbuildpost/" aria-label="Redirects user to the Create Build Post page">Upload your build!</a>
+                                aria-current="page" href="/createbuildpost/"
+                                aria-label="Redirects user to the Create Build Post page">Upload your build!</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == future_content_url %}active{% endif %}"
-                                aria-current="page" href="/future-content/" aria-label="Redirects user to the future-content page">Future Content</a>
+                                aria-current="page" href="/future-content/"
+                                aria-label="Redirects user to the future-content page">Future Content</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'account_logout' %}"><span
-                                    class="font-weight-bolder li-paddding-r" aria-label="Redirects user to the logout page">|</span> Logout</a>
+                                href="{% url 'account_logout' %}"><span class="font-weight-bolder li-paddding-r"
+                                    aria-label="Redirects user to the logout page">|</span> Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'account_signup' %}"><span
-                                    class="font-weight-bolder li-paddding-r" aria-label="Redirects user to the sign-up page">|</span> Register</a>
+                                href="{% url 'account_signup' %}"><span class="font-weight-bolder li-paddding-r"
+                                    aria-label="Redirects user to the sign-up page">|</span> Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"

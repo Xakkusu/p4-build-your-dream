@@ -13,7 +13,6 @@ from rest_framework.generics import ListAPIView
 from django.core.paginator import Paginator
 
 
-# Create your views here.
 def build_post_list(request):
     """
     Returns all published  build-posts and displays 8 posts
@@ -58,6 +57,8 @@ def search_build_tags_list(request):
 class BuildListAPIView (ListAPIView):
     """
     Returns a serlialized list used for the tags later on
+    Whole file was created with the help from this tutorial:
+    https://www.youtube.com/watch?v=Wy3yrZ-bbvE
     """
     queryset = BuildPost.objects.filter(status_build_post=2)
     serializer_class = BuildPostSerializer
@@ -100,7 +101,8 @@ def show_build_post(request, slug):
 
 def edit_comment(request, slug, comment_id):
     """
-    user can edit comment
+    user can edit comment, as lon as
+    its their own
     """
     if request.method == "POST":
         builds = BuildPost.objects.all()
@@ -123,7 +125,8 @@ def edit_comment(request, slug, comment_id):
 
 def delete_comment(request, slug, comment_id):
     """
-    user can delete their own comment
+    user can delete their own comment,
+    as long as it is their own
     """
     builds = BuildPost.objects.all()
     build = get_object_or_404(builds, slug=slug)

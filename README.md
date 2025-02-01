@@ -1,4 +1,7 @@
 # Build your Dream
+
+[Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
+
 Build your dream is an imaginary blog where users can share their own pc builds, find inspiration from other builds and interact with other pc-builders. Here everyone can see what is out there before, during and after building your own computer. 
 
 It is meant to be a place for people to exchange information and just show off their work. Hence the target audience are pc enthusiasts who want to present their own build with helpful information for future pc builders and for those future pc-builders to get inspired by others work.
@@ -8,7 +11,6 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 
 ![Build your dream screenshot](documentation/build-your-dream.png)
 
-[Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
 ## Contents
 - [SITE OWNER GOALS](#site-owner-goals)
@@ -98,34 +100,34 @@ Wireframes were produced using Balsamiq.
 
  <summary>Desktop Wireframes</summary>
 Index Page:
-<img src="documentation/wireframes/Index - Desktop.png" alt="Desktop Index Wireframe">
+<img src="documentation/wireframes/index-desktop.png" alt="Desktop Index Wireframe">
 
 Show Build Post Page:
-<img src="documentation/wireframes/Post - Desktop.png" alt="Desktop Show Build Post Wireframe">
+<img src="documentation/wireframes/post-desktop.png" alt="Desktop Show Build Post Wireframe">
 
 Add/Edit Build Post Page:
-<img src="documentation/wireframes/Add_Edit Post - Desktop.png" alt="Desktop Add/Edit Build Post Wireframe">
+<img src="documentation/wireframes/add-edit-post-desktop.png" alt="Desktop Add/Edit Build Post Wireframe">
 
 Delete Build Post Page:
-<img src="documentation/wireframes/Delete Post - Desktop.png" alt="Desktop Delete Build Post Wireframe">
+<img src="documentation/wireframes/delete-post-desktop.png" alt="Desktop Delete Build Post Wireframe">
 
 Search build via tags Page:
-<img src="documentation/wireframes/search - desktop.png" alt="Desktop Search build via tags Wireframe">
+<img src="documentation/wireframes/search-desktop.png" alt="Desktop Search build via tags Wireframe">
 
 Future Content Page:
-<img src="documentation/wireframes/Future Content - Desktop.png" alt="Desktop Future Content Wireframe">
+<img src="documentation/wireframes/future-content-desktop.png" alt="Desktop Future Content Wireframe">
 
 Sign-Up Page:
-<img src="documentation/wireframes/Sign-Up - Desktop.png" alt="Desktop Sign-Up Wireframe">
+<img src="documentation/wireframes/sign-up-desktop.png" alt="Desktop Sign-Up Wireframe">
 
 Login Page:
-<img src="documentation/wireframes/Login - Desktop.png" alt="Desktop Login Wireframe">
+<img src="documentation/wireframes/login-desktop.png" alt="Desktop Login Wireframe">
 
 Logout Page:
-<img src="documentation/wireframes/Logout - Desktop.png" alt="Desktop Logout Wireframe">
+<img src="documentation/wireframes/logout-desktop.png" alt="Desktop Logout Wireframe">
 
 404 Page:
-<img src="documentation/wireframes/404 - Desktop.png" alt="Desktop 404 Wireframe">
+<img src="documentation/wireframes/404-desktop.png" alt="Desktop 404 Wireframe">
 
  </details>
 
@@ -133,43 +135,43 @@ Logout Page:
     <summary>Mobile Wireframes</summary>
 Index Page:
 
-<img src="documentation/wireframes/Index - Mobile.png" alt="Mobile Index Wireframe" width="50%" >
+<img src="documentation/wireframes/index-mobile.png" alt="Mobile Index Wireframe" width="50%" >
 
 Show Build Post Page:
 
-<img src="documentation/wireframes/Post - Mobile.png" alt="Mobile Show Build Post Wireframe" width="50%" >
+<img src="documentation/wireframes/post-mobile.png" alt="Mobile Show Build Post Wireframe" width="50%" >
 
 Add/Edit Build Post Page:
 
-<img src="documentation/wireframes/Add_Edit Post - Mobile.png" alt="Mobile Add/Edit Build Post Wireframe" width="50%" >
+<img src="documentation/wireframes/add-edit-post-mobile.png" alt="Mobile Add/Edit Build Post Wireframe" width="50%" >
 
 Delete Build Post Page:
 
-<img src="documentation/wireframes/Delete Post - Mobile.png" alt="Mobile Delete Build Post Wireframe" width="50%" >
+<img src="documentation/wireframes/delete-post-mobile.png" alt="Mobile Delete Build Post Wireframe" width="50%" >
 
 Search build via tags Page:
 
-<img src="documentation/wireframes/search - mobile.png" alt="Mobile Search build via tags Wireframe" width="50%" >
+<img src="documentation/wireframes/search-mobile.png" alt="Mobile Search build via tags Wireframe" width="50%" >
 
 Future Content Page:
 
-<img src="documentation/wireframes/Future Content - Mobile.png" alt="Mobile Future Content Wireframe" width="50%" >
+<img src="documentation/wireframes/future-content-mobile.png" alt="Mobile Future Content Wireframe" width="50%" >
 
 Sign-Up Page:
 
-<img src="documentation/wireframes/Sign-Up - Mobile.png" alt="Mobile Sign-Up Wireframe" width="50%" >
+<img src="documentation/wireframes/sign-up-mobile.png" alt="Mobile Sign-Up Wireframe" width="50%" >
 
 Login Page:
 
-<img src="documentation/wireframes/Login - mobile.png" alt="Mobile Login Wireframe" width="50%" >
+<img src="documentation/wireframes/login-mobile.png" alt="Mobile Login Wireframe" width="50%" >
 
 Logout Page:
 
-<img src="documentation/wireframes/Logout - Mobile.png" alt="Mobile Logout Wireframe" width="50%" >
+<img src="documentation/wireframes/logout-mobile.png" alt="Mobile Logout Wireframe" width="50%" >
 
 404 Page:
 
-<img src="documentation/wireframes/404- Mobile.png" alt="Mobile 404 Wireframe" width="50%" >
+<img src="documentation/wireframes/404-mobile.png" alt="Mobile 404 Wireframe" width="50%" >
 
 </details>
 
@@ -208,9 +210,11 @@ The color palette was created by using the [coolors](https://coolors.co/) websit
 - As bootstrap styling devices were used throughout this website, the main fallback font where a native font stack is used which selects the best font-family for each OS and device, more on this [here](https://getbootstrap.com/docs/4.0/content/typography/).
 [Google Fonts](https://fonts.google.com/) was used for the following fonts:
 - ![Lato font image](documentation/font-lato.png) 
+
 [Lato](https://fonts.google.com/specimen/Lato?query=Lato)
 was chosen for all content where the user can either directly see the content of a post and give feedback to it (show build post and future content requests) and the navbar items to make them stand out to the user and indicate that this is their main content to interact with. The font was chosen as it is simple yet it fits the content and pc builds, therefore it stays in line with the website's styling.
 - ![Robotoc font image](documentation/font-roboto.png) 
+
 [Roboto](https://fonts.google.com/specimen/Roboto?query=Roboto)
 was used for buttons and links that are not directly related to editing content, yet still show the user that they can do something "different" when interacting with it. It is again a simple font that many pc related websites use. 
 - Sans Serif was chosen as a backup font, in case for any reason the main font isn't being imported into the site correctly.
@@ -775,7 +779,7 @@ All testing was done via direct input of the code instead of entering the URL, a
 
 No errors were returned for the CSS stylesheet from the W3C CSS Validator:
 
-<img src="documentation/validators/html-val-CSS.png" alt="W3C CSS validator" width=60%>
+<img src="documentation/validators/html-val-css.png" alt="W3C CSS validator" width=60%>
 
 
 ### JShint
@@ -784,14 +788,14 @@ No errors were returned for the CSS stylesheet from the W3C CSS Validator:
 <summary>comments.js</summary>
 No errors or warnings.
 
-<img src="documentation/js/JSHint-testing.png" alt="comments.js JSHint result">
+<img src="documentation/js/jshint-testing.png" alt="comments.js JSHint result">
 </details>
 
 <details>
-<summary>datepiker.js</summary>
+<summary>datepicker.js</summary>
 No errors or warnings.
 
-<img src="documentation/js/JSHint-testing-datepicker.png" alt="datepiker.js JSHint result">
+<img src="documentation/js/jshint-testing-datepicker.png" alt="datepicker.js JSHint result">
 </details>
 
 
@@ -880,6 +884,11 @@ views.py:
 
 
 </details>
+
+
+### Manual Testing
+#### Landing Page
+
 
 ### Form Testing
 All forms have been successfully tested if it would submit with missing or wrong data input. Moreover, the [Django AllAuth](https://docs.allauth.org/en/latest/) library made this very easy for all sign-in, sign-up and logout related content.
@@ -1025,6 +1034,7 @@ I could not figure out how to implement the approval process after editing a bui
 - [cloudinary](https://cloudinary.com/) - Used to was store uploaded images.
 - [Lucid Chart](https://www.lucidchart.com/pages/) - Used to create a ERD.
 - [PostgreSQL](https://www.postgresql.org/) - Used to store database.
+- [SWLite](https://www.sqlite.org/) - Used as a local database.
 - Code Institute's Gitpod Template to generate IDE workspace.
 
 
@@ -1073,6 +1083,8 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 The live link can be found here - [Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
 ### How to fork/clone the project locally on Github:
+> Need to install dependencies from requirements.txt
+
 Fork the repository:
 - Log in (or sign up) to Github.
 - Go to the repository for: Xakkusu/p4-build-your-dream.
