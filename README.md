@@ -1010,6 +1010,7 @@ I could not figured out how to implemented the approoval process after editing a
 - [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/#) - Used to validate the Python code.
 - [FontAwesome](https://fontawesome.com/) - Used for various icons on the website.
 - [pexels](https://www.pexels.com/de-de/) - Used for free images.
+- [unsplash](https://unsplash.com/de) - Used for free images.
 - [Favicon.io](https://favicon.io/) - Used for website's favicon.
 - [Django - Python framework](https://www.djangoproject.com/) - Used to create 
 - [Heroku](https://www.heroku.com/) - Used to deploy the project.
@@ -1069,8 +1070,7 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 The live link can be found here - [Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
-#### How to fork/clone the project locally on Github:
-
+### How to fork/clone the project locally on Github:
 Fork the repository:
 - Log in (or sign up) to Github.
 - Go to the repository for: Xakkusu/p4-build-your-dream.
@@ -1087,12 +1087,22 @@ Clone repository:
 
 ## CREDITS
 ### Media
-The following images were gratefully used:
-- [X Image](x) - Wallpapaerflare
+All images on this website were taken from pexels.com & unsplash.com, thanks to the talented photographers:
+- [Banner image](https://unsplash.com/de/fotos/nahaufnahme-eines-computers-W_DCDWCL3Wo) - Anthony Roberts
+- [Deafullt build post image](https://www.pexels.com/de-de/foto/weisser-und-schwarzer-computerlufter-2225617/) - Martin Lopez
+- [Build post image](https://www.pexels.com/de-de/foto/weisser-und-schwarzer-computerlufter-2225617/) - Martin Lopez
+- [Build post image](https://www.pexels.com/de-de/foto/komponente-der-computersystemeinheit-2225616/) - Martin Lopez
+- [Build post image](https://www.pexels.com/de-de/foto/schwarzes-und-rotes-computer-motherboard-2399840/) - 洋榤 郭
+- [Build post image](https://www.pexels.com/de-de/foto/neonlicht-lautsprecher-auf-dem-tisch-593093/) - gelver redfield
+- [Build post image](https://www.pexels.com/de-de/foto/schwarzes-computer-motherboard-159235/) - Pixabay
+- [Build post image](https://www.pexels.com/de-de/foto/technologie-computer-ventilator-hardware-23439696/) - ERod Photos
+- [Build post image](https://www.pexels.com/de-de/foto/beleuchtung-lichter-glas-computer-6913135/) - Nathan b Caldeira
+- [Build post image](https://www.pexels.com/de-de/foto/technologie-computer-innere-interior-15109653/) - Ivelin Donchev
+- [Build post image](https://www.pexels.com/de-de/foto/technologie-computer-pc-raubtier-19012044/) - Matheus Bertelli
 
 
 ### Resources
-- Tutorials from Code Institute's lessons that we learned in the course of our diploma-education used to understand the basic concepts of JavaScript. 
+- Tutorials from Code Institute's lessons that we learned in the course of our diploma-education used to understand the basic concepts of a full stack project. 
 
 - [Stack Overflow](https://stackoverflow.co/)
 
@@ -1100,8 +1110,31 @@ The following images were gratefully used:
 
 - [W3Schools](https://www.w3schools.com/)
 
-- 
+- To understand various functionalities of creating a blog webiste I used Dee Mc's playllist [Django Recipe Sharing Tutorial](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy):
+    1. I wanted an additional fallback in case my own code to only delete once own posts when the user is logged in I also implemented a 403.html page by following the [12. Delete Recipe](https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This video was also used to help me understand an write additional deletion code in my view and a deletion page.
+    2. To understand how to create a post I used her [9. Create a Recipe](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to add a blog post as a loggged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.
+    3. To understand how to edit a post I used her [13. Edit Recipe](https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to edit a blog post as a loggged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.#
+
+- To understand how to use as taggin system for the posts I used the tutorial [Django-Taggit - Adding Tags to Django Models](https://www.youtube.com/watch?v=213swbH8j_o) by Bugbytes to use a tag-system in a simple way. Through his help I was able to implement a tag model and use the tags to be searched by as well as be shown on the index page.
+
+- To understand how to set up a seach page to search post via tags I again relied on BugBytes work by using the [Django-Taggit - REST Framework integration & tag filtering with Alpine.js](https://www.youtube.com/watch?v=Wy3yrZ-bbvE) video. This introduced me to the alpine.js, the REST framework and its serializers to filter the tags and hence the posts according to it. Even though this throw me into some difficulties with my validation at first, it was really rewardung to use new frameworks on my own and be able to overcome challenges.
+
+- To understand how to show my success message correctly I relied on the [django documentation](https://docs.djangoproject.com/en/4.0/ref/contrib/messages/) itself to understand the basic. However after still facing some issues I thes stack overflow question [1, ](https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views) [2](https://stackoverflow.com/questions/26897050/django-success-url-using-kwargs) & [3](https://stackoverflow.com/questions/24822509/%20%20%20%20%20%20%20%20success-message-in-deleteview-not-shown) and their answers was used to successfully display the messages.
+
+- To understand how to implement a like function to my project I got input and help from [Flo](https://github.com/FlorianS4) with whom I was able to bounce ideas back and forth & when I got stuck he helped me a lot. He explained me the way he did it in detail and I was ablle to implement a similar way of liking posts.
+
+- To understand how to pass the W3C validator with alpine.js markup language I used icalilim's [solution](https://github.com/alpinejs/alpine/discussions/3397) to overcome this problem and use prefixes that are acccepted by the validator.
+
+- To style my cards in a visualy pleasing way I used Oz Coruhlu's [styling code](https://codepen.io/creativemanner/pen/NWrNWrd) and adapted it to my project. So the cards are shown in a nice responsive way. I decided to match my other styling tot he card's sytlingg so every page fits better together.
+
+- To understand my pagination better and get a good fitting pagination system implemented on my project I used [this solution](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django).
+
+- I used code insitute's templates as they were introduced in the "I code therefore I blog" lessons of the blog and adapted them if necessary.
 
 
 ## ACKNOWLEDGEMENTS
+- My mentor Iuliia Konovalova for their guidance and support.
 - Code Institute for informative course material.
+- The Code Institute's Slack community for suppor.
+- All students with whom I was able to exchange ideas for our projects. A special thank goes to Flo as mentioned in my credits.
+- My cats 
