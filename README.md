@@ -887,8 +887,108 @@ views.py:
 
 
 ### Manual Testing
-#### Landing Page
+#### Navbar & Footer
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| Navbar     |                        |                  |      |             |
+| 1           | Click on the title | Be redirected to the landing page | Y |          |
+| 2           | Click on menu items | Be redirected to the according page | Y |          |
+| 3           | Seing different content in navbar according to logged user status | When logged out seeing sign-up and login item & when logged in seeing logout item  | Y |          |
+| Footer     |                        |                  |      |             |
+| 1           | Click on the icons | Be redirected to the according social media page | Y |          |
 
+#### Landing Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+|Hero Image      |                        |                  |      |             |
+| 1           | Seing different content in navbar according to logged user status  | When logged out seeing a sign-up and login button, when being logged in seeing no buttons | Y |          |
+| Manage Div     |                        |                  |      |             |
+| 1           | Click on search build via tags button | Be redirected to the search build via tags page | Y |          |
+| 2           | Click on create build post button | Be redirected to the Create build post page | Y |          |
+| Build Post List     |                        |                  |      |             |
+| 1           | Click on build post | Be redirected to the build post page | Y |          |
+| 2           | Click on pagination links | Be redirected to the according page | Y |          |
+
+
+#### Search via Tags Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+|Heading      |                        |                  |      |             |
+| 1           | Click on create build post button | Be redirected to the Create build post page | Y |           |
+| Search     |                        |                  |      |             |
+| 1           | Click on search tag | show all posts with the according tag | Y |          |
+| 2           | Click on build post | Be redirected to the build post page | Y |          |
+
+#### Create Build Post Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| User Status     |                        |                  |      |             |
+| 1           | Seing different content according to logged user status | Seeing message to either log-in or sign-up | Y |           |
+| Create Build Post Form     |                        |                  |      |             |
+| 1           | Enter all build post fields acccording to their rules | Submit data and receive a success message | Y |          |
+
+#### Future Content Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| User Status      |                        |                  |      |             |
+| 1           | Seing different content according to logged user status | Seeing message to either log-in or sign-up to enter request | Y |           |
+| Create Build Post Form     |                        |                  |      |             |
+| 1           | Enter all future content request fields acccording to their rules | Submit data and receive a success message | Y |          |
+
+#### Sign-up Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Click on sign-in link | Be redirected to the login page | Y |           |
+| 2           | Register form as a new user according to the form rules | Register new user in database and being logged in | Y |           |
+
+#### Login Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Click on sign-up link | Be redirected to the Sign-Up page | Y |           |
+| 2           | Register form as a returning user according to the form rules | Check data with database and be logged in | Y |           |
+
+#### Logout Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Click on logout button | Be logged out | Y |           |
+
+
+#### Show Build Post Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| User Status      |                        |                  |      |             |
+| 1           | Seing different content according to logged user status | Seeing message to either log-in or sign-up to like a post or to comment | Y |           |
+| 2           | Seing different content according to ownership of post | Seeing a delete and edit button below post | Y |           |
+| 3           | Seing different content according to ownership of comment | Seeing a delete and edit button below comment | Y |           |
+| Like Post - logged in    |                        |                  |      |             |
+| 1           | Click on heart | Like or unlike post | Y |          |
+| Manage Post as author     |                        |                  |      |             |
+| 1           | Click on edit post button | Be redirected to the edit build post page | Y |          |
+| 2           | Click on delete post button | Be redirected to the delete build post page | Y |          |
+| Create Comment     |                        |                  |      |             |
+| 1           | Enter comment according to form rules | Submit comment and receive a success message | Y |          |
+| Manage Comment as author     |                        |                  |      |             |
+| 1           | Click on edit comment button | Comment content is loaded into comment form to be updated | Y |          |
+| 2           | Enter updated comment according to form rules | Edit comment and receive a success message | Y |          |
+| 3           | Click on delete comment button | Modal pops up to confirm deletion | Y |          |
+| 4           | Click on delete comment button in modal | Confirm deletion of comment, will be deleted | Y |          |
+| 5           | Click on close button in modal  | Closes modal | Y |          |
+| 6           | Click on "X" button in modal  | Closes modal | Y |          |
+
+#### Edit Build Post Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Edit filled up build post form with new content according to form rules and submit edit | Submit data and receive a success message | Y |           |
+
+#### Edit Build Post Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Click delete button | Confirm deletion, be redirected to landing page and receive a success message | Y |           |
+
+#### 404 Page
+|     | User Actions           | Expected Results | Y/N | Comments    |
+|-------------|------------------------|------------------|------|-------------|
+| 1           | Click return home button | Be redirected to landing page | Y |           |
 
 ### Form Testing
 All forms have been successfully tested if it would submit with missing or wrong data input. Moreover, the [Django AllAuth](https://docs.allauth.org/en/latest/) library made this very easy for all sign-in, sign-up and logout related content.
