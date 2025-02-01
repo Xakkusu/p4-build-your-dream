@@ -6,6 +6,8 @@ The post will have professional tags by the build-your-dream-team so that users 
 
 Moreover as this imaginary website is still new and wants to adapt to the users' needs, users can give recommendations of what changes and possible features they would implement on the blog. Therefore, Build Your Dream tries to build a growing community of builders that want to exchange information with one another in a respectful way.
 
+![Build your dream screenshot](documentation/build-your-dream.png)
+
 [Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
 ## Contents
