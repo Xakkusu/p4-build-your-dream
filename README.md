@@ -1,10 +1,10 @@
 # Build your Dream
-Build your dream is a imaginary blog where users can share their own pc builds, find inspiration from other builds and interact with other pc-builders. Here everyone can see what is out there before, during and after building your own computer. 
+Build your dream is an imaginary blog where users can share their own pc builds, find inspiration from other builds and interact with other pc-builders. Here everyone can see what is out there before, during and after building your own computer. 
 
-It is meant to be a place for people to exchange information and just show off their work. Hence the target audience are pc enthusiats who want to present their own build with helpful imformation for future pc builders and for those future pc-builders to get inspired by others work.
+It is meant to be a place for people to exchange information and just show off their work. Hence the target audience are pc enthusiasts who want to present their own build with helpful information for future pc builders and for those future pc-builders to get inspired by others work.
 The post will have professional tags by the build-your-dream-team so that users can search through the contents by parts and characteristics they are looking for. Moreover users can express their feelings about a post via comments and a like function.
 
-Moreover as this imaginary website is still new and wants to adapt to the users' needs, users can give recommendation of what changes and possible features they would implement on the blog. Therefore, Build Your Dream tries to build a growing community of builders that want to exchange information with one another in a respectful way.
+Moreover as this imaginary website is still new and wants to adapt to the users' needs, users can give recommendations of what changes and possible features they would implement on the blog. Therefore, Build Your Dream tries to build a growing community of builders that want to exchange information with one another in a respectful way.
 
 [Build Your Dream - Deployed website](https://build-your-dream-87f4998d58a9.herokuapp.com/)
 
@@ -58,7 +58,7 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - to provide the user with an informative website about pc builds
 - to provide the user with the ability to become part of a community of pc builders
 - to provide the user with the opportunity to upload, edit and delete their own pc build with information about it
-- to provide the user with the opportunity to comment on ones own or others' pc builds, the comments can be edited and deleted
+- to provide the user with the opportunity to comment on one's own or others' pc builds, the comments can be edited and deleted
 - to provide the user with the ability to search all posts via their tags
 - to provide the user with the ability to show their appreciation of a post with likes
 - to provide the user with the ability give input on what features the website could need and hence become a part of the development process
@@ -67,14 +67,14 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 ## USER EXPERIENCE (UX)
 #### First Time User Goals
 - As a user I can read about pc builds.
-- As a user I can register an account so that post content, comment and give feedback.
+- As a user I can register an account so that I can post content, comment and give feedback.
 - As a user I can create a post so that I can show off my build for other users to enjoy.
 - As a user I can use any device I want and the design will respond accordingly so that I am not bound to use only one device/browser.
-- As a user I can naviagte through the main topics so that I can jump to whichever topic I want from one menu bar.
+- As a user I can navigate through the main topics so that I can jump to whichever topic I want from one menu bar.
 
 
 #### Returning User Goals
-- As a user I can like the post and it's content so that how I thought about the build is represented.
+- As a user I can like the post and its content so that how I thought about the build is represented.
 - As a user I can modify or delete my comment on a post so that I can correct my opinion or delete my input from the post.
 - As a user I can modify or delete my posts so that I can correct my content or delete it.
 - As a user I can comment on a post so that I can give my opinion on the post.
@@ -87,7 +87,7 @@ Moreover as this imaginary website is still new and wants to adapt to the users'
 - As a user I can view all tags so that I can browse through them.
 - As a user I can indicate the status of my input so that I know if those things will be implemented one day or not.
 - As a user I can give input/feedback so that in the future there will be new features on the website.
-> additionaly the returning user goals apply here as well
+> additionally  the returning user goals apply here as well
 
 ## WIREFRAMES
 Wireframes were produced using Balsamiq. 
@@ -174,11 +174,11 @@ Logout Page:
 
 
 ## AGILE
-The agile metholody way applied for this project. The To-Do's were split according to their uer stories into sprints. To graphically represent this and not just have each sprint with its goals, tests etc on paper Github's project board was used to show this each springt and tasks as well. As I also use the agile system in my professional life (project management) I didn't always update the digital board and move user stories as I did it in my notes, hence you can see in the documentation of the board that a lot of stories were done at once. However, through my commits one can see that after each small step that worked, and through a lot of testing and fixing the code in between, one can see how this framework was well implemented into each step/sprint of the project.
+The agile methodology was applied for this project. The To-Do's were split according to their user stories into sprints. To graphically represent this and not just have each sprint with its goals, tests etc on paper Github's project board was used to show this each springt and tasks as well. As I also use the agile system in my professional life (project management) I didn't always update the digital board and move user stories as I did it in my notes, hence you can see in the documentation of the board that a lot of stories were done at once. However, through my commits one can see that after each small step that worked, and through a lot of testing and fixing the code in between, one can see how this framework was well implemented into each step/sprint of the project.
 
 >[Project Board](https://github.com/users/Xakkusu/projects/5)
 
-My mentor adviced me to only keep sprints that are within the scope of my project. So I also implemented a section called "for next run" where future sprints are in that are possible future features but are not needed in the current project.
+My mentor advised me to only keep sprints that are within the scope of my project. So I also implemented a section called "for next run" where future sprints are in that are possible future features but are not needed in the current project.
 
 
 ##  ENTITY RELATIONSHIP DIAGRAM - ERD
@@ -191,19 +191,19 @@ The user model is created by [Django AllAuth](https://docs.allauth.org/en/latest
 
 ## FINAL DESIGN
 ### Imagery
-It was chosen to include no images besides the build post images into this project. This was done after intense research into similar websites as well as question being asked to people that enjoy similar content. As the user can upload an image themselves the superuser can still decide through their approval process if this image is fitting or if it will not be shown.
-The only image used is the one of the default build post and the hero image. Both where chosen in-synch with the projects colour scheme, of which you can find out more [here](#color-scheme). The default images fits the card sizing more as we figured that most people would upload an image of their build to show it off. However, it is still a pleasing image. The hero image was brightened a lot to make it stand out and makle it easier to read the text on it. Both are of greyish pc builds, which is commom for this kind of content. The rathe dry styling fits the theme as well.
+It was chosen to include no images besides the build post images into this project. This was done after intense research into similar websites as well as questions being asked to people that enjoy similar content. As the user can upload an image themselves the superuser can still decide through their approval process if this image is fitting or if it will not be shown.
+The only image used is the one of the default build post and the hero image. Both were chosen in-synch with the project's colour scheme, of which you can find out more [here](#color-scheme). The default image fits the card sizing more as we figured that most people would upload an image of their build to show it off. However, it is still a pleasing image. The hero image was brightened a lot to make it stand out and make it easier to read the text on it. Both are of greyish pc builds, which is common for this kind of content. The rather dry styling fits the theme as well.
 
 
 ### Color Scheme
 
 <img src="documentation/color-scheme.png" alt="Color scheme" >
 
-In tone with most pc build related content A greyish color range was chosen. As most pc build themselves are mostly still black and grey it was seen as fitting for this project. Depending on the content the colors vary. The only exception are edit and delete buttons, with a more yellor and a distinct red color. The colors also do not take away from the content and perfectly keep the users focus on the build post, especially on the uploaded images. It was important to not make the website too dark and hence make it unpleasend to spend more time on the posts. The main color of the font is either complete white as in the bootstrap settings for a lot of the color related keywords or a #fafafa was chosen as it is a tat more pleasing for the eye, but in some cases it does not make the text stand out as much at it needs to be. Hence, especially when bootstrap was used in styling content the #fff (white) color is used. Yet this color still is in line with the color scheme.
+In tone with most pc build related content A greyish color range was chosen. As most pc builds themselves are mostly still black and grey it was seen as fitting for this project. Depending on the content the colors vary. The only exceptions are edit and delete buttons, with a more yellow and a distinct red color. The colors also do not take away from the content and perfectly keep the users focus on the build post, especially on the uploaded images. It was important to not make the website too dark and hence make it unpleasant to spend more time on the posts. The main color of the font is either complete white as in the bootstrap settings for a lot of the color related keywords or a #fafafa was chosen as it is a tat more pleasing for the eye, but in some cases it does not make the text stand out as much as it needs to be. Hence, especially when bootstrap was used in styling content the #fff (white) color is used. Yet this color still is in line with the color scheme.
 The color palette was created by using the [coolors](https://coolors.co/) website.
 
 ### Typography
-- As bootstrap styling devices were used througout this website, the main fallback font where a native font stack is used which selects the best font-family for each OS and device, more on this [here](https://getbootstrap.com/docs/4.0/content/typography/).
+- As bootstrap styling devices were used throughout this website, the main fallback font where a native font stack is used which selects the best font-family for each OS and device, more on this [here](https://getbootstrap.com/docs/4.0/content/typography/).
 [Google Fonts](https://fonts.google.com/) was used for the following fonts:
 - ![Lato font image](documentation/font-lato.png) 
 [Lato](https://fonts.google.com/specimen/Lato?query=Lato)
@@ -325,7 +325,7 @@ Desktop:
 
 - All pages have a navbar fixed at the top of the page.
 - This shows the title which is selectable and redirects the user to the landing page.
-- It also show the main menu items which when hovering have a lighter backdrop and the page you are on is also in a lighter color. This is done to indicate to the user that these things can be selected and on which page thei are.
+- It also shows the main menu items which when hovering have a lighter backdrop and the page you are on is also in a lighter color. This is done to indicate to the user that these things can be selected and on which page they are.
 - Depending if you are logged in or logged out logout, login or sign-up sections appear in the navbar.
 
 Mobile:
@@ -360,7 +360,7 @@ Mobile:
 ![Banner logged in Content](documentation/features/banner-login.png)
 
 - The banner is made up of a hero image which is brightened so the dark text is easier to read.
-- The hero image is of a pc build to perfectly fit to what this website is about.
+- The hero image is of a pc build to perfectly fit what this website is about.
 - When the user is logged out, there are two buttons to either sign-in or create an account. Both buttons have a hover effect.
 - When the user is logged in these buttons disappear.
 
@@ -376,7 +376,7 @@ Mobile:
 
 ![Build post hover Content](documentation/features/card-hover.png)
 
-- The build post are previewed with an image, the title, the tags, the author, the created time and the number of likes.
+- The build posts are previewed with an image, the title, the tags, the author, the created time and the number of likes.
 - There is a maximum number of posts being shown per page which is 8.
 - When hovering a post the content slightly lowers itself and gets a bit darker. This indicates to the user that it is interactable and when the user selects one post they will be redirected to the post.
 
@@ -391,7 +391,7 @@ Mobile:
 #### Build post contend
 ![Build post Content](documentation/features/build-content.png)
 
-- After selection a build post the user is redirected to the full post.
+- After selecting a build post the user is redirected to the full post.
 - The title, the author, the creation and updated time is shown on top. Below the build image is shown, if the user does not select one when posting a default image will be selected. Below this a text from the user as well as information about when it was build and how much it costs is shown.
 - The background is colored in line with how the posts are shown on the landing page. Moreover, an easy to read font size was used. This is done to make it as easy as possible for the reader to consume.
 
@@ -399,25 +399,25 @@ Mobile:
 ![Buttons on own post](documentation/features/post-edit.png)
 
 - When a user is on their own post they have the possibility to either edit or delete their own post.
-- The buttons are styled distincctive so the user know that they can do something important with them. Both have a hover effect as well.
+- The buttons are styled distinctive so the user know that they can do something important with them. Both have a hover effect as well.
 
 ##### Edit post
 ![Edit post](documentation/features/build-edit.png)
 
-- When selecting the edit post button the user will be forwarded to an edit page that looks nearly identical to the create a build post page (more on that below). The form field are filled in with the posts information & the button says edit post.
+- When selecting the edit post button the user will be forwarded to an edit page that looks nearly identical to the create a build post page (more on that below). The form fields are filled in with the posts information & the button says edit post.
 - This is done so that the user will use a familiar form as they already know it when they created the post in the first place.
 
 ##### Delete post
 ![Delete post](documentation/features/build-delete.png)
 
-- When selection the delete post button the user will be forwarded to a deletion page. This way the user has to confirm the deletion and cannot just delete by one singular click.
+- When selecting the delete post button the user will be forwarded to a deletion page. This way the user has to confirm the deletion and cannot just delete by one singular click.
 - The heading and the red button indicate that content will be lost once it is deleted.
 
 #### Likes
 ![Like logged out Content](documentation/features/like-logout.png)
 
 - Below the build post content a number of likes is shown.
-- If the user is logged out a hint message is shown that in order to like the post one needs to be signed in/ signed up. The links have a hover efffect so the user knows that they can interact with it.
+- If the user is logged out a hint message is shown that in order to like the post one needs to be signed in/ signed up. The links have a hover effect so the user knows that they can interact with it.
 
 ![Like logged in Content](documentation/features/like-login.png)
 
@@ -452,7 +452,7 @@ Mobile:
 ![Own comment Content](documentation/features/comment-own.png)
 
 - When being logged in the user can edit and or delete their post.
-- Both buttons again have distinct coloring to indicate an acction.
+- Both buttons again have distinct coloring to indicate an action.
 
 ![Edit comment Content](documentation/features/comment-edit.png)
 
@@ -484,7 +484,7 @@ Mobile:
 
 - On the "Search builds via tags"-page there is a section with various buttons.
 - A button to give the option to create a build post.
-- Many buttons with the tags. When selection the ALL Button all posts will be listed.
+- Many buttons with the tags. When selecting the ALL Button all posts will be listed.
 
 ![Search builds via tags - posts Content](documentation/features/search-builds.png)
 
@@ -507,7 +507,7 @@ Mobile:
 
 - When a future content request is approved the request will be listed below the form.
 - A number of approved requests is shown as well.
-- Through this users are informed about future features of the website. If the user doesn't want their appproved request to be public the can write it in the form and they will receive an information via mail that their request is approved. This is done manual by the admin through the contact-mail.
+- Through this users are informed about future features of the website. If the user doesn't want their approved request to be public the can write it in the form and they will receive information via mail that their request is approved. This is done manually by the admin through the contact-mail.
 
 ### Sign-Up page
 ![Sign up Content](documentation/features/sign-up.png)
@@ -524,7 +524,7 @@ Mobile:
 ### Logout page
 ![Logout Content](documentation/features/logout.png)
 
-- When being logged in the user can logout by selecting the logout menu item.
+- When being logged in the user can log out by selecting the logout menu item.
 - The user has to confirm that they want to be logged out.
 
 ### 404 Page
@@ -534,14 +534,14 @@ Mobile:
 - A button to redirect the user to the landing page is on this page as well. The button has a hover effect to indicate an action.
 
 ### Admin Panel
-- The superuser can approve posts, request and comments in the admin panel.
-- The slug is also auto create in the panel.
+- The superuser can approve posts, requests and comments in the admin panel.
+- The slug is also auto created in the panel.
 - The tags will be selected by the super user as they are more knowing on pc builds and what are good tags compared to the normal user.
-- In case there will me more than one admins in the future there are three status for build posts: Draft, In Progress, Approved.
-- This is for internal communication that it is on progress by an admin and doesn't need to be looked at, as someone is already working on it.
+- In case there will be more than one admins in the future there are three status for build posts: Draft, In Progress, Approved.
+- This is for internal communication that it is in progress by an admin and doesn't need to be looked at, as someone is already working on it.
 
 ### Future Features.
-The following user stories should be implemted in the next run:
+The following user stories should be implemented in the next run:
 
 ![Future features](documentation/future-feature.png)
 
@@ -551,8 +551,8 @@ Meaning they were not in the scope of this project yet "nice to haves" if I shou
 ## TESTING
 ### Accessibility
 #### Lighthouse Testing
-The main problem with my Best Practice score is that cloudinary uses http:// insteast of https:/ when transfering images.
-Moreover as the user can upload images whichever format and they are made to fit the cards, the performance suffers through this, especially in mobile view as a third-party cloud-based platform can create succh problems.
+The main problem with my Best Practice score is that cloudinary uses http:// instead of https:/ when transfering images.
+Moreover as the user can upload images whichever format and they are made to fit the cards, the performance suffers through this, especially in mobile view as a third-party cloud-based platform can create such problems.
 
 
 ##### Desktop
@@ -907,22 +907,22 @@ Google dev tools was used to check responsiveness.
 - As a user I can read about pc builds.
 
     As long as other users at least uploaded one post the user can read about pc builds.
-- As a user I can register an account so that post content, comment and give feedback.
+- As a user I can register an account so that I can post content, comment and give feedback.
 
-    Via the sign-up link in the navbar or throughout the website's content the user cac registrate and use all functionality of the website.
+    Via the sign-up link in the navbar or throughout the website's content the user can register and use all functionality of the website.
 - As a user I can create a post so that I can show off my build for other users to enjoy.
 
     When the user is signed up they can upload their own build post.
 - As a user I can use any device I want and the design will respond accordingly so that I am not bound to use only one device/browser.
 
     The user can use the website whenever they like on whichever device they like, as long as they have internet connection.
-- As a user I can naviagte through the main topics so that I can jump to whichever topic I want from one menu bar.
+- As a user I can navigate through the main topics so that I can jump to whichever topic I want from one menu bar.
 
-    Through the navbar the user cann jump from topic to topic.
+    Through the navbar the user can jump from topic to topic.
 
 
 #### Returning User Goals
-- As a user I can like the post and it's content so that how I thought about the build is represented.
+- As a user I can like the post and its content so that how I thought about the build is represented.
 
     There is a like button a user can use when they are logged in which will show how often someone liked the post.
 - As a user I can modify or delete my comment on a post so that I can correct my opinion or delete my input from the post.
@@ -943,12 +943,12 @@ Google dev tools was used to check responsiveness.
 - As a user I can create tags on my posts and comments so that it can be searched by them.
 
     As the user might lack professional knowledge the tags will be picked by the admin, yet they are chosen based on the post. So if good keywords are used they will be used as tags.
-- As a user I can search through the posts so that can find what I want to.
+- As a user I can search through the posts so that I can find what I want to.
 
     On the search page all used tags are shown and the user can select one and see all related build posts.
 - As a user I can view all tags so that I can browse through them.
 
-    On the search page all used tags are shown and the user can select one and see all related build posts, all tags can be seleced as well.
+    On the search page all used tags are shown and the user can select one and see all related build posts, all tags can be selected as well.
 - As a user I can indicate the status of my input so that I know if those things will be implemented one day or not.
 
     Approved requests are shown on the future content page for all users to see.
@@ -959,35 +959,35 @@ Google dev tools was used to check responsiveness.
 
 ### Fixed Bugs
 1. I had a lot of problems with the deployment on Heroku and the way my settings and env file were set up:
-    > The first time it was set up wrongly in my settings.py and I had important code commentet out. This cloudinary setup error was easily corrected.
+    > The first time it was set up wrongly in my settings.py and I had important code commented out. This cloudinary setup error was easily corrected.
     > The second time I had many fix commits as my static files were not accepted when uploading. A lot of tries myself, help from Slack and other students did not work. The tutor team gave me advice that I thought I already used with my STATIC_ROOTS, STATICFILES_STORAGE, whitenoise and my env.py, when I implemented that it finally worked. However, I still don't know where my mistake was but since I could not find it out while going through my commits, I'm guessing there was a spelling error in my env file.
     > My cloudinary files where somehow not able to be deployed on Heroku. After a lot of tries (and waaaay to many commits) I changed the way it was set-up in my env.py as well in settings.py as the API and key was correctly in Heroku, so the problem lied in accessing everything correctly in those files.
 
-2.  My templates were not correctly displayed so I had to set up my Templates's DIRS differently in settings.py than what we were thought in our class. I used this until finishing my project, yet I am still wondering if I just made a simple logical spelling mistake when it did not work.
+2.  My templates were not correctly displayed so I had to set up my Templates's DIRS differently in settings.py than what we were taught in our class. I used this until finishing my project, yet I am still wondering if I just made a simple logical spelling mistake when it did not work.
 
 
-3. The way I first set up my Create Build Post class in views.py did not work they way I thought it should (as in did not work at all ^^). I commented the old class out until I finally deleted it one week before completion. I solved this by using the following tutorial as another student recommmended me [Dee Mc](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) playlist and especially her videos about creating, editing and deleting posts. This greatly helped me to apply those features on my page and see how just blindly adding code that I thought would work from instructions I read online doesn't make anysense if I do not understand what I am doing myself.
+3. The way I first set up my Create Build Post class in views.py did not work they way I thought it should (as in did not work at all ^^). I commented the old class out until I finally deleted it one week before completion. I solved this by using the following tutorial as another student recommended me [Dee Mc](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) playlist and especially her videos about creating, editing and deleting posts. This greatly helped me to apply those features on my page and see how just blindly adding code that I thought would work from instructions I read online doesn't make anysense if I do not understand what I am doing myself.
 
-4. My form/view for future content requests did not work at all. At first I struggled a lot with getting it displayed and then the data from the form were not posted to the database. As I tried to do this via using a class in views.py I looked ate other ways to create this, that's how I got the idea to use a method instead as it made more sense in the context. I wired the urls up correctly and got the data to be saved to the database this way easier. In the end my code itself wasn't that much different just the outside "package" was better for the type of code I was writing.
+4. My form/view for future content requests did not work at all. At first I struggled a lot with getting it displayed and then the data from the form were not posted to the database. As I tried to do this via using a class in views.py I looked ate other ways to create this, that's how I got the idea to use a method instead as it made more sense in the context. I wired the urls up correctly and got the data to be saved to the database this way easier. In the end my code itself wasn't that much different, just the outside "package" was better for the type of code I was writing.
 
-5. Deleting the build load was creating an error before I even implemented the according code to my template through being wrongly set up in views.py and urls.py. As this was also my first time to use Django's mixins I kinda struggled to get that correct at the first try as well. Also when I first saw how others solved the deletion problem/how it was done in the playlist I watched I noticed that I named a lot of the fiels in my models very differntly from the teaching materials so I often got confused this way. As soon as I got over these hurdles and wired it up correctly the delete build post feature worked without issues.
+5. Deleting the build load was creating an error before I even implemented the according code to my template through being wrongly set up in views.py and urls.py. As this was also my first time to use Django's mixins I kinda struggled to get that correct at the first try as well. Also when I first saw how others solved the deletion problem/how it was done in the playlist I watched I noticed that I named a lot of the fields in my models very differntly from the teaching materials so I often got confused this way. As soon as I got over these hurdles and wired it up correctly the delete build post feature worked without issues.
 
-6. When implementing the tags via these two ([1](https://www.youtube.com/watch?v=213swbH8j_o), [2](https://www.youtube.com/watch?v=Wy3yrZ-bbvE&t=41s)) videos I encountered a few problems with my builds view.py. As I created my main list functionality through classes. In order to use the tags on the index page I had to made the build post list into a method. This was in my opinion the easiest way to overcome this as I already changed classes to methods before & kinda knew what I had to do this way.
+6. When implementing the tags via these two ([1](https://www.youtube.com/watch?v=213swbH8j_o), [2](https://www.youtube.com/watch?v=Wy3yrZ-bbvE&t=41s)) videos I encountered a few problems with my builds view.py. As I created my main list functionality through classes. In order to use the tags on the index page I had to make the build post list into a method. This was in my opinion the easiest way to overcome this as I already changed classes to methods before & kinda knew what I had to do this way.
 
 7. Even though I thought I correctly followed BugBytes [tutorial](https://www.youtube.com/watch?v=Wy3yrZ-bbvE&t=41s) on how to correctly set up my search via tags page, I missed some steps and blindly followed his instructions without realising that my project set-up was different from his so some things needed to be adjusted in order to see build post from search tags page. I had to wire it up differently in the urls.py to fit my own project.
 
 8. My search page and singular build post page did not work well together. When I selected a build post from my search page I got an error. So I had to add "search/" in front of all the pages in urls.py to wire them up correctly and still be able to see my search page and when I chose a build post from this page. As I noticed that in the middle of implementing my like feature that commit is kinda messed up with more than just that correction.
 
-9. They way pagination was thaught in our classes didn't really work with all additional functionality features and was displayed wrong (didn't limit post number and did not add second page) on the index page. After some research I found this [post](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django) on Stackoverflow to solve this problem and limit the amount of posts shown to 8. I later adjusted all other pagination features to the way it was done in the post.
+9. The way pagination was taught in our classes didn't really work with all additional functionality features and was displayed wrong (didn't limit post number and did not add second page) on the index page. After some research I found this [post](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django) on Stackoverflow to solve this problem and limit the amount of posts shown to 8. I later adjusted all other pagination features to the way it was done in the post.
 
-10. When I wanted to edit my comment I created a new one as the JavaScript code had a mistake in it and did not use the upload button but still the create comment button. This was easily fixed, by changing the JavaScript code, however I did this in my staticfiles first and hence had to correct the same mistake twice to focus the correct element and change it to upload. Moreover, I implemented a approve field to the comment model as the comment model did not work as intended with the status field. This also made it possible to show if a comment is waiting for approval.
+10. When I wanted to edit my comment I created a new one as the JavaScript code had a mistake in it and did not use the upload button but still the create comment button. This was easily fixed, by changing the JavaScript code, however I did this in my staticfiles first and hence had to correct the same mistake twice to focus the correct element and change it to upload. Moreover, I implemented an approve field to the comment model as the comment model did not work as intended with the status field. This also made it possible to show if a comment is waiting for approval.
 
-11. Using alpine.js for the first time caused quite some issues with the validators. Besides the normal validator errors that I correcty, but do not see as "bugs", the alpine.js problems should be mentioned under bugs. Even though it worked on the surface W3C has problems with some markup languagse such as alpine.js. As many developers before me had the same problems they came up with a way to add prefixes that are recognized by W3C. I read through the following [github discussion](https://github.com/alpinejs/alpine/discussions/3397) by icaliman and used the solution there to pass the W3C validator while using alpine.js
+11. Using alpine.js for the first time caused quite some issues with the validators. Besides the normal validator errors that I correctly, but do not see as "bugs", the alpine.js problems should be mentioned under bugs. Even though it worked on the surface W3C has problems with some markup languages such as alpine.js. As many developers before me had the same problems they came up with a way to add prefixes that are recognized by W3C. I read through the following [github discussion](https://github.com/alpinejs/alpine/discussions/3397) by icaliman and used the solution there to pass the W3C validator while using alpine.js
 
 
 
 ### Known Bugs
-I could not figured out how to implemented the approoval process after editing a build post. If I should ever work on this project again this would be implemented after the user stories for the next run are implemented as well.
+I could not figure out how to implement the approval process after editing a build post. If I should ever work on this project again this would be implemented after the user stories for the next run are implemented as well.
 
 ## TECHNOLOGIES USED
 ### Languages
@@ -1015,7 +1015,7 @@ I could not figured out how to implemented the approoval process after editing a
 - [Django - Python framework](https://www.djangoproject.com/) - Used to create 
 - [Heroku](https://www.heroku.com/) - Used to deploy the project.
 - [Bootstrap - CSS framework](https://getbootstrap.com/) - Used to style HTML elements that I did not style by myself.
-- [alpine.js](https://alpinejs.dev/) - Used to display all search tag related content on saerch build via tags page.
+- [alpine.js](https://alpinejs.dev/) - Used to display all search tag related content on search build via tags page.
 - [django REST framework](https://www.django-rest-framework.org/#) - Used to return a serlialized list used for the tags which were later used for the search.
 - [django taggit](https://django-taggit.readthedocs.io/en/latest/index.html) - Used to use tags in an easy way for my model.
 - [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Used to style the forms and control rendering behaviour.
@@ -1029,7 +1029,7 @@ I could not figured out how to implemented the approoval process after editing a
 ## DEPLOYMENT
 ### PostgreSQL
 This project used [PostgreSQL](https://www.postgresql.org/) as its database:
-1. Submit your e-mail adress to [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/) that is used for all course related content.
+1. Submit your email address to [PostgreSQL from Code Institute](https://dbs.ci-dbs.net/) that is used for all course related content.
 2. Create a database.
 3. Receive link to database via mail.
 4. Connect database to the project via env.py and settings.py files.
@@ -1110,31 +1110,31 @@ All images on this website were taken from pexels.com & unsplash.com, thanks to 
 
 - [W3Schools](https://www.w3schools.com/)
 
-- To understand various functionalities of creating a blog webiste I used Dee Mc's playllist [Django Recipe Sharing Tutorial](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy):
-    1. I wanted an additional fallback in case my own code to only delete once own posts when the user is logged in I also implemented a 403.html page by following the [12. Delete Recipe](https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This video was also used to help me understand an write additional deletion code in my view and a deletion page.
-    2. To understand how to create a post I used her [9. Create a Recipe](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to add a blog post as a loggged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.
-    3. To understand how to edit a post I used her [13. Edit Recipe](https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to edit a blog post as a loggged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.#
+- To understand various functionalities of creating a blog website I used Dee Mc's playlist [Django Recipe Sharing Tutorial](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy):
+    1. I wanted an additional fallback in case my own code to only delete once own posts when the user is logged in I also implemented a 403.html page by following the [12. Delete Recipe](https://www.youtube.com/watch?v=nFa3lC105dM&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This video was also used to help me understand and write additional deletion code in my view and a deletion page.
+    2. To understand how to create a post I used her [9. Create a Recipe](https://www.youtube.com/watch?v=vXMTp_1_L7Y&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=10) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to add a blog post as a logged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.
+    3. To understand how to edit a post I used her [13. Edit Recipe](https://www.youtube.com/watch?v=JzDBCZTgVyw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=14) video. This easily illustrated and explained every single step that needs to be taken and how to write an easy code to edit a blog post as a logged in user. I implemented her code in all necessary files and  adjusted them to my project after fully understanding them.
 
 - To understand how to use as taggin system for the posts I used the tutorial [Django-Taggit - Adding Tags to Django Models](https://www.youtube.com/watch?v=213swbH8j_o) by Bugbytes to use a tag-system in a simple way. Through his help I was able to implement a tag model and use the tags to be searched by as well as be shown on the index page.
 
-- To understand how to set up a seach page to search post via tags I again relied on BugBytes work by using the [Django-Taggit - REST Framework integration & tag filtering with Alpine.js](https://www.youtube.com/watch?v=Wy3yrZ-bbvE) video. This introduced me to the alpine.js, the REST framework and its serializers to filter the tags and hence the posts according to it. Even though this throw me into some difficulties with my validation at first, it was really rewardung to use new frameworks on my own and be able to overcome challenges.
+- To understand how to set up a search page to search post via tags I again relied on BugBytes work by using the [Django-Taggit - REST Framework integration & tag filtering with Alpine.js](https://www.youtube.com/watch?v=Wy3yrZ-bbvE) video. This introduced me to the alpine.js, the REST framework and its serializers to filter the tags and hence the posts according to it. Even though this throw me into some difficulties with my validation at first, it was really rewarding to use new frameworks on my own and be able to overcome challenges.
 
-- To understand how to show my success message correctly I relied on the [django documentation](https://docs.djangoproject.com/en/4.0/ref/contrib/messages/) itself to understand the basic. However after still facing some issues I thes stack overflow question [1, ](https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views) [2](https://stackoverflow.com/questions/26897050/django-success-url-using-kwargs) & [3](https://stackoverflow.com/questions/24822509/%20%20%20%20%20%20%20%20success-message-in-deleteview-not-shown) and their answers was used to successfully display the messages.
+- To understand how to show my success message correctly I relied on the [django documentation](https://docs.djangoproject.com/en/4.0/ref/contrib/messages/) itself to understand the basics. However after still facing some issues I thes stack overflow question [1, ](https://stackoverflow.com/questions/4802482/how-to-send-success-message-if-we-use-django-generic-views) [2](https://stackoverflow.com/questions/26897050/django-success-url-using-kwargs) & [3](https://stackoverflow.com/questions/24822509/%20%20%20%20%20%20%20%20success-message-in-deleteview-not-shown) and their answers were used to successfully display the messages.
 
-- To understand how to implement a like function to my project I got input and help from [Flo](https://github.com/FlorianS4) with whom I was able to bounce ideas back and forth & when I got stuck he helped me a lot. He explained me the way he did it in detail and I was ablle to implement a similar way of liking posts.
+- To understand how to implement a like function to my project I got input and help from [Flo](https://github.com/FlorianS4) with whom I was able to bounce ideas back and forth & when I got stuck he helped me a lot. He explained to me the way he did it in detail and I was able to implement a similar way of liking posts.
 
-- To understand how to pass the W3C validator with alpine.js markup language I used icalilim's [solution](https://github.com/alpinejs/alpine/discussions/3397) to overcome this problem and use prefixes that are acccepted by the validator.
+- To understand how to pass the W3C validator with alpine.js markup language I used icalilim's [solution](https://github.com/alpinejs/alpine/discussions/3397) to overcome this problem and use prefixes that are accepted by the validator.
 
-- To style my cards in a visualy pleasing way I used Oz Coruhlu's [styling code](https://codepen.io/creativemanner/pen/NWrNWrd) and adapted it to my project. So the cards are shown in a nice responsive way. I decided to match my other styling tot he card's sytlingg so every page fits better together.
+- To style my cards in a visually pleasing way I used Oz Coruhlu's [styling code](https://codepen.io/creativemanner/pen/NWrNWrd) and adapted it to my project. So the cards are shown in a nice responsive way. I decided to match my other styling to the card's sytling so every page fits better together.
 
 - To understand my pagination better and get a good fitting pagination system implemented on my project I used [this solution](https://stackoverflow.com/questions/74615456/how-to-add-pagination-in-django).
 
-- I used code insitute's templates as they were introduced in the "I code therefore I blog" lessons of the blog and adapted them if necessary.
+- I used code institute's templates as they were introduced in the "I code therefore I blog" lessons of the blog and adapted them if necessary.
 
 
 ## ACKNOWLEDGEMENTS
 - My mentor Iuliia Konovalova for their guidance and support.
 - Code Institute for informative course material.
-- The Code Institute's Slack community for suppor.
+- The Code Institute's Slack community for support.
 - All students with whom I was able to exchange ideas for our projects. A special thank goes to Flo as mentioned in my credits.
 - My cats 
